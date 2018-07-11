@@ -1,12 +1,11 @@
 import React from 'react'
-import {HashRouter as Route, Link} from 'react-router-dom'
 
 const Homegraph = () => {
   return (
-    <div className='nav'>
-      <h2> I am a graph </h2>
+    <div className='homegraph'>
+      <img src='./images/gender-chart.jpg' alt='gender diversity pie chart' />
+      <p> Gender diversity in NZ tech industry as of July 2018 </p>
     </div>
-
   )
 }
 

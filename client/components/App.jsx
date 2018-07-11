@@ -11,7 +11,6 @@ const App = () => {
   return (
     <Router>
       <div className='app'>
-        <h1>Softwareness</h1>
         <Nav />
         <div className='container'>
           <Route path='/' component={Homegraph} />
@@ -19,6 +18,7 @@ const App = () => {
           <a className="button" href='/companies/add'>
           ADD COMPANY
           </a>
+          <br />
           <a className="button" href='/companies'>
           VIEW COMPANIES
           </a>
