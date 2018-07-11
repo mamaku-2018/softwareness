@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route, Router} from 'react-router'
 import {connect} from 'react-redux'
+import {addCompany} from '../actions'
 
 class CompanyName extends React.Component {
   constructor (props) {
@@ -28,7 +29,7 @@ class CompanyName extends React.Component {
   }
 
   addInfo () {
-    this.props.dispatch(/*add*/(this.state))
+    this.props.dispatch(addCompany(this.state))
   }
 
   render () {
