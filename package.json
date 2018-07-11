@@ -4,10 +4,11 @@
   "description": "React Redux with simple async action",
   "main": "server/index",
   "scripts": {
-    "dev": "nodemon --watch server & webpack --watch",
+    "build": "webpack --config ./client/webpack.config.js",
+    "dev": "nodemon server & yarn build --watch",
+    "knex": "knex --knexfile ./server/db/knexfile.js",
     "test": "jest --watchAll",
-    "start": "node server",
-    "postinstall": "webpack"
+    "start": "node server"
   },
   "author": "EDA",
   "license": "ISC",
@@ -18,7 +19,9 @@
     ]
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "knex": "^0.15.0",
+    "sqlite3": "^4.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
