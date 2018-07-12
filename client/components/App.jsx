@@ -5,6 +5,7 @@ import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Nav from './Nav'
 import Homegraph from './Homegraph'
+import Homebuttons from './Homebuttons'
 import About from './About'
 
 const App = () => {
@@ -16,9 +17,7 @@ const App = () => {
         <div className='container'>
           <Route path='/' component={Homegraph} />
           <Route path='/' component={About} />
-          <a className="button" href='/companies/add'>ADD COMPANY</a>
-          <br />
-          <a className="button" href='/companies'>VIEW COMPANIES</a>
+          <Route path='/' component={Homebuttons} />
           <WaitIndicator />
         </div>
       </div>
