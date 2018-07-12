@@ -23,7 +23,7 @@ router.post('/add', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  db.getAllCompanines()
+  db.getAllCompanies()
     .then((companies) => {
       res.json(companies)
     })
@@ -31,6 +31,19 @@ router.get('/', (req, res) => {
     // eslint-disable-next-line
     console.log(err)
       res.status(500).send('Unable to find companies')
+    })
+})
+
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.getCompany(id)
+    .then((company) => {
+      res.json(company)
+    })
+    .catch(err => {
+      // eslint-disable-next-line
+      console.log(err)
+      res.status(500).send('Unable to find company')
     })
 })
 
