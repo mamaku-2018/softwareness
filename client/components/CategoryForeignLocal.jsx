@@ -27,7 +27,7 @@ const localforeign = () => {
           }
         </Pie>
         <Legend iconType="square"/>
- <Tooltip />
+        <Tooltip />
       </PieChart>
     </div>
   )
