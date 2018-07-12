@@ -24,13 +24,13 @@ test('POST /api/v1/companies/add ', () => {
     .post('/api/v1/companies/add')
     .send({
       name: 'test',
-      webiteUrl: 'www.test.com',
+      websiteUrl: 'www.test.com',
       countryId: 123
     })
     .expect(200)
     .then(res => {
       return request(server)
-        .get('/api/v1/companies/add')
+        .get('/api/v1/companies/')
         .then(res => {
           expect(res.body.length).toBe(4)
         })
