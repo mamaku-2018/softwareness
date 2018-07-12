@@ -3,7 +3,9 @@ import {connect} from 'react-redux'
 
 const companyHeader = ({profileHeader}) => ( // from reducer
   <div>
-    {companyHeader}
+    {companyHeader.name}
+    {companyHeader.website_url}
+    {companyHeader.country_id}
   </div>
 )
 

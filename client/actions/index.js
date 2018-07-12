@@ -29,7 +29,7 @@ export function getCompanyInfo (id) {
   return (dispatch) => {
     dispatch(requestProfileHeader())
     return request
-      .get(`/api/v1/xxxx/xxxxxx/${id}`)
+      .get(`/api/v1/companies/profile/${id}`)
       .then(res => {
         dispatch(receiveProfileHeader(res.body))
       })
