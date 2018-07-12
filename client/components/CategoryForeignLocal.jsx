@@ -1,18 +1,29 @@
 import React from 'react'
-import {LineChart, Line} from 'recharts'
+import {PieChart, Pie, Tooltip} from 'recharts'
 
-const pie = () => {
+const data = [{name: 'foreign', value: 40}, {name: 'local', value: 60}]
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042']
+
+const localforeign = () => {
   return (
     <div className='pie'>
 
-      <LineChart width={600} height={300} data={data}>
-        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="name" />
-        <YAxis />
-      </LineChart>
+      <PieChart width={730} height={250}>
+        <Pie
+          data={data}
+          dataKey="value"
+          nameKey="name" 
+          cx="50%"
+          cy="50%" 
+          innerRadius={60}
+          fill="#70ffc3"
+          label
+        />
+        <Tooltip />
+      </PieChart>
     </div>
   )
 }
 
-export default pie
+export default localforeign
