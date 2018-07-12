@@ -25,13 +25,13 @@ export const receiveProfileHeader = (profileHeader) => {
   }
 }
 
-export function fetchProfileHeader (profileHeader) {
+export function getCompanyInfo (id) {
   return (dispatch) => {
     dispatch(requestProfileHeader())
     return request
-      .get()
+      .get(`/api/v1/xxxx/xxxxxx/${id}`)
       .then(res => {
-        dispatch(receiveProfileHeader(profileHeader))
+        dispatch(receiveProfileHeader(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
