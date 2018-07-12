@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-redux-async",
+  "name": "softwareness",
   "version": "0.1.0",
-  "description": "React Redux with simple async action",
+  "description": "Providing self-awareness to software",
   "main": "server/index",
   "scripts": {
     "build": "webpack --config ./client/webpack.config.js",
