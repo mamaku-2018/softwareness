@@ -28,8 +28,8 @@ router.get('/', (req, res) => {
       res.json(companies)
     })
     .catch(err => {
-    // eslint-disable-next-line
-    console.log(err)
+      // eslint-disable-next-line
+      console.log(err)
       res.status(500).send('Unable to find companies')
     })
 })
