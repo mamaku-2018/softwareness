@@ -8,6 +8,7 @@ const colors = ['#3fb1c8', '#c84e4e']
 const localforeign = () => {
   return (
     <div className='pie'>
+      <h1>Foreign / Local</h1>
 
       <PieChart width={860} height={300}>
         <Pie
