@@ -1,4 +1,4 @@
-const db = require('../../../server/db/companiesDb')
+const db = require('../../../server/db/companies')
 const env = require('./testEnvironment')
 
 let testDb = null
@@ -13,7 +13,7 @@ afterEach(() => {
 })
 
 test('getAllCompanies returns list of all companies', () => {
-  db.getAllCompanies(testDb)
+  return db.getAllCompanies(testDb)
     .then(companies => {
       expect(companies.length).toBe(3)
     })
@@ -21,7 +21,7 @@ test('getAllCompanies returns list of all companies', () => {
 
 test('getCompany returns selected company by id', () => {
   const id = 1
-  db.getCompany(id, testDb)
+  return db.getCompany(id, testDb)
     .then(companies => {
       expect(companies.length).toBe(1)
     })
@@ -33,8 +33,8 @@ test('addCompany inserts a new company object', () => {
     website_url: 'test.com',
     country_id: 1111
   }
-  db.addCompany(company, testDb)
+  return db.addCompany(company, testDb)
     .then(resp => {
-      expect(resp).toBe(1)
+      expect(typeof (resp)).toBe('number')
     })
 })
