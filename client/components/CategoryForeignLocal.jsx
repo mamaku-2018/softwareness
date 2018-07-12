@@ -1,15 +1,15 @@
 import React from 'react'
-import {PieChart, Pie, Tooltip, Cell} from 'recharts'
+import {PieChart, Pie, Tooltip, Cell, Legend} from 'recharts'
 
 const data = [{name: 'foreign', value: 40}, {name: 'local', value: 60}]
 
-const colors = ['#4df9d1', '#b8f24d']
+const colors = ['#3fb1c8', '#c84e4e']
 
 const localforeign = () => {
   return (
     <div className='pie'>
 
-      <PieChart width={730} height={250}>
+      <PieChart width={860} height={300}>
         <Pie
           data={data}
           dataKey="value"
@@ -20,13 +20,14 @@ const localforeign = () => {
           fill="#70ffc3"
           label
         >
+          
           {
             data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index]}/>
             ))
           }
         </Pie>
-        <legend align='left' />
+        <Legend iconType="square"/>
 
         <Tooltip />
       </PieChart>
