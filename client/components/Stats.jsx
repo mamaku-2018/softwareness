@@ -5,8 +5,8 @@ import CategoryMaleFemale from './CategoryMaleFemale'
 const Stats = () => (
   <div className='stats'>
     <h1>Stats</h1>
-    {/* <CategoryForeignLocal /> */}
-    {/* <CategoryMaleFemale /> */}
+    <CategoryForeignLocal />
+    <CategoryMaleFemale />
   </div>
 )
 
