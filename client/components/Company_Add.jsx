@@ -1,5 +1,4 @@
 import React from 'react'
-import {Route, Router} from 'react-router'
 import {connect} from 'react-redux'
 import {addCompany} from '../actions'
 
@@ -8,8 +7,8 @@ class CompanyName extends React.Component {
     super(props)
     this.state = {
       name: '',
-      siteURL: '',
-      nzCompany: 0
+      siteUrl: '',
+      countryId: 0
     }
     this.fillState = this.fillState.bind(this)
   }
@@ -19,11 +18,11 @@ class CompanyName extends React.Component {
       case 'name':
         this.setState.name = e.target.value
         break
-      case 'site-url':
-        this.setState.siteURL = e.target.value
+      case 'siteUrl':
+        this.setState.siteUrl = e.target.value
         break
-      case 'nz-company':
-        this.setState.nzCompany = e.target.value
+      case 'countryId':
+        this.setState.countryId = e.target.value
         break
     }
   }
@@ -39,9 +38,9 @@ class CompanyName extends React.Component {
         <h3>Name</h3>
         <input onClick={this.fillState} type='text' id='name'/>
         <h3>Site URL</h3>
-        <input onClick={this.fillState} type='text' id='site-url'/>
-        <h3>NZ Company #</h3>
-        <input onClick={this.fillState} type='text' id='nz-company'/>
+        <input onClick={this.fillState} type='text' id='siteUrl'/>
+        <h3>Company #</h3>
+        <input onClick={this.fillState} type='text' id='countryId'/>
         <button className='addButt' onClick={this.addInfo}>ADD</button>
       </div>
     )
