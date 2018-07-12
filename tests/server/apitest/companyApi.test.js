@@ -1,19 +1,9 @@
-/* global test expect */
-
 const request = require('supertest')
 const server = require('../../../server/server')
-const env = require('../test-environment')
 
-let testDb = null
-
-beforeEach(() => {
-  testDb = env.getTestDb()
-  return env.initialise(testDb)
-})
-
-afterEach(() => {
-  env.cleanup(testDb)
-})
+jest.mock('../../../server/db/companies', () => ({
+  addCompany: () => Promise.resolve()
+}))
 
 test('good to go', () => {
   expect(true).toBeTruthy()
