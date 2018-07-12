@@ -6,7 +6,7 @@ const Stats = () => (
   <div className='stats'>
     <h1>Stats</h1>
     {/* <CategoryForeignLocal /> */}
-    {/* <CategoryMaleFemale /> */}
+    <CategoryMaleFemale />
   </div>
 )
 
