@@ -20,7 +20,6 @@ const localforeign = () => {
           fill="#70ffc3"
           label
         >
-          
           {
             data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index]}/>
@@ -28,8 +27,7 @@ const localforeign = () => {
           }
         </Pie>
         <Legend iconType="square"/>
-
-        <Tooltip />
+ <Tooltip />
       </PieChart>
     </div>
   )
