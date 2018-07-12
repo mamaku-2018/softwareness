@@ -6,11 +6,7 @@ const router = express.Router()
 router.use(express.json())
 
 router.post('/add', (req, res) => {
-  const company = {
-    name: req.body.name,
-    website_url: req.body.websiteUrl,
-    country_id: req.body.countryId
-  }
+  const company = req.body
   db.addCompany(company)
     .then((id) => {
       res.json({newId: id})
