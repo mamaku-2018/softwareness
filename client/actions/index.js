@@ -1,9 +1,9 @@
-import {request} from 'http'
+import {request} from 'superagent'
 
 export const SHOW_ERROR = 'SHOW_ERROR'
 
-export const REQUEST_COMPANYPROFILE = 'REQUEST_COMPANYPROFILE'
-export const RECEIVE_COMPANYPROFILE = 'RECEIVE_COMPANYPROFILE'
+export const REQUEST_COMPANYINFO = 'REQUEST_COMPANYINFO'
+export const RECEIVE_COMPANYINFO = 'RECEIVE_COMPANYINFO'
 
 export const showError = (errorMessage) => {
   return {
@@ -12,26 +12,26 @@ export const showError = (errorMessage) => {
   }
 }
 
-export const requestCompanyProfile = () => {
+export const requestCompanyInfo = () => {
   return {
-    type: 'REQUEST_COMPANYPROFILE'
+    type: 'REQUEST_COMPANYINFO'
   }
 }
 
-export const receiveCompanyProfile = (companyProfile) => {
+export const receiveCompanyInfo = (companyInfo) => {
   return {
-    type: 'RECEIVE_COMPANYPROFILE',
-    companyProfile
+    type: 'RECEIVE_COMPANYINFO',
+    companyInfo
   }
 }
 
 export function getCompanyInfo (id) {
   return (dispatch) => {
-    dispatch(requestCompanyProfile())
+    dispatch(requestCompanyInfo())
     return request
       .get(`/api/v1/companies/profile/${id}`)
       .then(res => {
-        dispatch(receiveCompanyProfile(res.body))
+        dispatch(receiveCompanyInfo(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
