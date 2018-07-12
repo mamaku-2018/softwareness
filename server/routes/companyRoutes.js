@@ -24,9 +24,14 @@ router.post('/add', (req, res) => {
 
 router.get('/', (req, res) => {
   db.getAllCompanines()
-  .then((res) => {
-    res.json()
-  }
+    .then((companies) => {
+      res.json(companies)
+    })
+    .catch(err => {
+    // eslint-disable-next-line
+    console.log(err)
+      res.status(500).send('Unable to find companies')
+    })
 })
 
 module.exports = router
