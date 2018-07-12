@@ -2,7 +2,8 @@ const config = require('./knexfile').development
 const knex = require('knex')(config)
 
 module.exports = {
-  categoryMaleFemaleCount
+  categoryMaleFemaleCount,
+  catetoryLocalForeignCount
 }
 
 function categoryMaleFemaleCount (db = knex) {
@@ -12,4 +13,14 @@ function categoryMaleFemaleCount (db = knex) {
     .sum('rc.female_count as femaleTotal')
     .groupBy('r.category')
     .select('r.category')
+}
+
+function catetoryLocalForeignCount (db = knex) {
+  return db('role_counts as rc')
+    .avg('percent_local as local')
+    .then(localResult => {
+      const local = Math.floor(localResult[0].local)
+      const foreign = 100 - local
+      return ([{local, foreign}])
+    })
 }

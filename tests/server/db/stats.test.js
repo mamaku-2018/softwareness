@@ -18,3 +18,11 @@ test('categoryMaleFemaleCount', () => {
       expect(counts.length).toBe(3)
     })
 })
+
+test('catetoryLocalForeignCount', () => {
+  return db.catetoryLocalForeignCount(testDb)
+    .then(counts => {
+      const acutal = counts[0].foreign + counts[0].local
+      expect(acutal).toBe(100)
+    })
+})
