@@ -2,14 +2,14 @@ import React from 'react'
 import {configure, shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import CompanyName from '../../client/components/Company_Add'
+import {CompanyName} from '../../client/components/CompanyAdd'
 configure({adapter: new Adapter()})
 
 test('<CompanyName />', () => {
-  const expected = 'Site URL'
+  const expected = 'Add CompanyNameSite URLCompany #ADD'
 
   const wrapper = shallow(<CompanyName />)
   const actual = wrapper.text()
 
-  expect(actual).toBe(expected)
+  expect(actual).toEqual(expected)
 })
