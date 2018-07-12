@@ -1,5 +1,5 @@
 import React from 'react'
-import {BarChart, Bar, CartesianGrid, YAxis, XAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts'
+import {BarChart, Bar, CartesianGrid, YAxis, XAxis, Tooltip, Legend} from 'recharts'
 
 const CategoryMaleFemale = (props) => {
   const data = [
@@ -7,9 +7,8 @@ const CategoryMaleFemale = (props) => {
     {category: 'creative', male: 20, female: 30},
     {category: 'support', male: 5, female: 4}
   ]
-  
-  return (
 
+  return (
     <BarChart width={730} height={500} data={data} barGap={5} >
       <CartesianGrid strokeDasharray = "4 4" />
       <XAxis dataKey="category" />
