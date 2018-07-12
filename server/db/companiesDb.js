@@ -2,23 +2,20 @@ const config = require('./knexfile').development
 const knex = require('knex')(config)
 
 module.exports = {
-  allCompanies,
+  getAllCompanies,
   getCompany,
-  newCompany
+  addCompany
 }
 
-function allCompanies () {
-  const db = knex
+function getAllCompanies (db = knex) {
   return db('companies').select()
 }
 
-function getCompany (id) {
-  const db = knex
+function getCompany (id, db = knex) {
   return db('companies')
     .where('id', id).select()
 }
 
-function newCompany (company) {
-  const db = knex
-  return db('companies').insert(company)
+function addCompany (company, db = knex) {
+  return db('companies').insert(company).then(companyId => companyId[0])
 }
