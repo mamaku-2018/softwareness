@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getCompanyInfo} from '../actions'
 
-class ProfileHeaderLoad extends React.Component {
+class CompanyInfoLoad extends React.Component {
   constructor (props) {
     super(props)
     this.state = {}
@@ -13,4 +13,4 @@ class ProfileHeaderLoad extends React.Component {
   }
 }
 
-export default connect()(ProfileHeaderLoad)
+export default connect()(CompanyInfoLoad)

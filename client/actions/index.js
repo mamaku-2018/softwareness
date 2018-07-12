@@ -2,8 +2,8 @@ import {request} from 'http'
 
 export const SHOW_ERROR = 'SHOW_ERROR'
 
-export const REQUEST_PROFILEHEADER = 'REQUEST_PROFILEHEADER'
-export const RECEIVE_PROFILEHEADER = 'RECEIVE_PROFILEHEADER'
+export const REQUEST_COMPANYPROFILE = 'REQUEST_COMPANYPROFILE'
+export const RECEIVE_COMPANYPROFILE = 'RECEIVE_COMPANYPROFILE'
 
 export const showError = (errorMessage) => {
   return {
@@ -12,26 +12,26 @@ export const showError = (errorMessage) => {
   }
 }
 
-export const requestProfileHeader = () => {
+export const requestCompanyProfile = () => {
   return {
-    type: 'REQUEST_PROFILEHEADER'
+    type: 'REQUEST_COMPANYPROFILE'
   }
 }
 
-export const receiveProfileHeader = (profileHeader) => {
+export const receiveCompanyProfile = (companyProfile) => {
   return {
-    type: 'RECEIVE_PROFILEHEADER',
-    profileHeader
+    type: 'RECEIVE_COMPANYPROFILE',
+    companyProfile
   }
 }
 
 export function getCompanyInfo (id) {
   return (dispatch) => {
-    dispatch(requestProfileHeader())
+    dispatch(requestCompanyProfile())
     return request
       .get(`/api/v1/companies/profile/${id}`)
       .then(res => {
-        dispatch(receiveProfileHeader(res.body))
+        dispatch(receiveCompanyProfile(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
