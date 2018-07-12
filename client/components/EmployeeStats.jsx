@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
+import {Link} from 'react.router'
 const EmployeeStats = (props) => {
   return (
     <div>
       <div>
         <h3> Employee Profile</h3>
-        <button> Edit </button>
+        <Link to={`/companies/${props.id}/edit`}> Edit </Link>
       </div>
       <div>
         <table>
@@ -24,8 +24,9 @@ const EmployeeStats = (props) => {
               <td>{category.name} </td>
               <td>{category.role.count} </td>
               <td>{category.role.avgYearExp} </td>
-              <td>{category.role.femaleCount} </td>
-              <td>{category.role.maleCount} </td>
+              {/* we have a total for each male/female. we now need the % of the company */}
+              <td>%{category.role.femaleCount / ((category.role.maleCount + category.role.femaleCount) * 100)} </td>
+              <td>%{category.role.maleCount / ((category.role.maleCount + category.role.femaleCount) * 100)} </td>
               <td>{category.role.openReqs} </td>
               <td>%{category.role.percentLocal} </td>
             </tr>
