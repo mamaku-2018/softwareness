@@ -1,8 +1,8 @@
 exports.up = (knex, Promise) => {
   return knex.schema.createTable('role_counts', table => {
-    table.increments('id')
-    table.integer('role_id')
-    table.integer('company_id')
+    table.increments('id').primary()
+    table.integer('role_id').references('roles.id')
+    table.integer('company_id').references('companies.id')
     table.integer('count')
     table.date('last_updated_date')
     table.integer('avg_years_exp')
