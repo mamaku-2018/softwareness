@@ -13,7 +13,6 @@ const Nav = () => {
         <h2>LOGIN</h2>
       </div>
     </div>
-
   )
 }
 
