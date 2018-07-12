@@ -9,7 +9,7 @@ test('good to go', () => {
   expect(true).toBeTruthy()
 })
 
-test('POST /api/v1/companies/add ', () => {
+test.skip('POST /api/v1/companies/add ', () => {
   return request(server)
     .post('/api/v1/companies/add')
     .send({
@@ -20,7 +20,7 @@ test('POST /api/v1/companies/add ', () => {
     .expect(200)
     .then(res => {
       return request(server)
-        .get('/api/v1/companies/')
+        .get(`/api/v1/companies/${res.newId}`)
         .then(res => {
           expect(res.body.length).toBe(4)
         })
