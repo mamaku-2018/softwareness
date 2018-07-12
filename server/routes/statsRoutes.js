@@ -7,7 +7,12 @@ router.use(express.json())
 
 router.get('/', (req, res) => {
   db.categoryMaleFemaleCount()
-    .then(counts => res.json(counts))
+    .then(gender => {
+      db.catetoryLocalForeignCount()
+        .then(local => {
+          res.json({gender, local})
+        })
+    })
 })
 
 module.exports = router
