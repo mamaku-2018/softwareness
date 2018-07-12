@@ -15,7 +15,7 @@ afterEach(() => {
 test('getAllCompanies returns list of all companies', () => {
   return db.getAllCompanies(testDb)
     .then(companies => {
-      expect(companies.length).toBe(3)
+      expect(companies.length).toBe(5)
     })
 })
 
