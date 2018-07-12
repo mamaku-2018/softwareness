@@ -8,12 +8,13 @@ module.exports = {
 }
 
 function getAllCompanies (db = knex) {
-  return db('companies').select()
+  return db('companies')
+    .select('id as id, name as name, website_url as websiteUrl, country_id as countryId')
 }
 
 function getCompany (id, db = knex) {
   return db('companies')
-    .where('id', id).select()
+    .where('id', id).select('id as id, name as name, website_url as websiteUrl, country_id as countryId')
 }
 
 function addCompany (company, db = knex) {
