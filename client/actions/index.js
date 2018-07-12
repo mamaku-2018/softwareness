@@ -2,8 +2,8 @@ import {request} from 'superagent'
 
 export const SHOW_ERROR = 'SHOW_ERROR'
 
-export const REQUEST_PROFILEHEADER = 'REQUEST_PROFILEHEADER'
-export const RECEIVE_PROFILEHEADER = 'RECEIVE_PROFILEHEADER'
+export const REQUEST_COMPANYINFO = 'REQUEST_COMPANYINFO'
+export const RECEIVE_COMPANYINFO = 'RECEIVE_COMPANYINFO'
 
 export const showError = (errorMessage) => {
   return {
@@ -12,26 +12,26 @@ export const showError = (errorMessage) => {
   }
 }
 
-export const requestProfileHeader = () => {
+export const requestCompanyInfo = () => {
   return {
-    type: 'REQUEST_PROFILEHEADER'
+    type: 'REQUEST_COMPANYINFO'
   }
 }
 
-export const receiveProfileHeader = (profileHeader) => {
+export const receiveCompanyInfo = (companyInfo) => {
   return {
-    type: 'RECEIVE_PROFILEHEADER',
-    profileHeader
+    type: 'RECEIVE_COMPANYINFO',
+    companyInfo
   }
 }
 
 export function getCompanyInfo (id) {
   return (dispatch) => {
-    dispatch(requestProfileHeader())
+    dispatch(requestCompanyInfo())
     return request
       .get(`/api/v1/companies/profile/${id}`)
       .then(res => {
-        dispatch(receiveProfileHeader(res.body))
+        dispatch(receiveCompanyInfo(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
