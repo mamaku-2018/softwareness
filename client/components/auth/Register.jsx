@@ -65,7 +65,7 @@ class Register extends React.Component {
             {!this.state.match && <span>{this.state.message}</span>}
             <br />
 
-            <button type="button" disabled={!this.state.match} className="registerBtn" onClick={this.handleSubmit}>Register</button>
+            <button type="button" disabled={!this.state.match} className="button" onClick={this.handleSubmit}>Register</button>
           </fieldset>
         </form>
       </div>
