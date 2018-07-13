@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react.router'
-const EmployeeStats = (props) => {
+import {Link} from 'react-router'
+export const EmployeeStats = (props) => {
   return (
     <div>
       <div>
