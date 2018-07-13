@@ -1,5 +1,5 @@
 import request from 'superagent'
-
+import {showError} from '../index'
 export const GET_LOCALDATA = 'GET_LOCALDATA'
 
 export const getLocalData = (stats) => {
@@ -9,13 +9,15 @@ export const getLocalData = (stats) => {
   }
 }
 
-export function getlocalForeign () {
+export function getLocalForeign () {
   return (dispatch) => {
     return request
       .get('api/v1/stats')
       .then(res => {
         dispatch(getLocalData(res.body.local))
-      }
-      )
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
   }
 }
