@@ -1,11 +1,12 @@
 import React from 'react'
-import {HashRouter as Router, Route} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
+import Nav from './Nav'
+import Home from './Home'
+import CompanyAdd from './CompanyAdd'
+import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
-import Nav from './Nav'
-import Homegraph from './Homegraph'
-import About from './About'
 import Register from './auth/Register'
 
 const App = () => {
@@ -15,12 +16,12 @@ const App = () => {
         <Nav />
         <ErrorMessage />
         <div className='container'>
+          <Route exact path='/' component={Home} />
           <Route path='/register' component={Register} />
-          <Route path='/' component={Homegraph} />
-          <Route path='/' component={About} />
-          <a className="button" href='/companies/add'>ADD COMPANY</a>
-          <br />
-          <a className="button" href='/companies'>VIEW COMPANIES</a>
+          <Switch>
+            <Route path='/companies/add' component={CompanyAdd} />
+            <Route path='/companies/:id' component={CompanyInfo} />
+          </Switch>
           <WaitIndicator />
         </div>
       </div>

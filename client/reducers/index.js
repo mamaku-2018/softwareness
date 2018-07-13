@@ -1,9 +1,13 @@
 import {combineReducers} from 'redux'
 
-import errorMessage from './error-message'
 import waiting from './waiting'
+import companyInfo from './companyInfo'
+import companyProfile from './companyProfile'
+import errorMessage from './errorMessage'
 
 export default combineReducers({
-  errorMessage,
-  waiting
+  waiting,
+  companyInfo,
+  companyProfile,
+  errorMessage
 })

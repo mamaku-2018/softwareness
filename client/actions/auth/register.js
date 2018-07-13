@@ -34,7 +34,6 @@ const receiveUserDetails = (user) => {
 }
 
 export function register (user) {
-  
   return dispatch => {
     dispatch(requestUserRegistration())
     return request('post', '/auth/register', user)

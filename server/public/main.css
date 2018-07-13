@@ -2,3 +2,62 @@
   color: red;
   font-weight: bold;
 }
+
+* {
+  box-sizing: border-box;
+  border: .3px solid transparent;
+}
+
+.app {
+  background-color: #7AB0AD;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add Company Title */
+.AddCompTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-weight: 500;
+  margin: 5% 5% 2% 10%;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* Form */
+.CompanyAddForm {
+  background-color: #1F3D45;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #E8E8E8;
+  font-size: 20px;
+  padding: 2% 5% 2% 5%;
+  margin: 0% 12% 10% 10%;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin: 2% 0% 2% 0%;
+  color: #E8E8E8;
+}
+
+.name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4em;
+}
+
+/* Add Button */
+.addButt {
+width: 150px;
+padding: 10px;
+margin: 0% 20% 0% 35%;
+background-color: #C0462E;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+color: #E8E8E8;
+font-weight: 500;
+}
