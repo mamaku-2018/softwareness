@@ -2,18 +2,17 @@ import React from 'react'
 
 const Nav = () => {
   return (
-
-    <div className='columns' id='nav'>
-      <div className='column' id='nav-logo'>
+    <nav className='navbar'>
+      <div className='navbar-brand'>
         <a className='logo' href='/'>
           <h2>Softwareness</h2>
         </a>
       </div>
-      <div className='column' id='nav-login'>
+      <div className='navbar-menu'>
         {/* To be replaced by an Auth */}
-        <h2>LOGIN</h2>
+        <h2>login</h2>
       </div>
-    </div>
+    </nav>
   )
 }
 

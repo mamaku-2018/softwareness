@@ -5,12 +5,13 @@
 
 * {
   box-sizing: border-box;
-  border: 0.5px solid red; 
+  border: 0.5px solid transparent; 
 }
 
 html, body {
   max-width: 100%;
   font-family: Arial, Helvetica, sans-serif; 
+  color: #1F3D45;
   text-align: center;
   margin: 0px; 
   padding: 0px; 
@@ -19,47 +20,48 @@ html, body {
 #app, .container {
   width: 100%;
   height: 100vh; 
+  background-color: #7AB0AD;
 }
 
 /* NAV  */
 
-#nav {
+.navbar {
   position: relative;
   height: 10%;
   width: 100%; 
   margin: auto;
+  background-color: #7AB0AD;
+  margin: 0;
 }
 
-.nav-logo {
-
-}
-
-.logo h2 {
+.navbar-brand h2 {
   position: absolute;
+  top: 20%;
   color: #1F3D45;
   font-size: 30px; 
   text-align: left; 
   width: 10%; 
-  line-height: 1rem; 
+  margin-left: 0;
 }
 
-#nav-login {
-position: absolute;  
-top: 25%; 
-right: 0;
+.navbar-menu {
+  position: absolute;  
+  top: 25%; 
+  right: 0;
 }
 
 /* HOMEGRAPH  */
-#homegraph.column {
+
+.homegraph {
   height: 100%; 
 }
 
-img#homegraph {
-  width: 300px; 
+.homegraph img {
+  width: 500px; 
 }
 
-p {
-  font-size: 20px; 
+.homegraph p {
+  font-size: 1rem; 
   margin: 1rem; 
 }
 
@@ -69,7 +71,49 @@ p {
 
 /* ABOUT */
 
-#about.column {
+.about {
   position: relative; 
+  padding-top: 10%; 
 }
 
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1F3D45;
+}
+
+.button {
+  margin: 1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  background-color: transparent;
+  border: 2px solid #1F3D45;
+  height: 3rem;
+  color: #1F3D45;
+}
+
+.about p {
+  font-size: 1.6rem;
+  margin: 1rem 3rem 1rem 3rem;
+  font-style: italic;
+  color: #1F3D45;
+}
+
+/* FOOTER */
+
+.footer {
+  height: 5%;
+  background-color: #7AB0AD;
+  text-align: left;
+  border-top: 2px solid #1F3D45;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer h4 {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.footer a {
+  color: #1F3D45;
+}
