@@ -6,6 +6,7 @@ import WaitIndicator from './WaitIndicator'
 import Nav from './Nav'
 import Homegraph from './Homegraph'
 import About from './About'
+import Register from './auth/Register'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Nav />
         <ErrorMessage />
         <div className='container'>
+          <Route path='/register' component={Register} />
           <Route path='/' component={Homegraph} />
           <Route path='/' component={About} />
           <a className="button" href='/companies/add'>ADD COMPANY</a>
