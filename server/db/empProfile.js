@@ -6,8 +6,6 @@ module.exports = {
   getEmpProfiles
 }
 
-console.log('db.js--------------------------')
-
 function getEmpProfiles (companyId) {
   return db('role_counts as empProfile')
     .join('roles as role', 'empProfile.role_id', 'role.id')
