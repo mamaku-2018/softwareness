@@ -49,7 +49,22 @@ function getCategories (list) {
 }
 
 function getRoles (list, category) {
-  console.log(list)
+  console.log(category)
+  const result = []
+  for (let i = 0; i < list.length; i++) {
+    if (category === list[i].category) {
+      result.push({
+        name: list[i].name,
+        count: list[i].count,
+        avgYearExp: list[i].avg_years_exp,
+        femaleCount: list[i].female_count,
+        maleCount: list[i].male_count,
+        openReqs: list[i].open_reqs,
+        percentLocal: list[i].percent_local
+      })
+    }
+  }
+  return result
 }
 
 module.exports = router
