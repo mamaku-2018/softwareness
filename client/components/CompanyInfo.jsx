@@ -2,12 +2,9 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getCompanyInfo} from '../actions'
 
-class CompanyInfo extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {}
-  }
+const companiesRoot = 'https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/'
 
+class CompanyInfo extends React.Component {
   componentDidMount () {
     this.props.dispatch(getCompanyInfo())
   }
@@ -15,11 +12,12 @@ class CompanyInfo extends React.Component {
   render () {
     return (
       <div>
-        {this.props.companyProfile.name}
-        {this.props.companyProfile.website_url}
-        {this.props.companyProfile.country_id}
+        <h2>{this.props.companyProfile.name}</h2>
+        <a href="{this.props.companyProfile.website_url}">Website</a>
+        <a href={`${companiesRoot}${this.props.companyProfile.country_id}`}>
+          NZ Companies Office listing
+        </a>
       </div>
-
     )
   }
 }
@@ -30,6 +28,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(
-  mapStateToProps
-)(CompanyInfo)
+export default connect(mapStateToProps)(CompanyInfo)
