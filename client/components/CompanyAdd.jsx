@@ -21,7 +21,7 @@ export class CompanyName extends React.Component {
   }
 
   addInfo () {
-    if (typeof (this.state.countryId) === 'number') {
+    if (typeof this.state.countryId === 'number') {
       this.state.dispatch(addCompany(this.state))
     } else {
       this.state.dispatch(showError('Please enter a number for company #'))

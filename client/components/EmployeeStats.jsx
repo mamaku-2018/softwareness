@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+
 export const EmployeeStats = (props) => {
   return (
     <div>
@@ -19,7 +20,7 @@ export const EmployeeStats = (props) => {
             <th>Open</th>
             <th>Local</th>
           </tr>
-          {props.map(category => {
+          {props.categories.map(category => {
             return <tr key = {category.name}>
               <td>{category.name} </td>
               <td>{category.role.count} </td>
@@ -38,11 +39,11 @@ export const EmployeeStats = (props) => {
   )
 }
 
-function mapStateToProps (state) {
-  var tempCategories = state.categories
+function mapStateToProps (state, ownProps) {
+  const tempCategories = state.categories
   // Go through each of the three main categories to total their data
-  tempCategories.map(category => {
-    var runningCount = 0
+  tempCategories.categories.map(category => {
+    let runningCount = 0
     // Reducing each of the values in the subcategories, bringing each to a total
     tempCategories.roles.reduce((totalRole, currentRole) => {
       runningCount += 1
@@ -55,6 +56,7 @@ function mapStateToProps (state) {
     })
   })
   return {
+    ...ownProps,
     categories: tempCategories
   }
 }
