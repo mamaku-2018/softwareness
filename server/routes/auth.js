@@ -7,7 +7,6 @@ const router = express.Router()
 
 router.post('/register', register, token.issue)
 function register (req, res, next) {
-  console.log(req.body)
   db.userExists(req.body.email)
     .then(exists => {
       if (exists) {
