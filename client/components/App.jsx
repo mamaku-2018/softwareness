@@ -2,9 +2,9 @@ import React from 'react'
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
 import Nav from './Nav'
+import Home from './Home'
 import Stats from './Stats'
 import Footer from './Footer'
-import Home from './Home'
 import CompanyAdd from './CompanyAdd'
 import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
@@ -18,8 +18,8 @@ const App = () => {
         <ErrorMessage />
         <WaitIndicator />
         <div className='container'>
-          <Route path='/stats' component={Stats} />
           <Route exact path='/' component={Home} />
+          <Route path='/stats' component={Stats} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
             <Route path='/companies/:id' component={CompanyInfo} />

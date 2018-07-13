@@ -1,7 +1,7 @@
 import React from 'react'
 import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
 import {connect} from 'react-redux'
-import {getLocalForeign} from '../actions/stats/getcategoryforloc'
+import {getLocalForeign} from '../actions/stats/getCategoryForLocation'
 
 const colors = ['#3fb1c8', '#c84e4e']
 

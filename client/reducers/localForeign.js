@@ -1,4 +1,4 @@
-import {GET_LOCALDATA} from '../actions/stats/getcategoryforloc'
+import {GET_LOCALDATA} from '../actions/stats/getCategoryForLocation'
 
 const localforeign = (state = [], action) => {
   switch (action.type) {
