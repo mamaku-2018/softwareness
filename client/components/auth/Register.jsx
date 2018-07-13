@@ -12,7 +12,8 @@ class Register extends React.Component {
       email: '',
       password: '',
       confirm: '',
-      match: false
+      match: false,
+      message: 'Passwords do not match'
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -35,8 +36,7 @@ class Register extends React.Component {
       firstName: this.state.firstName,
       surname: this.state.surname,
       email: this.state.email,
-      password: this.state.password,
-      confirm: this.state.confirm
+      password: this.state.password
     }
     register(user)
     e.preventDefault()
@@ -62,8 +62,10 @@ class Register extends React.Component {
             <br />
             <label htmlFor="confirm">Confirm password: </label>
             <input type="password" name="confirm" id="confirm" placeholder="Confirm password" onChange={this.handleChange} value={this.state.confirm}/>
+            {!this.state.match && <span>{this.state.message}</span>}
             <br />
-            <button className="registerBtn" onClick={this.handleSubmit}>Register</button>
+
+            <button type="button" disabled={!this.state.match} className="registerBtn" onClick={this.handleSubmit}>Register</button>
           </fieldset>
         </form>
       </div>

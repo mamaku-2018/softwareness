@@ -36,7 +36,7 @@ const receiveUserDetails = (user) => {
 export function register (user) {
   return dispatch => {
     dispatch(requestUserRegistration())
-    return request('post', '/register', user)
+    return request('post', '/auth/register', user)
       .then(res => {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveUserRegestration(res.body))
