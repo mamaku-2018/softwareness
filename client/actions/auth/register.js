@@ -41,13 +41,13 @@ export function register (user) {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveUserRegestration(res.body))
         dispatch(getUserDetails(token.id))
-        history.push('/logIn')
+        history.push('/login')
         dispatch(showSuccess('Registration successful'))
       })
       .catch(err => {
         const res = err.response.body
-        if (res && res.errorType === 'EMAIL_UNAVAILABLE') {
-          return dispatch(showError('This email is unavialable'))
+        if (res && res.errorType === 'EMAIL_ALREADY_REGISTERED') {
+          return dispatch(showError('This email is already registered'))
         }
         dispatch(showError('An unexpected error has occurred'))
       })

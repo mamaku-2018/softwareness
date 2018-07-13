@@ -6,10 +6,10 @@ export default {
 }
 
 export function saveToken (token) {
-  if (!token) {
-    localStorage.removeItem(TOKEN)
-  } else {
+  if (token) {
     localStorage.setItem(TOKEN, token)
+  } else {
+    localStorage.removeItem(TOKEN)
   }
 }
 
