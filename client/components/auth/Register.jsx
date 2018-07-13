@@ -76,11 +76,8 @@ class Register extends React.Component {
 function mapDispatchToProps (dispatch) {
   return {
     register: (user) => {
-      if (user.password === user.confirm) {
-        dispatch(clearError())
-        return dispatch(register(user))
-      }
-      dispatch(showError('Passwords don\'t match'))
+      dispatch(clearError())
+      return dispatch(register(user))
     }
   }
 }
