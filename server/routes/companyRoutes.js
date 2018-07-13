@@ -3,8 +3,6 @@ const db = require('../db/companies')
 
 const router = express.Router()
 
-router.use(express.json())
-
 router.post('/add', (req, res) => {
   const company = req.body
   db.addCompany(company)
