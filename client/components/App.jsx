@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter as Router, Route} from 'react-router-dom'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 import Nav from './Nav'
 import About from './About'
@@ -15,6 +15,7 @@ const App = () => {
       <div className='app'>
         <Nav />
         <ErrorMessage />
+        <Link to='/stats'>Stats</Link>
         <div className='container'>
           <Route path='/stats' component={Stats} />
           <Route exact path='/' component={Homegraph} />
