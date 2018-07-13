@@ -15,11 +15,15 @@ function getAllCompanies (db = knex) {
 
 function getCompany (id, db = knex) {
   return db('companies')
-    .where('id', id).select('id', 'name', 'website_url as websiteUrl', 'country_id as countryId')
+    .where('id', id)
+    .select('id', 'name', 'website_url as websiteUrl', 'country_id as countryId')
+    .first()
 }
 
 function addCompany (company, db = knex) {
-  return db('companies').insert(company).then(companyId => companyId[0])
+  return db('companies')
+    .insert(company)
+    .then(companyId => companyId[0])
 }
 
 function getProfile(id, db = knex) {

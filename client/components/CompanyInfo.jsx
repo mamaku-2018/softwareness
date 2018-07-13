@@ -1,20 +1,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {getCompanyInfo} from '../actions'
+import {getCompanyInfo} from '../actions/companies'
 
 const companiesRoot = 'https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/'
 
 class CompanyInfo extends React.Component {
   componentDidMount () {
-    this.props.dispatch(getCompanyInfo())
+    const id = this.props.match.params.id
+    this.props.dispatch(getCompanyInfo(id))
   }
 
   render () {
     return (
       <div>
-        <h2>{this.props.companyProfile.name}</h2>
-        <a href="{this.props.companyProfile.website_url}">Website</a>
-        <a href={`${companiesRoot}${this.props.companyProfile.country_id}`}>
+        <h2>{this.props.companyInfo.name}</h2>
+        <a href={`${this.props.companyInfo.websiteUrl}`}>Website</a>
+        <a href={`${companiesRoot}${this.props.companyInfo.countryId}`}>
           NZ Companies Office listing
         </a>
       </div>
@@ -24,7 +25,7 @@ class CompanyInfo extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    companyProfile: state.companyProfile
+    companyInfo: state.companyInfo
   }
 }
 

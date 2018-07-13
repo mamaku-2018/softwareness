@@ -1,4 +1,5 @@
 const db = require('../../../server/db/companies')
+const dbProfile = require('../../../server/db/employeeProfile')
 const env = require('./testEnvironment')
 
 let testDb = null
@@ -36,5 +37,13 @@ test('addCompany inserts a new company object', () => {
   return db.addCompany(company, testDb)
     .then(resp => {
       expect(typeof (resp)).toBe('number')
+    })
+})
+
+test('getEmpProfiles returns list of all profiles', () => {
+  const id = 3
+  return dbProfile.getEmpProfiles(id, testDb)
+    .then(categories => {
+      expect(categories.length).toBe(1)
     })
 })
