@@ -1,8 +1,7 @@
 const express = require('express')
 const db = require('../db/companies')
-const dbProfile = require('../db/empProfile')
+const dbProfile = require('../db/employeeProfile')
 const router = express.Router()
-router.use(express.json())
 
 router.post('/add', (req, res) => {
   const company = req.body

@@ -1,5 +1,5 @@
 const db = require('../../../server/db/companies')
-const dbProfile = require('../../../server/db/empProfile')
+const dbProfile = require('../../../server/db/employeeProfile')
 const env = require('./testEnvironment')
 
 let testDb = null
@@ -16,7 +16,7 @@ afterEach(() => {
 test('getAllCompanies returns list of all companies', () => {
   return db.getAllCompanies(testDb)
     .then(companies => {
-      expect(companies.length).toBe(3)
+      expect(companies.length).toBe(6)
     })
 })
 
