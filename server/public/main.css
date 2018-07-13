@@ -14,6 +14,7 @@ html, body {
   text-align: center;
   margin: 0px; 
   padding: 0px; 
+  background-color: #7AB0AD;
 }
 #app, .container {
   width: 100%;
