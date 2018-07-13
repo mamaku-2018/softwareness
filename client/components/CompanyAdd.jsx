@@ -31,14 +31,16 @@ export class CompanyName extends React.Component {
   render () {
     return (
       <div>
-        <h2>Add Company</h2>
-        <h3>Name</h3>
-        <input onChange={this.fillState} type='text' name='name'/>
-        <h3>Site URL</h3>
-        <input onChange={this.fillState} type='text' name='siteUrl'/>
-        <h3>Company #</h3>
-        <input onChange={this.fillState} type='number' name='countryId'/>
-        <button className='addButt' onClick={this.addInfo}>ADD</button>
+        <h2 className='AddCompTitle'>Add Company</h2>
+        <div className='CompanyAddForm'>
+          <h3>Name:</h3>
+          <input onChange={this.fillState} type='text' name='name'/>
+          <h3>Site URL:</h3>
+          <input onChange={this.fillState} type='text' name='siteUrl'/>
+          <h3>Company #:</h3>
+          <input onChange={this.fillState} type='number' name='countryId'/>
+          <button className='addButt' onClick={this.addInfo}>ADD</button>
+        </div>
       </div>
     )
   }
