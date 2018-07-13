@@ -1,12 +1,13 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
+import Nav from './Nav'
+import About from './About'
+import Homegraph from './Homegraph'
+import CompanyAdd from './CompanyAdd'
+import Homebuttons from './Homebuttons'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
-import Nav from './Nav'
-import Homegraph from './Homegraph'
-import About from './About'
-import CompanyAdd from './CompanyAdd'
 
 const App = () => {
   return (
@@ -17,10 +18,8 @@ const App = () => {
         <div className='container'>
           <Route exact path='/' component={Homegraph} />
           <Route exact path='/' component={About} />
-          <Route path='/companies/add' component={CompanyAdd} />
-          <a className="button" href='/companies/add'>ADD COMPANY</a>
-          <br />
-          <a className="button" href='/companies'>VIEW COMPANIES</a>
+          <Route exact path='/' component={Homebuttons} />
+          <Route exact path='/companies/add' component={CompanyAdd} />
           <WaitIndicator />
         </div>
       </div>

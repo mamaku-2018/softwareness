@@ -16,17 +16,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Softwareness/Login Header */
-nav {
-
-}
-
 /* Add Company Title */
 .AddCompTitle {
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
   font-weight: 500;
-  margin: 5% 5% 5% 10%;
+  margin: 5% 5% 2% 10%;
   font-size: 30px;
 }
 
@@ -37,12 +32,12 @@ nav {
   font-family: Arial, Helvetica, sans-serif;
   color: #E8E8E8;
   font-size: 20px;
-  padding: 10px;
-  margin: 5% 10% 10% 10%;
+  padding: 2% 5% 2% 5%;
+  margin: 0% 12% 10% 10%;
 }
 
 input {
-  width: 75%;
+  width: 100%;
   padding: 10px;
   font-size: 15px;
   margin: 2% 0% 2% 0%;
@@ -53,11 +48,12 @@ input {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4em;
 }
+
 /* Add Button */
 .addButt {
 width: 150px;
 padding: 10px;
-margin: 0% 20% 0% 5%;
+margin: 0% 20% 0% 35%;
 background-color: #C0462E;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 15px;
