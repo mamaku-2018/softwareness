@@ -3,16 +3,18 @@ import {connect} from 'react-redux'
 import {BarChart, Bar, CartesianGrid, YAxis, XAxis, Tooltip, Legend} from 'recharts'
 import {getGenderStats} from '../actions/stats/getCategoryMaleFemale'
 
-class CategoryMaleFemale extends React.Component {
+export class CategoryMaleFemale extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       stats: []
     }
   }
+
   componentDidMount () {
     this.props.dispatch(getGenderStats())
   }
+
   render () {
     return (
       <div>

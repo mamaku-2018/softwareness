@@ -22,7 +22,7 @@ test('categoryMaleFemaleCount', () => {
 test('catetoryLocalForeignCount', () => {
   return db.catetoryLocalForeignCount(testDb)
     .then(counts => {
-      const acutal = counts[0].foreign + counts[0].local
+      const acutal = counts[0].value + counts[1].value
       expect(acutal).toBe(100)
     })
 })
