@@ -4511,6 +4511,11 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.6.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 03ec551877ecf7d2fb6ba999b9f24a7bd5c48118
 react-router-dom@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
@@ -4522,6 +4527,10 @@ react-router-dom@^4.3.1:
     react-router "^4.3.1"
     warning "^4.0.1"
 
+<<<<<<< HEAD
+>>>>>>> d39b8c87543a4557be9ed90c5089caac13adef26
+=======
+>>>>>>> 03ec551877ecf7d2fb6ba999b9f24a7bd5c48118
 react-router@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
@@ -4534,6 +4543,10 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 03ec551877ecf7d2fb6ba999b9f24a7bd5c48118
 react-test-renderer@^16.0.0-0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.4.1.tgz#f2fb30c2c7b517db6e5b10ed20bb6b0a7ccd8d70"
@@ -4543,6 +4556,11 @@ react-test-renderer@^16.0.0-0:
     prop-types "^15.6.0"
     react-is "^16.4.1"
 
+<<<<<<< HEAD
+=======
+>>>>>>> d39b8c87543a4557be9ed90c5089caac13adef26
+=======
+>>>>>>> 03ec551877ecf7d2fb6ba999b9f24a7bd5c48118
 react@^16.2.0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"

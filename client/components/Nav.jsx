@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -10,7 +11,7 @@ const Nav = () => {
       </div>
       <div className='navbar-menu'>
         {/* To be replaced by an Auth */}
-        <button>login</button>
+        <Link to='/login' className='button'>login</Link>
       </div>
     </nav>
   )
