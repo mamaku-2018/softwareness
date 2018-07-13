@@ -37,6 +37,7 @@ html, body {
 .navbar-brand h2 {
   position: absolute;
   top: 20%;
+  left: 1rem;
   color: #1F3D45;
   font-size: 30px; 
   text-align: left; 
@@ -44,11 +45,22 @@ html, body {
   margin-left: 0;
 }
 
-.navbar-menu {
+.navbar-menu button {
   position: absolute;  
   top: 25%; 
-  right: 0;
+  right: 1rem;
+  width: 8rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1F3D45;
+  border: 2px solid #1F3D45;
+  background-color: transparent;
+  border-radius: 5px;
 }
+
+
 
 /* HOMEGRAPH  */
 
@@ -82,13 +94,19 @@ h1 {
   color: #1F3D45;
 }
 
-.button {
+button {
+  width: 10rem;
   margin: 1rem;
   text-transform: uppercase;
   font-weight: 900;
   background-color: transparent;
   border: 2px solid #1F3D45;
   height: 3rem;
+  color: #1F3D45;
+  border-radius: 5px;
+}
+
+button a {
   color: #1F3D45;
 }
 
