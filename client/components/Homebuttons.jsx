@@ -4,8 +4,9 @@ import {Link} from 'react-router-dom'
 const Homebuttons = () => {
   return (
     <div className='homebuttons'>
-      <p><Link to='/companies/add' className="button">Add company</Link></p>
-      <p><Link to='/companies' className="button">View companies</Link></p>
+      <Link to='/companies/add' className='button'>Add company</Link>
+      <Link to='/companies' className='button'>View companies</Link>
+      <Link to='/stats' className='button'>Stats</Link>
     </div>
   )
 }
