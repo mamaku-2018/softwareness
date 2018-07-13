@@ -19,7 +19,6 @@
     ]
   },
   "dependencies": {
-    "bulma": "^0.7.1",
     "express": "^4.16.2",
     "knex": "^0.15.0"
   },
