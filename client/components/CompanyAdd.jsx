@@ -33,14 +33,16 @@ export class CompanyName extends React.Component {
   render () {
     return (
       <div>
-        <h2>Add Company</h2>
-        <h3>Name</h3>
-        <input onChange={this.changeHandler} name='name'/>
-        <h3>Site URL</h3>
-        <input onChange={this.changeHandler} name='websiteUrl'/>
-        <h3>Company #</h3>
-        <input onChange={this.changeHandler} name='countryId'/>
-        <button className='button' onClick={this.submitHandler}>Add company</button>
+        <h2 className='AddCompTitle'>Add Company</h2>
+        <div className='CompanyAddForm'>
+          <h3>Name:</h3>
+          <input onChange={this.changeHandler} name='name'/>
+          <h3>Site URL:</h3>
+          <input onChange={this.changeHandler} name='siteUrl'/>
+          <h3>Company #:</h3>
+          <input onChange={this.changeHandler} name='countryId'/>
+          <button className='button' onClick={this.submitHandler}>ADD</button>
+        </div>
       </div>
     )
   }
