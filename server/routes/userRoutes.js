@@ -5,7 +5,7 @@ const router = express.Router()
 router.use(express.json())
 
 router.post('/register', (req, res) => {
-  const email = req.body.user.email
+  const email = req.body.email
   db.userExists(email)
     .then(exists => {
       if (exists) {
