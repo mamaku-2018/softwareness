@@ -9,10 +9,10 @@ module.exports = {
 function categoryMaleFemaleCount (db = knex) {
   return db('role_counts as rc')
     .join('roles as r', 'r.id', 'rc.role_id')
-    .sum('rc.male_count as maleTotal')
-    .sum('rc.female_count as femaleTotal')
+    .sum('rc.male_count as Male')
+    .sum('rc.female_count as Female')
     .groupBy('r.category')
-    .select('r.category')
+    .select('r.category as Category')
 }
 
 function catetoryLocalForeignCount (db = knex) {
@@ -21,6 +21,6 @@ function catetoryLocalForeignCount (db = knex) {
     .then(localResult => {
       const local = Math.floor(localResult[0].local)
       const foreign = 100 - local
-      return ([{local, foreign}])
+      return ([{'name': 'Value', local}, {'name': 'Value', foreign}])
     })
 }
