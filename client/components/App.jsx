@@ -16,7 +16,7 @@ const App = () => {
         <Nav />
         <ErrorMessage />
         <WaitIndicator />
-        <div className='container'>
+        <div className='container-main'>
           <Route exact path='/' component={Home} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />

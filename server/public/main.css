@@ -57,6 +57,8 @@ input {
   height: 100vh; 
 }
 
+
+
 /* NAV  */
 
 .navbar {
@@ -79,7 +81,7 @@ input {
   margin-left: 0;
 }
 
-.navbar-menu button {
+#login-button {
   position: absolute;  
   top: 25%; 
   right: 1rem;
@@ -94,8 +96,11 @@ input {
   border-radius: 5px;
 }
 
-.navbar-menu {
-  display: inline;  
+/* HOME */
+
+.container-main {
+  height: 50%; 
+  margin-top: 5rem;
 }
 
 /* HOMEGRAPH  */
@@ -114,10 +119,6 @@ input {
   font-weight: 900; 
   margin: 1rem; 
   color: #7AB0AD;
-}
-
-.main-container {
-  height: 50%; 
 }
 
 /* ABOUT */
@@ -141,7 +142,7 @@ input {
   background-color: #1F3D45;
   text-align: left;
   border-top: 2px solid  #7AB0AD;
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   color: #E8E8E8;
 }
