@@ -1,38 +1,49 @@
 import React from 'react'
 import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
-
-const data = [{name: 'foreign', value: 40}, {name: 'local', value: 60}]
+import {connect} from 'react-redux'
+import {getLocalForeign} from '../actions/stats/getcategoryforloc'
 
 const colors = ['#3fb1c8', '#c84e4e']
 
-const localforeign = () => {
-  return (
-    <div className='pie'>
-      <h1>Foreign / Local</h1>
+class CategoryForeignLocal extends React.Component {
+  componentDidMount () {
+    this.props.dispatch(getLocalForeign())
+  }
+  render () {
+    console.log(this.props.local)
+    return (
+      <div className='pie'>
+        <h1>Foreign / Local</h1>
 
-      <PieChart width={860} height={300}>
-        <Pie
-          data={data}
-          dataKey="value"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          innerRadius={40}
-          fill="#70ffc3"
-
-        >
-          <Label position="center" />
-          {
-            data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={colors[index]}/>
-            ))
-          }
-        </Pie>
-        <Legend iconType="square"/>
-        <Tooltip />
-      </PieChart>
-    </div>
-  )
+        <PieChart width={860} height={300}>
+          <Pie
+            data={this.props.local}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            innerRadius={40}
+            fill="#70ffc3"
+          >
+            <Label position="center" />
+            {
+              this.props.local.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={colors[index]}/>
+              ))
+            }
+          </Pie>
+          <Legend iconType="square"/>
+          <Tooltip />
+        </PieChart>
+      </div>
+    )
+  }
 }
 
-export default localforeign
+function mapStateToProps (state) {
+  return {
+    local: state.localForeign
+  }
+}
+
+export default connect(mapStateToProps)(CategoryForeignLocal)
