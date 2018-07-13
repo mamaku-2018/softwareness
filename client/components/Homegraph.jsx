@@ -4,7 +4,7 @@ const Homegraph = () => {
   return (
     <div className='homegraph'>
       <img src='./images/pie.png' alt='gender diversity pie chart' id='homegraph'/>
-      <p> Gender diversity in NZ tech industry as of July 2018 </p>
+      <p> Gender diversity in NZ tech industry as of July 2018. </p>
     </div>
   )
 }
