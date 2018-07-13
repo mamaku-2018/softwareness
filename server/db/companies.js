@@ -4,7 +4,8 @@ const knex = require('knex')(config)
 module.exports = {
   getAllCompanies,
   getCompany,
-  addCompany
+  addCompany,
+  getProfile
 }
 
 function getAllCompanies (db = knex) {
@@ -19,4 +20,8 @@ function getCompany (id, db = knex) {
 
 function addCompany (company, db = knex) {
   return db('companies').insert(company).then(companyId => companyId[0])
+}
+
+function getProfile(id, db = knex) {
+  return db('roles')
 }

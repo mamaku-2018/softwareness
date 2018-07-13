@@ -41,4 +41,9 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/profile/:id', (req,res) => {
+  const id = Number(req.params.id)
+  db.getProfile(id)
+    .then()
+})
 module.exports = router
