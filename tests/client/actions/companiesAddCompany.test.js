@@ -8,7 +8,7 @@ jest.mock('superagent', () => {
   return {
     post: (url) => {
       if (url.split('/')[1] === 'api') {
-        return {send: () => {
+        return {send: (company) => {
           return Promise.resolve({body: {id: 1}})
         }}
       } else {
