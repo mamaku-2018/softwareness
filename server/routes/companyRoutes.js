@@ -1,8 +1,6 @@
 const express = require('express')
 const db = require('../db/companies')
-
 const router = express.Router()
-
 router.use(express.json())
 
 router.post('/add', (req, res) => {
