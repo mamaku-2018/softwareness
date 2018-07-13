@@ -10,16 +10,22 @@ import About from './About'
 const App = () => {
   return (
     <Router>
-      <div className='app'>
+      <div className='container'>
         <Nav />
         <ErrorMessage />
-        <div className='container'>
-          <Route path='/' component={Homegraph} />
-          <Route path='/' component={About} />
-          <a className="button" href='/companies/add'>ADD COMPANY</a>
-          <br />
-          <a className="button" href='/companies'>VIEW COMPANIES</a>
-          <WaitIndicator />
+        <div className='main-container'>
+          <div className='columns'>
+            <div className='column' id='homegraph'>
+              <Route path='/' component={Homegraph} />
+            </div>
+            <div className='column' id='about'>
+              <Route path='/' component={About} />
+              <a className='button' href='/companies/add'>ADD COMPANY</a>
+              <br />
+              <a className='button' href='/companies'>VIEW COMPANIES</a>
+              <WaitIndicator />
+            </div>
+          </div>
         </div>
       </div>
     </Router>
