@@ -1,11 +1,11 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
+import Nav from './Nav'
+import About from './About'
+import Homegraph from './Homegraph'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
-import Nav from './Nav'
-import Homegraph from './Homegraph'
-import About from './About'
 
 const App = () => {
   return (
