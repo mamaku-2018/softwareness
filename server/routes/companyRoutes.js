@@ -93,4 +93,10 @@ function getRoles (list, category) {
   }
   return result
 }
+router.post('profile/:id', (req,res) => {
+  const id = req.params.id
+  
+  
+})
 module.exports = router
+

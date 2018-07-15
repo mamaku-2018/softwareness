@@ -27,5 +27,5 @@ function addCompany (company, db = knex) {
 }
 
 function getProfile(id, db = knex) {
-  return db('roles')
+  return db('roles').where(id = 'Company_ID')
 }
