@@ -63,6 +63,19 @@ router.get('/profile/:companyId', (req, res) => {
     })
 })
 
+router.post('/profile/:id', (req,res) => {
+
+  db.addProfile(req.body)
+  .then(id => {
+    return ({newID: id})
+  })
+  .catch(err => {
+    console.error(err)
+    res.status(500).send('Unable to send to database')
+  })
+  
+})
+
 function getCategories (list) {
   const result = []
   const set = new Set()
@@ -93,10 +106,5 @@ function getRoles (list, category) {
   }
   return result
 }
-router.post('profile/:id', (req,res) => {
-  const id = req.params.id
-  
-  
-})
-module.exports = router
 
+module.exports = router

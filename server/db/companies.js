@@ -5,7 +5,8 @@ module.exports = {
   getAllCompanies,
   getCompany,
   addCompany,
-  getProfile
+  getProfile,
+  addProfile
 }
 
 function getAllCompanies (db = knex) {
@@ -28,4 +29,9 @@ function addCompany (company, db = knex) {
 
 function getProfile(id, db = knex) {
   return db('roles').where(id = 'Company_ID')
+}
+
+function addProfile(profile, db = knex) {
+  return db('role_counts')
+    .insert(profile)
 }
