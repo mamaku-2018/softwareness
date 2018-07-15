@@ -4,9 +4,14 @@ const dbProfile = require('../db/employeeProfile')
 const router = express.Router()
 
 router.post('/add', (req, res) => {
-  const company = req.body
+  const {name, websiteUrl, countryId} = req.body
+  const company = {
+    name: name,
+    country_id: countryId,
+    website_url: websiteUrl
+  }
   db.addCompany(company)
-    .then((id) => {
+    .then(id => {
       res.json({newId: id})
     })
     .catch(err => {
@@ -18,7 +23,7 @@ router.post('/add', (req, res) => {
 
 router.get('/', (req, res) => {
   db.getAllCompanies()
-    .then((companies) => {
+    .then(companies => {
       res.json(companies)
     })
     .catch(err => {
@@ -31,7 +36,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getCompany(id)
-    .then((company) => {
+    .then(company => {
       res.json(company)
     })
     .catch(err => {

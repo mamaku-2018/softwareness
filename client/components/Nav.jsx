@@ -1,18 +1,19 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Nav = () => {
   return (
-    <div className='nav'>
-      <div className='nav-logo'>
+    <nav className='navbar'>
+      <div className='navbar-brand'>
         <a className='logo' href='/'>
-          <h2>Softwareness</h2>
+          <h2>SW</h2>
         </a>
       </div>
-      <div className='nav-login'>
+      <div className='navbar-menu'>
         {/* To be replaced by an Auth */}
-        <h2>LOGIN</h2>
+        <Link to='/login' className='button'>login</Link>
       </div>
-    </div>
+    </nav>
   )
 }
 
