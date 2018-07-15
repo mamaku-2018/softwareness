@@ -1,7 +1,8 @@
 import React from 'react'
-import {render, shallow, configure} from 'enzyme'
+import {shallow, configure} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import {CategoryMaleFemale} from '../../../client/components/CategoryMaleFemale'
+
 
 configure({adapter: new Adapter()})
 
@@ -14,9 +15,9 @@ test('<CategoryMaleFemale>', () => {
 })
 
 test('<CategoryMaleFemale>', () => {
-  const expected = 'Gender Split'
+  const expected = 10
   const testFn = jest.fn()
-  const wrapper = render(<CategoryMaleFemale dispatch={testFn} />)
-  const actual = wrapper.find('h2').text()
-  expect(actual).toContain(expected)
+  const wrapper = shallow(<CategoryMaleFemale dispatch={testFn} />)
+  const actual = wrapper.prop('gender').
+  expect(actual).toBe(expected)
 })

@@ -5,7 +5,7 @@ import {getLocalForeign} from '../actions/stats/getCategoryForLocation'
 
 const colors = ['#3fb1c8', '#c84e4e']
 
-class CategoryForeignLocal extends React.Component {
+export class CategoryForeignLocal extends React.Component {
   componentDidMount () {
     this.props.dispatch(getLocalForeign())
   }
