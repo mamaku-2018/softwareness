@@ -1,6 +1,8 @@
 import {
   requestUserRegistration,
-  receiveUserRegestration
+  receiveUserRegestration,
+  requestUserDetails,
+  receiveUserDetails
 } from '../../../client/actions/auth/register'
 
 test('requestUserRegistration returns correct action type', () => {
@@ -43,6 +45,50 @@ test('receiveUserRegestration returns type details', () => {
   }
 
   const actual = receiveUserRegestration(token)
+
+  expect(actual).toEqual(expected)
+})
+
+test('requestUserDetails returns correct action type', () => {
+  const expected = 'REQUEST_USER_DETAILS'
+
+  const actual = requestUserDetails()
+
+  expect(actual.type).toBe(expected)
+})
+
+test('requestUserDetails returns correct action', () => {
+  const expected = {type: 'REQUEST_USER_DETAILS'}
+
+  const actual = requestUserDetails()
+
+  expect(actual).toEqual(expected)
+})
+
+test('receiveUserDetails returns correct action type', () => {
+  const expected = 'RECEIVE_USER_DETAILS'
+
+  const actual = receiveUserDetails()
+
+  expect(actual.type).toBe(expected)
+})
+
+test('receiveUserDetails returns correct action', () => {
+  const expected = {type: 'RECEIVE_USER_DETAILS'}
+
+  const actual = receiveUserDetails()
+
+  expect(actual).toEqual(expected)
+})
+
+test('receiveUserDetails returns type details', () => {
+  const user = 'user'
+  const expected = {
+    type: 'RECEIVE_USER_DETAILS',
+    user: 'user'
+  }
+
+  const actual = receiveUserDetails(user)
 
   expect(actual).toEqual(expected)
 })
