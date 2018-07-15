@@ -19,7 +19,7 @@ const App = () => {
           <Route exact path='/' component={Homegraph} />
           <Route exact path='/' component={About} />
           <Route exact path='/' component={Homebuttons} />
-          <Route exact path='/companies/add' component={CompanyAdd} />
+          <Route path='/companies/add' component={CompanyAdd} />
           <WaitIndicator />
         </div>
       </div>
