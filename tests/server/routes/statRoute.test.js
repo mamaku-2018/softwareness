@@ -1,5 +1,5 @@
 const request = require('supertest')
-const server = require('../../../server')
+const server = require('../../../server/server')
 
 jest.mock('../../../server/db/stats', () => ({
   categoryMaleFemaleCount: () => Promise.resolve({
@@ -17,11 +17,12 @@ test('good to go', () => {
   expect(true).toBeTruthy()
 })
 
-test('GET stats', () => {
+test('GET /api/v1/stats', () => {
   return request(server)
     .get('/api/v1/stats')
+    .expect('Content-Type', /json/)
     .expect(200)
     .then(res => {
-      expect(res.body.length).toBe(3)
+      expect(res.body).toHaveProperty('gender')
     })
 })
