@@ -108,13 +108,11 @@ input {
 
 /* HOMEGRAPH  */
 
-.homegraph {
+.homegraph, #homegraph {
   height: 100%; 
-}
-
-.homegraph img {
-  width: 350px; 
-  margin-top: 2rem; 
+  margin-top: 1rem;
+  padding: 0;
+  position: relative;
 }
 
 .homegraph p {
@@ -122,6 +120,11 @@ input {
   font-weight: 900; 
   margin: 1rem; 
   color: #7AB0AD;
+}
+
+.recharts-wrapper, .recharts-surface, .recharts-legend-wrapper, .recharts-default-legend {
+  width: 100% !important;
+  overflow: hidden;
 }
 
 /* ABOUT */
