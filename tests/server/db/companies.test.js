@@ -24,7 +24,7 @@ test('getCompany returns selected company by id', () => {
   const id = 1
   return db.getCompany(id, testDb)
     .then(companies => {
-      expect(companies.length).toBe(1)
+      expect(companies.id).toBe(1)
     })
 })
 

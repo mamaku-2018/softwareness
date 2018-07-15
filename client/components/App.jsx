@@ -9,6 +9,7 @@ import CompanyAdd from './CompanyAdd'
 import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
+import Register from './auth/Register'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <div className='container'>
           <Route exact path='/' component={Home} />
           <Route path='/stats' component={Stats} />
+          <Route path='/register' component={Register} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
             <Route path='/companies/:id' component={CompanyInfo} />

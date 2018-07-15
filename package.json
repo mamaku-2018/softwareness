@@ -19,15 +19,8 @@
     ]
   },
   "dependencies": {
-    "babel-register": "^6.26.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.2",
-    "jsdom": "^11.11.0",
-    "knex": "^0.15.0",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "recharts": "^1.0.1",
-    "sqlite3": "^4.0.1"
+    "knex": "^0.15.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -50,6 +43,9 @@
     "sqlite3": "^4.0.1",
     "superagent": "^3.8.2",
     "supertest": "^3.0.0",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "babel-register": "^6.26.0",
+    "jwt-decode": "^2.2.0",
+    "recharts": "^1.0.1"
   }
 }
