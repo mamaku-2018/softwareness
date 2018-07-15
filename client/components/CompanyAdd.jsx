@@ -1,44 +1,48 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addCompany, showError} from '../actions'
+import {showError} from '../actions'
+import {addCompany} from '../actions/companies'
 
 export class CompanyName extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       name: '',
-      siteUrl: '',
+      websiteUrl: '',
       countryId: 0
     }
-    this.companyHandler = this.companyHandler.bind(this)
-    this.addInfo = this.addInfo.bind(this)
+    this.submitHandler = this.submitHandler.bind(this)
+    this.changeHandler = this.changeHandler.bind(this)
   }
 
-  companyHandler (e) {
+  changeHandler (e) {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  addInfo () {
-    if (typeof this.state.countryId === 'number') {
-      this.state.dispatch(addCompany(this.state))
+  submitHandler () {
+    const countryNumber = Number(this.state.countryId)
+    if (typeof countryNumber === 'number' && !isNaN(countryNumber)) {
+      this.props.dispatch(addCompany(this.state))
     } else {
-      this.state.dispatch(showError('Please enter a number for company #'))
+      this.props.dispatch(showError('Please enter a number for company #'))
     }
   }
 
   render () {
     return (
       <div>
-        <h2>Add Company</h2>
-        <h3>Name</h3>
-        <input onChange={this.fillState} type='text' name='name'/>
-        <h3>Site URL</h3>
-        <input onChange={this.fillState} type='text' name='siteUrl'/>
-        <h3>Company #</h3>
-        <input onChange={this.fillState} type='number' name='countryId'/>
-        <button className='addButt' onClick={this.addInfo}>ADD</button>
+        <h2 className='AddCompTitle'>Add Company</h2>
+        <div className='CompanyAddForm'>
+          <h3>Name:</h3>
+          <input onChange={this.changeHandler} name='name'/>
+          <h3>Site URL:</h3>
+          <input onChange={this.changeHandler} name='siteUrl'/>
+          <h3>Company #:</h3>
+          <input onChange={this.changeHandler} name='countryId'/>
+          <button className='addButt' onClick={this.submitHandler}>ADD</button>
+        </div>
       </div>
     )
   }
