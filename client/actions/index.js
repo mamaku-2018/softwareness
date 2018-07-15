@@ -1,6 +1,8 @@
 import {request} from 'superagent'
 
 export const SHOW_ERROR = 'SHOW_ERROR'
+export const CLEAR_ERROR = 'CLEAR_ERROR'
+export const SHOW_SUCCESS = 'SHOW_SUCCESS'
 
 export const REQUEST_COMPANYINFO = 'REQUEST_COMPANYINFO'
 export const RECEIVE_COMPANYINFO = 'RECEIVE_COMPANYINFO'
@@ -12,6 +14,7 @@ export const showError = (errorMessage) => {
   }
 }
 
+<<<<<<< HEAD
 export const requestCompanyInfo = () => {
   return {
     type: 'REQUEST_COMPANYINFO'
@@ -36,5 +39,17 @@ export function getCompanyInfo (id) {
       .catch(err => {
         dispatch(showError(err.message))
       })
+=======
+export const clearError = () => {
+  return {
+    type: CLEAR_ERROR
+  }
+}
+
+export const showSuccess = (message) => {
+  return {
+    type: SHOW_SUCCESS,
+    message
+>>>>>>> 51f2b2650a489ca35b3c84a80d215c97758c6fed
   }
 }

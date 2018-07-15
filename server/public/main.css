@@ -1,4 +1,198 @@
+* {
+  box-sizing: border-box;
+  border: 0.5px solid transparent; 
+}
+
+html, body {
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif; 
+  color:  #7AB0AD;
+  text-align: center;
+  margin: 0px; 
+  padding: 0px; 
+  background-color:#1F3D45;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #E8E8E8;
+}
+
+.button {
+  width: 10rem;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  background-color: transparent;
+  border: 2px solid  #7AB0AD;
+  height: 3rem;
+  color: #E8E8E8;
+  border-radius: 5px;
+}
+
+.button a {
+  color:  #E8E8E8;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin: 2% 0% 2% 0%;
+  color: #E8E8E8;
+}
+
 .error {
   color: red;
   font-weight: bold;
+}
+
+#app, .container {
+  width: 100%;
+  height: 100vh; 
+}
+
+/* NAV  */
+
+.navbar {
+  position: relative;
+  height: 10%;
+  width: 100%; 
+  margin: auto;
+  background-color: #1F3D45;
+  margin: 0;
+}
+
+.navbar-brand h2 {
+  position: absolute;
+  top: 40%;
+  left: 1rem;
+  color: #E8E8E8;
+  font-size: 3rem; 
+  text-align: left; 
+  width: 10%; 
+  margin-left: 0;
+}
+
+.navbar-menu button {
+  position: absolute;  
+  top: 25%; 
+  right: 1rem;
+  width: 8rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #E8E8E8;
+  border: 2px solid  #7AB0AD;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.navbar-menu {
+  display: inline;  
+}
+
+/* HOMEGRAPH  */
+
+.homegraph {
+  height: 100%; 
+}
+
+.homegraph img {
+  width: 350px; 
+  margin-top: 2rem; 
+}
+
+.homegraph p {
+  font-size: 1rem; 
+  font-weight: 900; 
+  margin: 1rem; 
+  color: #7AB0AD;
+}
+
+.main-container {
+  height: 50%; 
+}
+
+/* ABOUT */
+
+.about {
+  position: relative; 
+  padding-top: 10%; 
+}
+
+.about p {
+  font-size: 1.6rem;
+  margin: 1rem 3rem 1rem 3rem;
+  font-style: italic;
+  color:  #7AB0AD;
+}
+
+/* FOOTER */
+
+.footer {
+  height: 5%;
+  background-color: #1F3D45;
+  text-align: left;
+  border-top: 2px solid  #7AB0AD;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  color: #E8E8E8;
+}
+
+.footer h4 {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.footer a {
+  color: #E8E8E8;
+  border: .3px solid transparent;
+}
+
+.app {
+  background-color: #7AB0AD;
+}
+
+/* Add Company Title */
+.AddCompTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-weight: 500;
+  margin: 5% 5% 2% 10%;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* Form */
+.CompanyAddForm {
+  background-color: #1F3D45;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #E8E8E8;
+  font-size: 20px;
+  padding: 2% 5% 2% 5%;
+  margin: 0% 12% 10% 10%;
+}
+
+.name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4em;
+}
+
+/* Add Button */
+.addButt {
+  width: 150px;
+  padding: 10px;
+  margin: 0% 20% 0% 35%;
+  background-color: #C0462E;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #E8E8E8;
+  font-weight: 500;
 }
