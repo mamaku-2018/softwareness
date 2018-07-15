@@ -10,7 +10,6 @@ class CategoryForeignLocal extends React.Component {
     this.props.dispatch(getLocalForeign())
   }
   render () {
-    console.log(this.props.local)
     return (
       <div className='pie'>
         <h1>Foreign / Local</h1>

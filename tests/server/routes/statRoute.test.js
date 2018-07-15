@@ -16,3 +16,12 @@ jest.mock('../../../server/db/stats', () => ({
 test('good to go', () => {
   expect(true).toBeTruthy()
 })
+
+test('GET stats', () => {
+  return request(server)
+    .get('/api/v1/stats')
+    .expect(200)
+    .then(res => {
+      expect(res.body.length).toBe(3)
+    })
+})
