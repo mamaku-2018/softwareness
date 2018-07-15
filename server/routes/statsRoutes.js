@@ -17,8 +17,11 @@ router.get('/', (req, res) => {
 
 router.get('/stats', (req, res) => {
   db.categoryCompanyGenderCount()
-    .then(gender => {
-      res.json({gender})
+    .then(company => {
+      db.categoryCompanyGenderCount()
+        .then(gender => {
+          res.json({company, gender})
+        })
     })
 })
 
