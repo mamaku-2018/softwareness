@@ -15,4 +15,11 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/stats', (req, res) => {
+  db.categoryCompanyGenderCount()
+    .then(gender => {
+      res.json({gender})
+    })
+})
+
 module.exports = router
