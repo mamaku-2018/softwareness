@@ -1,14 +1,17 @@
 const express = require('express')
 const db = require('../db/companies')
-
+const dbProfile = require('../db/employeeProfile')
 const router = express.Router()
 
-router.use(express.json())
-
 router.post('/add', (req, res) => {
-  const company = req.body
+  const {name, websiteUrl, countryId} = req.body
+  const company = {
+    name: name,
+    country_id: countryId,
+    website_url: websiteUrl
+  }
   db.addCompany(company)
-    .then((id) => {
+    .then(id => {
       res.json({newId: id})
     })
     .catch(err => {
@@ -20,7 +23,7 @@ router.post('/add', (req, res) => {
 
 router.get('/', (req, res) => {
   db.getAllCompanies()
-    .then((companies) => {
+    .then(companies => {
       res.json(companies)
     })
     .catch(err => {
@@ -33,7 +36,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getCompany(id)
-    .then((company) => {
+    .then(company => {
       res.json(company)
     })
     .catch(err => {
@@ -43,4 +46,51 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/profile/:companyId', (req, res) => {
+  const companyId = req.params.companyId
+
+  dbProfile.getEmpProfiles(companyId)
+    .then(list => {
+      const result = {
+        categories: getCategories(list)
+      }
+      res.json(result)
+    })
+    .catch(err => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      res.status(500).send('Unable to read from database')
+    })
+})
+
+function getCategories (list) {
+  const result = []
+  const set = new Set()
+  list.forEach(item => set.add(item.category))
+  for (let category of set.values()) {
+    result.push({
+      name: category,
+      roles: getRoles(list, category)
+    })
+  }
+  return result
+}
+
+function getRoles (list, category) {
+  const result = []
+  for (let i = 0; i < list.length; i++) {
+    if (category === list[i].category) {
+      result.push({
+        name: list[i].name,
+        count: list[i].count,
+        avgYearExp: list[i].avg_years_exp,
+        femaleCount: list[i].female_count,
+        maleCount: list[i].male_count,
+        openReqs: list[i].open_reqs,
+        percentLocal: list[i].percent_local
+      })
+    }
+  }
+  return result
+}
 module.exports = router

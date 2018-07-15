@@ -19,4 +19,11 @@ function register (req, res, next) {
       res.status(500).send({message: err.message})
     })
 }
+
+router.get('/login/:email', token.decode, (req, res) => {
+  res.json({
+    email: req.user.email
+  })
+})
+
 module.exports = router

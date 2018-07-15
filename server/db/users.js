@@ -5,8 +5,7 @@ const hash = require('../auth/hash')
 module.exports = {
   createUser,
   userExists,
-  getUserById
-
+  getUserByEmail
 }
 
 function createUser (firstName, surName, password, email, db = knex) {
@@ -24,7 +23,7 @@ function userExists (email, db = knex) {
     })
 }
 
-function getUserById (id, db = knex) {
+function getUserByEmail (id, db = knex) {
   return db('users')
     .select()
     .where('email', id)
