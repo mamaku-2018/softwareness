@@ -1,6 +1,6 @@
 import {
-  getCompany,
-  RECEIVE_COMPANY
+  getCompanyInfo,
+  RECEIVE_COMPANY_INFO
 } from '../../../client/actions/companies'
 import {SHOW_ERROR} from '../../../client/actions'
 
@@ -22,15 +22,15 @@ jest.mock('superagent', () => {
 
 test('get companies gets the correct actions', () => {
   const dispatch = jest.fn()
-  return getCompany('/api/v1/companies')(dispatch)
+  return getCompanyInfo('/api/v1/companies')(dispatch)
     .then(() => {
-      expect(dispatch.mock.calls[0][0].type).toBe(RECEIVE_COMPANY)
+      expect(dispatch.mock.calls[0][0].type).toBe(RECEIVE_COMPANY_INFO)
     })
 })
 
 test('get companies returns an error with incorrect url', () => {
   const dispatch = jest.fn()
-  return getCompany('/companies')(dispatch)
+  return getCompanyInfo('/companies')(dispatch)
     .catch(() => {
       expect(dispatch.mock.calls[0][0].type).toBe(SHOW_ERROR)
     })

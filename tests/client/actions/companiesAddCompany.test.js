@@ -1,6 +1,6 @@
 import {
   addCompany,
-  RECEIVE_COMPANY_ID
+  REQUEST_COMPANY_INFO
 } from '../../../client/actions/companies'
 import {SHOW_ERROR} from '../../../client/actions'
 
@@ -27,7 +27,7 @@ test('add company gets the correct actions', () => {
   }
   return addCompany('/api/v1/companies', company)(dispatch)
     .then(() => {
-      expect(dispatch.mock.calls[0][0].type).toBe(RECEIVE_COMPANY_ID)
+      expect(dispatch.mock.calls[0][0].type).toBe(REQUEST_COMPANY_INFO)
     })
 })
 
