@@ -14,32 +14,6 @@ export const showError = (errorMessage) => {
   }
 }
 
-<<<<<<< HEAD
-export const requestCompanyInfo = () => {
-  return {
-    type: 'REQUEST_COMPANYINFO'
-  }
-}
-
-export const receiveCompanyInfo = (companyInfo) => {
-  return {
-    type: 'RECEIVE_COMPANYINFO',
-    companyInfo
-  }
-}
-
-export function getCompanyInfo (id) {
-  return (dispatch) => {
-    dispatch(requestCompanyInfo())
-    return request
-      .get(`/api/v1/companies/profile/${id}`)
-      .then(res => {
-        dispatch(receiveCompanyInfo(res.body))
-      })
-      .catch(err => {
-        dispatch(showError(err.message))
-      })
-=======
 export const clearError = () => {
   return {
     type: CLEAR_ERROR
@@ -50,6 +24,5 @@ export const showSuccess = (message) => {
   return {
     type: SHOW_SUCCESS,
     message
->>>>>>> 51f2b2650a489ca35b3c84a80d215c97758c6fed
   }
 }
