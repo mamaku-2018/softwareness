@@ -41,7 +41,7 @@ export class CompanyName extends React.Component {
           <input onChange={this.changeHandler} name='siteUrl'/>
           <h3>Company #:</h3>
           <input onChange={this.changeHandler} name='countryId'/>
-          <button className='button' onClick={this.submitHandler}>ADD</button>
+          <button className='addButt' onClick={this.submitHandler}>ADD</button>
         </div>
       </div>
     )
