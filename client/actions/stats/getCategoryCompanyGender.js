@@ -10,12 +10,11 @@ const getCompanyGender = (stats) => {
   }
 }
 
-export function getCompanyGenderStats () {
+export function getCompanyGenderStats (id) {
   return (dispatch) => {
     return request
-      .get('/api/v1/stats/companies/:id')
+      .get(`/api/v1/stats/companies/${id}`)
       .then(stats => {
-        // console.log(stats.body)
         dispatch(getCompanyGender(stats.body))
       })
       .catch(err => {

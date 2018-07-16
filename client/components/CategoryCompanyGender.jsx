@@ -7,17 +7,19 @@ const colors = ['#3fb1c8', '#c84e4e']
 
 export class CategoryCompanyGender extends React.Component {
   componentDidMount () {
-    this.props.dispatch(getCompanyGenderStats())
+    // const id = this.props.path.params.id
+    this.props.dispatch(getCompanyGenderStats(3))
   }
 
   render () {
+    console.log(this.props.categoryCompanyGender)
     return (
       <div>
         <h2>Gender Split for Each Company</h2>
 
         <PieChart with={860} height={300}>
           <Pie
-            data={this.props.company}
+            data={this.props.categoryCompanyGender}
             dataKey="value"
             nameKey="name"
             cx="50%"
@@ -27,7 +29,7 @@ export class CategoryCompanyGender extends React.Component {
           >
             <Label position="center" />
             {
-              this.props.company.map((entry, index) => (
+              this.props.categoryCompanyGender.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={colors[index]}/>
               ))
             }
@@ -42,7 +44,7 @@ export class CategoryCompanyGender extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    company: state.categoryCompanyGender
+    categoryCompanyGender: state.categoryCompanyGender
   }
 }
 
