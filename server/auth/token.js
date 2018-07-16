@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const verifyJwt = require('express-jwt')
+
 const db = require('../db/users')
 
 module.exports = {

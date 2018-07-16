@@ -1,5 +1,6 @@
 const config = require('./knexfile').development
 const knex = require('knex')(config)
+
 const hash = require('../auth/hash')
 
 module.exports = {
