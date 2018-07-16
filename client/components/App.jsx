@@ -10,6 +10,7 @@ import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Register from './auth/Register'
+import Login from './auth/Login'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route path='/stats' component={Stats} />
           <Route path='/register' component={Register} />
+          <Route path='/login' component={Login} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
             <Route path='/companies/:id' component={CompanyInfo} />
