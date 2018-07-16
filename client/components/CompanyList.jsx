@@ -4,23 +4,18 @@ import {connect} from 'react-redux'
 import {getCompanies} from '../actions/companies'
 
 class CompanyList extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {}
-  }
-
   componentDidMount () {
     this.props.dispatch(getCompanies())
   }
 
   render () {
     return (
-      <div>
+      <div className='companyList'>
         <h1>reviewed companies</h1>
         <ul>
-          {this.props.companies.map(company => {
+          {this.props.companyList.map(company => {
             return (
-              <li key={this.props.company.id}> {this.props.company} </li>
+              <li key={company.id}> {company.name} </li>
             )
           })}
         </ul>
@@ -31,7 +26,7 @@ class CompanyList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    companies: state.companies
+    companyList: state.companyList
   }
 }
 

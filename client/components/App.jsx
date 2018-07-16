@@ -10,7 +10,7 @@ import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Register from './auth/Register'
-import CompanyList from './CompanyList';
+import CompanyList from './CompanyList'
 
 const App = () => {
   return (

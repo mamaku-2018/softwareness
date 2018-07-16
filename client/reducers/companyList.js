@@ -1,7 +1,7 @@
 import {RECEIVE_COMPANIES} from '../actions/companies'
 
 const initialState = []
-const companies = (state = initialState, action) => {
+const companyList = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_COMPANIES:
       return action.companies
@@ -11,4 +11,4 @@ const companies = (state = initialState, action) => {
   }
 }
 
-export default companies
+export default companyList

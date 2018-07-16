@@ -58,7 +58,8 @@ export const requestCompanies = () => {
 export const receiveCompanies = (companies) => {
   return {
     type: RECEIVE_COMPANIES,
-    company: companies.map(company => company)
+    // company: companies.map(company => company)
+    companies
   }
 }
 
