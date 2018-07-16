@@ -10,12 +10,12 @@ const Home = () => {
 
     <div className='columns'>
 
-      <div className='column' id='about'>
+      <div className='about column'>
         <Route path='/' component={About} />
         <Route path='/' component={Homebuttons} />
       </div>
 
-      <div className='column' id='homegraph'>
+      <div className='homegraph column'>
         <Route path='/' component={Homegraph} />
       </div>
     </div>

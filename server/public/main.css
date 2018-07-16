@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0.5px solid transparent; 
+  border: 0.5px solid red; 
 }
 
 html, body {
@@ -61,8 +61,6 @@ input {
   position: relative;
 }
 
-
-
 /* NAV  */
 
 .navbar {
@@ -84,7 +82,7 @@ input {
   margin-left: 0;
 }
 
-#login-button {
+.login {
   position: absolute;  
   top: 25%; 
   right: 0;
@@ -108,7 +106,7 @@ input {
 
 /* HOMEGRAPH  */
 
-.homegraph, #homegraph {
+.homegraph {
   height: 100%; 
   margin-top: 1rem;
   padding: 0;
@@ -131,7 +129,7 @@ input {
 
 .about {
   position: relative; 
-  padding-top: 10%; 
+  padding-top: 5%; 
 }
 
 .about p {
@@ -168,6 +166,7 @@ input {
 }
 
 /* Add Company Title */
+
 .AddCompTitle {
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
@@ -178,6 +177,7 @@ input {
 }
 
 /* Form */
+
 .CompanyAddForm {
   background-color: #1F3D45;
   text-align: left;
@@ -194,6 +194,7 @@ input {
 }
 
 /* Add Button */
+
 .addButt {
   width: 150px;
   padding: 10px;
@@ -208,7 +209,6 @@ input {
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 800px) {
-
   .container {
     height: 100vh;
   }

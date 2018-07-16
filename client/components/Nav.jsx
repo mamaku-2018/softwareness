@@ -11,7 +11,7 @@ const Nav = () => {
       </div>
       <div className='navbarmenu'>
         {/* To be replaced by an Auth */}
-        <Link to='/login' className='button' id='login-button'>login</Link>
+        <Link to='/login' className='login button'>login</Link>
       </div>
     </nav>
   )
