@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className='navbar'>
       <div className='navbar-brand'>
@@ -11,15 +12,24 @@ const Nav = () => {
       </div>
       <div className='navbarmenu'>
         {/* To be replaced by an Auth */}
-        <Link to='/login' className='button'>login</Link>
+        {!props.loggedIn && <Link to='/login' className='button'>login</Link>}
         {/* LogOut needs an onclick function added */}
-        <Link to='/' className='button'>logOut</Link>
-        <Link to='/register' className='button'>register</Link>
+        {props.loggedIn && <Link to='/' className='button'>logOut</Link>}
+        {!props.loggedIn && <Link to='/register' className='button'>register</Link>}
       </div>
     </nav>
   )
 }
 
-// clicking logout will dispatch and call untoggleNav  
 
-export default Nav
+
+// clicking logout will dispatch and call untoggleNav  
+function mapStateToProps(state){
+  console.log(state.toggleNav)
+  return {
+    loggedIn: state.toggleNav
+  }
+}
+
+
+export default connect(mapStateToProps, null)(Nav)

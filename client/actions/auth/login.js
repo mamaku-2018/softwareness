@@ -28,6 +28,7 @@ export const receiveLogin = (token) => {
 
 export const logOut = () => {
   logOff()
+  untoggleNav()
   return {
     type: LOG_OUT
   }
