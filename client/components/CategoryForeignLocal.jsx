@@ -3,7 +3,7 @@ import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
 import {connect} from 'react-redux'
 import {getLocalForeign} from '../actions/stats/getCategoryForLocation'
 
-const colors = ['#3fb1c8', '#c84e4e']
+const colors = ['#c0462e', '#7AB0AD']
 
 class CategoryForeignLocal extends React.Component {
   componentDidMount () {
@@ -12,16 +12,16 @@ class CategoryForeignLocal extends React.Component {
   render () {
     return (
       <div className='pie'>
-        <h1>Foreign / Local</h1>
 
-        <PieChart width={860} height={300}>
+        <PieChart width={540} height={400}>
           <Pie
             data={this.props.local}
             dataKey="value"
             nameKey="name"
             cx="50%"
             cy="50%"
-            innerRadius={40}
+            innerRadius={60}
+            outerRadius={160}
             fill="#70ffc3"
           >
             <Label position="center" />

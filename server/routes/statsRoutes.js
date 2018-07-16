@@ -13,6 +13,11 @@ router.get('/', (req, res) => {
           res.json({gender, local})
         })
     })
+    .catch(err => {
+      // eslint-disable-next-line
+      console.log(err)
+      res.status(500).send('Unable to find data')
+    })
 })
 
 module.exports = router
