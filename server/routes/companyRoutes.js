@@ -64,17 +64,21 @@ router.get('/profile/:companyId', (req, res) => {
 })
 
 router.post('/profile/:id', (req, res) => {
-  // grabs id from the url
-  const id = req.params.id
+  const id = Number(req.params.id)
   const body = req.body
-  body.company_id = id
-  db.addProfile(body)
+  body.companyId = id
+  body.timestamp = getDate()
+  const profile = camelToRail(body)
+  db.addProfile(profile)
     .then(id => {
     // returns fully fleshed object to the display company profile page, after edit is hit
+      body.id = id[0]
       res.json(body)
     })
     .catch(err => {
-      res.status(500).send(err + 'Unable to send to database')
+    // eslint-disable-next-line no-console
+      console.error(err)
+      res.status(500).send('Unable to send to database')
     })
 })
 
@@ -89,6 +93,15 @@ function getCategories (list) {
     })
   }
   return result
+}
+
+function getDate () {
+  const date = new Date()
+  const dd = date.getDate()
+  const mm = date.getMonth() + 1
+  const yyyy = date.getFullYear()
+  const datestr = `${yyyy}-${mm}-${dd}`
+  return datestr
 }
 
 function getRoles (list, category) {
@@ -109,4 +122,23 @@ function getRoles (list, category) {
   return result
 }
 
+// Takes an object that has camelCase keys. returns an object with rail_case keys
+function camelToRail (obj) {
+  const keyArr = Object.keys(obj)
+  let i = 0
+  /* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
+  String.prototype.toUnderscore = function () {
+    return this.replace(/([A-Z])/g, function ($1) { return '_' + $1.toLowerCase() })
+  }
+  for (let j = 0; j < keyArr.length; j++) {
+    keyArr[j] = keyArr[j].toUnderscore()
+  }
+  for (let prop in obj) {
+    let val = obj[prop]
+    delete obj[prop]
+    obj[keyArr[i]] = val
+    i += 1
+  }
+  return obj
+}
 module.exports = router

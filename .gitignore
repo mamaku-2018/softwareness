@@ -3,3 +3,4 @@ bundle*
 *.log
 .DS_Store
 *.sqlite*
+server/db/dev.sqlite3
