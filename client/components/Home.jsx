@@ -7,17 +7,16 @@ import Homebuttons from './Homebuttons'
 
 const Home = () => {
   return (
-    <div className='main-container'>
-      <div className='columns'>
 
-        <div className='column' id='about'>
-          <Route path='/' component={About} />
-          <Route path='/' component={Homebuttons} />
-        </div>
+    <div className='columns'>
 
-        <div className='column' id='homegraph'>
-          <Route path='/' component={Homegraph} />
-        </div>
+      <div className='about column'>
+        <Route path='/' component={About} />
+        <Route path='/' component={Homebuttons} />
+      </div>
+
+      <div className='homegraph column'>
+        <Route path='/' component={Homegraph} />
       </div>
     </div>
   )
