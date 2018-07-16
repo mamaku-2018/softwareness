@@ -3,13 +3,16 @@ const server = require('../../../server/server')
 
 jest.mock('../../../server/db/stats', () => ({
   categoryMaleFemaleCount: () => Promise.resolve({
-    gender:
-  [ {Male: 3, Female: 10, Category: 'creative'},
-    {Male: 10, Female: 9, Category: 'support'},
-    {Male: 7, Female: 11, Category: 'technical'} ]
+    gender: [
+      {Male: 3, Female: 10, Category: 'creative'},
+      {Male: 10, Female: 9, Category: 'support'},
+      {Male: 7, Female: 11, Category: 'technical'}
+    ]
   }),
   catetoryLocalForeignCount: () => Promise.resolve({
-    local: [{name: 'Local', value: 69}, {name: 'Foreign', value: 31}]
+    local: [
+      {name: 'Local', value: 69}, {name: 'Foreign', value: 31}
+    ]
   })
 }))
 
@@ -24,5 +27,6 @@ test('GET /api/v1/stats', () => {
     .expect(200)
     .then(res => {
       expect(res.body).toHaveProperty('gender')
+      expect(res.body).toHaveProperty('local')
     })
 })
