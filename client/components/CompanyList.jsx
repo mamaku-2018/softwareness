@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {getCompanies} from '../actions/companies'
 
@@ -15,7 +16,11 @@ class CompanyList extends React.Component {
         <ul>
           {this.props.companyList.map(company => {
             return (
-              <li key={company.id}> {company.name} </li>
+
+              <li key={company.id}>
+                <a href={company.websiteUrl}>{company.name}</a>
+              </li>
+
             )
           })}
         </ul>
