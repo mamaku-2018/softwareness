@@ -1,6 +1,6 @@
 import {showError, clearError, showSuccess} from '../'
-import {saveAuthToken} from '../lib/auth'
-import request from '../lib/apiClient'
+import {saveAuthToken} from '../../lib/auth'
+import request from '../../lib/apiClient'
 
 export const REQUEST_USER_REGISTRATION = 'REQUEST_USER_REGISTRATION'
 export const RECEIVE_USER_REGISTRATION = 'RECEIVE_USER_REGISTRATION'
