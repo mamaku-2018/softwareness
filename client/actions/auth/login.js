@@ -38,10 +38,9 @@ export function login (user, confirmSuccess) {
       .then(res => {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveLogin(res.body))
-        dispatch(getUserDetails(token.id))
+        dispatch(getUserData(token.id))
         dispatch(clearError())
         confirmSuccess()
-        // stretch: add user's name to welcome message
         dispatch(showSuccess('You are now logged in.'))
       })
       .catch(err => {
@@ -53,7 +52,7 @@ export function login (user, confirmSuccess) {
   }
 }
 
-export function getUser (id) {
+export function getUserData (id) {
   return (dispatch) => {
     dispatch(requestUserDetails())
     request('get', `/users/${id}`)

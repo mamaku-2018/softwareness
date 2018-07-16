@@ -1,4 +1,4 @@
-import './saveAuthToken'
+import './saveAuthTokenMock'
 import {
   REQUEST_LOGIN,
   requestLogin,
@@ -6,7 +6,7 @@ import {
   receiveLogin,
   LOG_OUT,
   logOut
-} from '../../../client/actions/auth/login'
+} from '../../../../client/actions/auth/login'
 
 test('requestLogin returns correct action type', () => {
   const expected = REQUEST_LOGIN
@@ -51,7 +51,6 @@ test('receiveLogin returns type details', () => {
 })
 
 test('logOut returns correct action type', () => {
-  // const logOff = jest.fn
   const expected = LOG_OUT
 
   const actual = logOut()
