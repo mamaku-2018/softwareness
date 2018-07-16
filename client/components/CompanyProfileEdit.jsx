@@ -1,21 +1,24 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import getCompanyProfile from '../actions/companies'
-//edit component that switches out with info component. 
-export class CompanyProfileEdit extends React.Component {
-  componentDidMount(){
+import {getCompanyProfile} from '../actions/companies'
+// edit component that switches out with info component.
+
+class CompanyProfileEdit extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      categories: []
+    }
+  }
+  componentDidMount () {
     const id = this.props.match.params.id
     this.props.dispatch(getCompanyProfile(id))
   }
 
-  render() {
-    return(
+  render () {
+    return (
       <div>
-        <h3> HELLO FUCKER </h3>
-        <h3> HELLO FUCKER </h3>
-        <h3> HELLO FUCKER </h3>
-        <h3> HELLO FUCKER </h3>
-        <h3> HELLO FUCKER </h3>
+        <h3> Test String </h3>
 
       </div>
     )

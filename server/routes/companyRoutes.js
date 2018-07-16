@@ -63,21 +63,19 @@ router.get('/profile/:companyId', (req, res) => {
     })
 })
 
-router.post('/profile/:id', (req,res) => {
-  //grabs id from the url
+router.post('/profile/:id', (req, res) => {
+  // grabs id from the url
   const id = req.params.id
   const body = req.body
   body.company_id = id
   db.addProfile(body)
-  .then(id => {
-    //returns fully fleshed object to the display company profile page, after edit is hit
-    res.json(body)
-  })
-  .catch(err=> {
-    console.error(err)
-    res.status(500).send('Unable to send to database')
-  })
-  
+    .then(id => {
+    // returns fully fleshed object to the display company profile page, after edit is hit
+      res.json(body)
+    })
+    .catch(err => {
+      res.status(500).send(err + 'Unable to send to database')
+    })
 })
 
 function getCategories (list) {

@@ -19,7 +19,7 @@ class CompanyInfo extends React.Component {
         <a href={`${companiesRoot}${this.props.companyInfo.countryId}`}>
           NZ Companies Office listing
         </a>
-        <Route path='/companies/:id' component={CompanyProfileEdit} />
+        <Route path='/companies/:id/edit' component={CompanyProfileEdit} />
       </div>
     )
   }

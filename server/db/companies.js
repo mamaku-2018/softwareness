@@ -27,11 +27,11 @@ function addCompany (company, db = knex) {
     .then(companyId => companyId[0])
 }
 
-function getProfile(id, db = knex) {
+function getProfile (id, db = knex) {
   return db('roles').where(id = 'Company_ID')
 }
 
-function addProfile(profile, db = knex) {
+function addProfile (profile, db = knex) {
   return db('role_counts')
     .insert(profile)
 }
