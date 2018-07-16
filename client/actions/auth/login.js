@@ -33,7 +33,7 @@ export const logOut = () => {
   }
 }
 
-export const untoggle = () => {
+export const untoggleNav = () => {
   return {
     type: LOGGED_OUT
   }
