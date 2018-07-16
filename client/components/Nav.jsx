@@ -13,11 +13,13 @@ const Nav = () => {
         {/* To be replaced by an Auth */}
         <Link to='/login' className='button'>login</Link>
         {/* LogOut needs an onclick function added */}
-        <Link to='/logOut' className='button'>logOut</Link>
+        <Link to='/' className='button'>logOut</Link>
         <Link to='/register' className='button'>register</Link>
       </div>
     </nav>
   )
 }
+
+// clicking logout will dispatch and call untoggleNav  
 
 export default Nav

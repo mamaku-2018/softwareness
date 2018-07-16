@@ -1,7 +1,9 @@
 import {
   REQUEST_LOGIN,
   RECEIVE_LOGIN,
-  LOG_OUT
+  LOG_OUT,
+  LOGGED_IN,
+  LOGGED_OUT
 } from '../actions/auth/login'
 import {
   REQUEST_USER_REGISTRATION,
@@ -24,14 +26,20 @@ const auth = (state = null, action) => {
     case RECEIVE_LOGIN:
       return false
 
-    case REQUEST_USER_DETAILS:
+    case REQUEST_USER_DETAILS: // unsure if correct
       return null
 
-    case RECEIVE_USER_DETAILS:
+    case RECEIVE_USER_DETAILS: // unsure if correct
       return action.user
 
     case LOG_OUT:
       return null
+
+    case LOGGED_IN:
+      return true
+
+    case LOGGED_OUT:
+      return false
 
     default:
       return state
