@@ -10,17 +10,10 @@ router.get('/', (req, res) => {
     .then(gender => {
       db.catetoryLocalForeignCount()
         .then(local => {
-          res.json({gender, local})
-        })
-    })
-})
-
-router.get('/stats', (req, res) => {
-  db.categoryCompanyGenderCount()
-    .then(company => {
-      db.categoryCompanyGenderCount()
-        .then(gender => {
-          res.json({company, gender})
+          db.categoryCompanyGenderCount()
+            .then(company => {
+              res.json({gender, local, company})
+            })
         })
     })
 })
