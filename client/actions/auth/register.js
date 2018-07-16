@@ -1,32 +1,32 @@
 import {showError, clearError, showSuccess} from '../'
-import {saveAuthToken} from '../lib/auth'
-import request from '../lib/apiClient'
+import {saveAuthToken} from '../../lib/auth'
+import request from '../../lib/apiClient'
 
 export const REQUEST_USER_REGISTRATION = 'REQUEST_USER_REGISTRATION'
 export const RECEIVE_USER_REGISTRATION = 'RECEIVE_USER_REGISTRATION'
 export const REQUEST_USER_DETAILS = 'REQUEST_USER_DETAILS'
 export const RECEIVE_USER_DETAILS = 'RECEIVE_USER_DETAILS'
 
-const requestUserRegistration = () => {
+export const requestUserRegistration = () => {
   return {
     type: REQUEST_USER_REGISTRATION
   }
 }
 
-const receiveUserRegestration = (token) => {
+export const receiveUserRegestration = (token) => {
   return {
     type: RECEIVE_USER_REGISTRATION,
     token
   }
 }
 
-const requestUserDetails = () => {
+export const requestUserDetails = () => {
   return {
     type: REQUEST_USER_DETAILS
   }
 }
 
-const receiveUserDetails = (user) => {
+export const receiveUserDetails = (user) => {
   return {
     type: RECEIVE_USER_DETAILS,
     user
