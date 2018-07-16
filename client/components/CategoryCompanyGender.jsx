@@ -7,12 +7,10 @@ const colors = ['#3fb1c8', '#c84e4e']
 
 export class CategoryCompanyGender extends React.Component {
   componentDidMount () {
-    // const id = this.props.path.params.id
     this.props.dispatch(getCompanyGenderStats(3))
   }
 
   render () {
-    console.log(this.props.categoryCompanyGender)
     return (
       <div>
         <h2>Gender Split for Each Company</h2>
