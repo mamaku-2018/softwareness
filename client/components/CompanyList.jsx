@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-// import CompanyInfo from '../components/CompanyInfo'
 import {getCompanies} from '../actions/companies'
 
 class CompanyList extends React.Component {
@@ -18,13 +17,13 @@ class CompanyList extends React.Component {
     return (
       <div>
         <h1>reviewed companies</h1>
-        {/* <ul>
+        <ul>
           {this.props.companies.map(company => {
             return (
-              <CompanyInfo key={this.props.company.id} company={this.props.company} />
+              <li key={this.props.company.id}> {this.props.company} </li>
             )
           })}
-        </ul> */}
+        </ul>
       </div>
     )
   }
@@ -32,7 +31,7 @@ class CompanyList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    comapnies: state.companies
+    companies: state.companies
   }
 }
 
