@@ -9,12 +9,14 @@ const router = express.Router()
 router.post('/register', register, token.issue)
 
 function register (req, res, next) {
+  const {firstName, surName, email, password} = req.body
+
   db.userExists(req.body.email)
     .then(exists => {
       if (exists) {
         return res.status(400).send({message: 'User exists'})
       }
-      db.createUser(req.body.firstName, req.body.surName, req.body.hash, req.body.email)
+      db.createUser(firstName, surName, password, email)
         .then(() => next())
     })
     .catch(err => {

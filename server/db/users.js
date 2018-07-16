@@ -12,7 +12,12 @@ module.exports = {
 function createUser (firstName, surName, password, email, db = knex) {
   const passwordHash = hash.generate(password)
   return db('users')
-    .insert({first_name: firstName, surname: surName, hash: passwordHash, email: email})
+    .insert({
+      first_name: firstName,
+      surname: surName,
+      hash: passwordHash,
+      email: email
+    })
 }
 
 function userExists (email, db = knex) {
