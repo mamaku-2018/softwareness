@@ -64,12 +64,16 @@ router.get('/profile/:companyId', (req, res) => {
 })
 
 router.post('/profile/:id', (req,res) => {
-
-  db.addProfile(req.body)
+  //grabs id from the url
+  const id = req.params.id
+  const body = req.body
+  body.company_id = id
+  db.addProfile(body)
   .then(id => {
-    return ({newID: id})
+    //returns fully fleshed object to the display company profile page, after edit is hit
+    res.json(body)
   })
-  .catch(err => {
+  .catch(err=> {
     console.error(err)
     res.status(500).send('Unable to send to database')
   })

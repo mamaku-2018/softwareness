@@ -13,7 +13,8 @@ jest.mock('../../../server/db/companies', () => ({
     {id: 3, name: 'onemore', websiteUrl: 'www.test1.com', countryId: 222},
     {id: 1, name: 'andanother', websiteUrl: 'www.test1.com', countryId: 432}
   ]),
-  addCompany: () => Promise.resolve()
+  addCompany: () => Promise.resolve(),
+  addProfile: () => Promise.resolve(),
 }))
 
 test('good to go', () => {
@@ -50,4 +51,22 @@ test('GET /api/v1/companies/id', () => {
     .then(res => {
       expect(res.body.id).toBe(2)
     })
+})
+
+test ('POST /api/v1/companies/profile/id', () => {
+  const id  = 33
+  return request(server)
+    .post(`/api/v1/companies/profile/${id}`)
+    .send({
+      role_id: 6,
+      company_id: id,
+      count: 3,
+      last_updated_date: "28-03-11",
+      avg_years_exp: 33,
+      female_count: 25,
+      male_count: 15,
+      open_reqs: 32,
+      percent_local: 14
+    })
+    .expect(200)
 })
