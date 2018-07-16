@@ -10,8 +10,6 @@ export const RECEIVE_LOGIN = 'RECEIVE_LOGIN'
 export const REQUEST_USER = 'REQUEST_USER'
 export const RECEIVE_USER = 'RECEIVE_USER'
 export const LOG_OUT = 'LOG_OUT'
-export const LOGGED_IN = 'LOGGED_IN'
-export const LOGGED_OUT = 'LOGGED_OUT'
 
 export const requestLogin = () => {
   return {
@@ -28,21 +26,8 @@ export const receiveLogin = (token) => {
 
 export const logOut = () => {
   logOff()
-  untoggleNav()
   return {
     type: LOG_OUT
-  }
-}
-
-export const untoggleNav = () => {
-  return {
-    type: LOGGED_OUT
-  }
-}
-
-export const toggleNav = () => {
-  return {
-    type: LOGGED_IN
   }
 }
 
@@ -53,11 +38,9 @@ export function login (user, confirmSuccess) {
       .then(res => {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveLogin(res.body))
-        dispatch(getUserDetails(token.id))
+        dispatch(getUserData(token.id))
         dispatch(clearError())
-        dispatch(toggleNav())
         confirmSuccess()
-        // stretch: add user's name to welcome message
         dispatch(showSuccess('You are now logged in.'))
       })
       .catch(err => {
@@ -69,7 +52,7 @@ export function login (user, confirmSuccess) {
   }
 }
 
-export function getUser (id) {
+export function getUserData (id) {
   return (dispatch) => {
     dispatch(requestUserDetails())
     request('get', `/users/${id}`)

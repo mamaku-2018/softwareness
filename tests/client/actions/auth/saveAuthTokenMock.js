@@ -1,4 +1,4 @@
-jest.mock('../../../client/lib/auth', () => {
+jest.mock('../../../../client/lib/auth', () => {
   const testToken = {id: 'test token id'}
   const saveAuthToken = {token: 'test token value'}
   return {

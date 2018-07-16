@@ -9,10 +9,10 @@ import {
 
 const userDetails = (state = null, action) => {
   switch (action.type) {
-    case REQUEST_USER_DETAILS: // unsure if correct
+    case REQUEST_USER_DETAILS:
     return null
 
-    case RECEIVE_USER_DETAILS: // unsure if correct
+    case RECEIVE_USER_DETAILS:
       return action.user
   
     case LOG_OUT:

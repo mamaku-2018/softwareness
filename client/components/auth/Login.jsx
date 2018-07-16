@@ -8,8 +8,7 @@ class Login extends React.Component {
     super(props)
     this.state = {
       email: '',
-      password: '',
-      userLoggedIn: false
+      password: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)

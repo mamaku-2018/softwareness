@@ -11,9 +11,7 @@ const Nav = (props) => {
         </a>
       </div>
       <div className='navbarmenu'>
-        {/* To be replaced by an Auth */}
         {!props.loggedIn && <Link to='/login' className='button'>login</Link>}
-        {/* LogOut needs an onclick function added */}
         {props.loggedIn && <Link to='/' className='button'>logOut</Link>}
         {!props.loggedIn && <Link to='/register' className='button'>register</Link>}
       </div>
@@ -21,15 +19,10 @@ const Nav = (props) => {
   )
 }
 
-
-
-// clicking logout will dispatch and call untoggleNav  
 function mapStateToProps(state){
-  console.log(state.toggleNav)
   return {
-    loggedIn: state.toggleNav
+    loggedIn: state.login
   }
 }
-
 
 export default connect(mapStateToProps, null)(Nav)

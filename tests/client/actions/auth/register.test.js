@@ -7,7 +7,7 @@ import {
   REQUEST_USER_DETAILS,
   receiveUserDetails,
   RECEIVE_USER_DETAILS
-} from '../../../client/actions/auth/register'
+} from '../../../../client/actions/auth/register'
 
 test('requestUserRegistration returns correct action type', () => {
   const expected = REQUEST_USER_REGISTRATION
