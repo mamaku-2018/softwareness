@@ -13,11 +13,16 @@ router.get('/', (req, res) => {
           res.json({gender, local})
         })
     })
+    .catch(err => {
+      // eslint-disable-next-line
+      console.log(err)
+      res.status(500).send('Unable to find data')
+    })
 })
 
 router.get('/companies/:id', (req, res) => {
   const id = req.params.id
-  console.log(id)
+  // console.log(id)
   db.categoryCompanyGenderCount(id)
     .then(company => {
       res.json({company})
