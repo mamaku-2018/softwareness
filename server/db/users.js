@@ -23,9 +23,9 @@ function userExists (email, db = knex) {
     })
 }
 
-function getUserByEmail (id, db = knex) {
+function getUserByEmail (email, db = knex) {
   return db('users')
     .select()
-    .where('email', id)
+    .where('email', email)
     .first()
 }

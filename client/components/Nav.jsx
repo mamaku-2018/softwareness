@@ -9,9 +9,9 @@ const Nav = () => {
           <h2>SW</h2>
         </a>
       </div>
-      <div className='navbar-menu'>
+      <div className='navbarmenu'>
         {/* To be replaced by an Auth */}
-        <Link to='/login' className='button'>login</Link>
+        <Link to='/login' className='login button'>login</Link>
       </div>
     </nav>
   )
