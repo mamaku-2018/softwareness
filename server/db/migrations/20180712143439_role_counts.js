@@ -4,7 +4,7 @@ exports.up = (knex, Promise) => {
     table.integer('role_id').references('roles.id')
     table.integer('company_id').references('companies.id')
     table.integer('count')
-    table.date('last_updated_date')
+    table.date('timestamp')
     table.integer('avg_years_exp')
     table.integer('female_count')
     table.integer('male_count')
