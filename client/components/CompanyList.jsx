@@ -7,23 +7,43 @@ class CompanyList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      search: ''
+      search: '',
+      companyNames: []
     }
-    this.searchCompany = this.searchCompany.bind(this)
+    this.updateSearch = this.updateSearch.bind(this)
+    this.searchBar = this.searchBar.bind(this)
   }
   componentDidMount () {
     this.props.dispatch(getCompanies())
+      .then(() => {
+        this.setState({
+          companyNames: this.props.companyList.map(company => company.name)
+        })
+      })
   }
 
-  searchCompany () {
-    this.props.companyList.filter(companies => {
-      console.log(companies = this.state.search)
-    }
-    )
+  searchBar (e) {
+    this.setState({
+      search: e.target.value
+    })
+    let searchList = this.props.companyList.map(company => company.name)
+    searchList = searchList.filter(res => {
+      return res.toLowerCase().search(this.state.search) !== -1
+    })
+    this.setState({
+      companyNames: searchList
+    })
+  }
+
+  updateSearch (e) {
+    this.setState({
+      search: e.target.value
+    })
   }
 
   render () {
-    this.searchCompany()
+    console.log(this.state.search)
+    console.log(this.state.companyNames)
 
     return (
       <div className='companyList'>
@@ -31,20 +51,18 @@ class CompanyList extends React.Component {
         <p>Softwareness is working with forward-thinking companies to improve self-awareness in the software industry.</p>
         <div className="field has-addons">
           <div className="control">
-            <input className="search" type="text" placeholder="Find a company" onChange={this.handleChange} value={this.state.search} />
+            <input className="search" type="text" placeholder="Find a company" onChange={this.searchBar} value={this.state.search} />
           </div>
           <div className="control">
             <a className="button is-info">Search</a>
           </div>
         </div>
         <ul>
-          {this.props.companyList.map(company => {
+          {this.state.companyNames.map(company => {
             return (
-
-              <li key={company.id}>
-                <a className='companyName' href={company.websiteUrl}>{company.name}</a>
+              <li key={company}>
+                <a className='companyName' href={company.websiteUrl}>{company}</a>
               </li>
-
             )
           })}
         </ul>
