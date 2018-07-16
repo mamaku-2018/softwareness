@@ -26,10 +26,11 @@ function catetoryLocalForeignCount (db = knex) {
     })
 }
 
-function categoryCompanyGenderCount (db = knex) {
+function categoryCompanyGenderCount (id, db = knex) {
   return db('role_counts as rc')
     .sum('rc.male_count as Male')
     .sum('rc.female_count as Female')
     .groupBy('rc.company_id')
+    .where('rc.company_id', id)
     .select('rc.company_id as CompanyId')
 }

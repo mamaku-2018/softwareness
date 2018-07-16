@@ -1,13 +1,13 @@
 import React from 'react'
 import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
 import {connect} from 'react-redux'
-import {getCompanyGender} from '../actions/stats/getCategoryCompanyGender'
+import {getCompanyGenderStats} from '../actions/stats/getCategoryCompanyGender'
 
 const colors = ['#3fb1c8', '#c84e4e']
 
 export class CategoryCompanyGender extends React.Component {
   componentDidMount () {
-    this.props.dispatch(getCompanyGender())
+    this.props.dispatch(getCompanyGenderStats())
   }
 
   render () {
@@ -17,7 +17,7 @@ export class CategoryCompanyGender extends React.Component {
 
         <PieChart with={860} height={300}>
           <Pie
-            data={this.props.gender}
+            data={this.props.company}
             dataKey="value"
             nameKey="name"
             cx="50%"
@@ -27,7 +27,7 @@ export class CategoryCompanyGender extends React.Component {
           >
             <Label position="center" />
             {
-              this.props.gender((entry, index) => (
+              this.props.company.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={colors[index]}/>
               ))
             }
@@ -42,7 +42,7 @@ export class CategoryCompanyGender extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    local: state.companyGender
+    company: state.categoryCompanyGender
   }
 }
 

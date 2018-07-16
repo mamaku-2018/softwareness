@@ -10,11 +10,17 @@ router.get('/', (req, res) => {
     .then(gender => {
       db.catetoryLocalForeignCount()
         .then(local => {
-          db.categoryCompanyGenderCount()
-            .then(company => {
-              res.json({gender, local, company})
-            })
+          res.json({gender, local})
         })
+    })
+})
+
+router.get('/companies/:id', (req, res) => {
+  const id = req.params.id
+  console.log(id)
+  db.categoryCompanyGenderCount(id)
+    .then(company => {
+      res.json({company})
     })
 })
 
