@@ -22,7 +22,14 @@ test('categoryMaleFemaleCount', () => {
 test('catetoryLocalForeignCount', () => {
   return db.catetoryLocalForeignCount(testDb)
     .then(counts => {
-      const acutal = counts[0].value + counts[1].value
-      expect(acutal).toBe(100)
+      const actual = counts[0].value + counts[1].value
+      expect(actual).toBe(100)
+    })
+})
+
+test('categoryCompanyGenderCount', () => {
+  return db.categoryCompanyGenderCount(testDb)
+    .then(counts => {
+      expect(counts.length).toBe(4)
     })
 })
