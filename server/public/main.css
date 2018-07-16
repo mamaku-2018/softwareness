@@ -39,7 +39,7 @@ h1 {
   color:  #E8E8E8;
 }
 
-input {
+.CompanyAddForm input {
   width: 100%;
   padding: 10px;
   font-size: 15px;
@@ -215,7 +215,6 @@ input {
 .companyList p {
   font-size: 20px; 
   text-align: center;
-  border-bottom: 2px solid #7AB0AD;
   padding: 1rem; 
 }
 
@@ -234,6 +233,18 @@ input {
   color: #7AB0AD ;
 }
 
+.button.is-info {
+  margin: 0;
+  height: 2.25em; 
+  width: 5rem; 
+  background-color: #C0462E; 
+  border: none; 
+}
+
+input.search {
+  height: 2.7em; 
+  border: none; 
+}
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 800px) {
