@@ -6,6 +6,7 @@ const token = require('../auth/token')
 const router = express.Router()
 
 router.post('/register', register, token.issue)
+
 function register (req, res, next) {
   db.userExists(req.body.email)
     .then(exists => {

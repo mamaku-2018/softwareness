@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const verifyJwt = require('express-jwt')
+
 const db = require('../db/users')
 
 module.exports = {
@@ -20,10 +21,7 @@ function issue (req, res) {
 
 function createToken (user, secret) {
   return jwt.sign({
-    id: user.id,
-    firstName: user.first_name,
-    surName: user.surname,
-    email: user.email
+    id: user.id
   }, secret, {
     expiresIn: '1d'
   })
