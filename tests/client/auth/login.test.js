@@ -4,10 +4,6 @@ import {
   requestLogin,
   RECEIVE_LOGIN,
   receiveLogin,
-  REQUEST_USER,
-  requestUser,
-  RECEIVE_USER,
-  receiveUser,
   LOG_OUT,
   logOut
 } from '../../../client/actions/auth/login'
@@ -51,48 +47,6 @@ test('receiveLogin returns type details', () => {
     token: token
   }
   const actual = receiveLogin(token)
-  expect(actual).toEqual(expected)
-})
-
-test('requestUser returns correct action type', () => {
-  const expected = REQUEST_USER
-
-  const actual = requestUser()
-
-  expect(actual.type).toBe(expected)
-})
-
-test('requestUser returns correct action', () => {
-  const expected = {type: REQUEST_USER}
-
-  const actual = requestUser()
-
-  expect(actual).toEqual(expected)
-})
-
-test('receiveUser returns correct action type', () => {
-  const expected = RECEIVE_USER
-
-  const actual = receiveUser()
-
-  expect(actual.type).toBe(expected)
-})
-
-test('receiveUser returns correct action', () => {
-  const expected = {type: RECEIVE_USER}
-
-  const actual = receiveUser()
-
-  expect(actual).toEqual(expected)
-})
-
-test('receiveUser returns type details', () => {
-  const user = {firstName: 'firse', lastName: 'last'}
-  const expected = {
-    type: RECEIVE_USER,
-    user: user
-  }
-  const actual = receiveUser(user)
   expect(actual).toEqual(expected)
 })
 

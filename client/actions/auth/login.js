@@ -1,6 +1,9 @@
 import request from '../../lib/apiClient'
 import {saveAuthToken, logOff} from '../../lib/auth'
 import {showError, clearError, showSuccess} from '../'
+import {requestUserDetails,
+  receiveUserDetails,
+  getUserDetails} from './register'
 
 export const REQUEST_LOGIN = 'REQUEST_LOGIN'
 export const RECEIVE_LOGIN = 'RECEIVE_LOGIN'
@@ -21,19 +24,6 @@ export const receiveLogin = (token) => {
   }
 }
 
-export const requestUser = () => {
-  return {
-    type: REQUEST_USER
-  }
-}
-
-export const receiveUser = (user) => {
-  return {
-    type: RECEIVE_USER,
-    user
-  }
-}
-
 export const logOut = () => {
   logOff()
   return {
@@ -48,7 +38,7 @@ export function login (user, confirmSuccess) {
       .then(res => {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveLogin(res.body))
-        dispatch(getUser(token.id))
+        dispatch(getUserDetails(token.id))
         dispatch(clearError())
         confirmSuccess()
         // stretch: add user's name to welcome message
@@ -65,10 +55,10 @@ export function login (user, confirmSuccess) {
 
 export function getUser (id) {
   return (dispatch) => {
-    dispatch(requestUser())
+    dispatch(requestUserDetails())
     request('get', `/users/${id}`)
       .then(res => {
-        dispatch(receiveUser(res.body))
+        dispatch(receiveUserDetails(res.body))
         dispatch(clearError())
       })
       .catch(() => {
