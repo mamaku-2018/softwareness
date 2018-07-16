@@ -28,7 +28,7 @@ export function getAuthToken () {
   return authToken ? decode(authToken) : null
 }
 
-export function getEncodedFunction () {
+export function getEncodedToken () {
   return getToken()
 }
 
