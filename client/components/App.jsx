@@ -18,7 +18,7 @@ const App = () => {
         <Nav />
         <ErrorMessage />
         <WaitIndicator />
-        <div className='container'>
+        <div className='container-main'>
           <Route exact path='/' component={Home} />
           <Route path='/stats' component={Stats} />
           <Route path='/register' component={Register} />
