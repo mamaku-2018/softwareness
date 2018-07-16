@@ -6,8 +6,8 @@ import {getCompanyGenderStats} from '../actions/stats/getCategoryCompanyGender'
 const colors = ['#3fb1c8', '#c84e4e']
 
 export class CategoryCompanyGender extends React.Component {
-  componentDidMount () {
-    this.props.dispatch(getCompanyGenderStats(3))
+  componentDidMount (props) {
+    this.props.dispatch(getCompanyGenderStats(Number(props.match.params.id)))
   }
 
   render () {
@@ -40,9 +40,10 @@ export class CategoryCompanyGender extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps (state, ownProps) {
   return {
     categoryCompanyGender: state.categoryCompanyGender
+    // ...ownProps ?
   }
 }
 
