@@ -23,16 +23,25 @@ class CompanyList extends React.Component {
   }
 
   searchBar (e) {
-    this.setState({
-      search: e.target.value
-    })
-    let searchList = this.props.companyList.map(company => company.name)
-    searchList = searchList.filter(res => {
-      return res.toLowerCase().search(this.state.search) !== -1
-    })
-    this.setState({
-      companyNames: searchList
-    })
+    if (e.target.value === '') {
+      this.setState({
+        companyNames: this.props.companyList.map(company => company.name)
+      })
+      this.setState({
+        search: e.target.value
+      })
+    } else {
+      let searchList = this.props.companyList.map(company => company.name)
+      searchList = searchList.filter(res => {
+        return res.toLowerCase().search(e.target.value.toLowerCase()) !== -1
+      })
+      this.setState({
+        search: e.target.value
+      })
+      this.setState({
+        companyNames: searchList
+      })
+    }
   }
 
   updateSearch (e) {
@@ -42,9 +51,6 @@ class CompanyList extends React.Component {
   }
 
   render () {
-    console.log(this.state.search)
-    console.log(this.state.companyNames)
-
     return (
       <div className='companyList'>
         <h1>Reviewed Companies</h1>
