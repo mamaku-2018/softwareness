@@ -1,12 +1,16 @@
 import {
   requestUserRegistration,
+  REQUEST_USER_REGISTRATION,
   receiveUserRegestration,
+  RECEIVE_USER_REGISTRATION,
   requestUserDetails,
-  receiveUserDetails
+  REQUEST_USER_DETAILS,
+  receiveUserDetails,
+  RECEIVE_USER_DETAILS
 } from '../../../client/actions/auth/register'
 
 test('requestUserRegistration returns correct action type', () => {
-  const expected = 'REQUEST_USER_REGISTRATION'
+  const expected = REQUEST_USER_REGISTRATION
 
   const actual = requestUserRegistration()
 
@@ -14,7 +18,7 @@ test('requestUserRegistration returns correct action type', () => {
 })
 
 test('requestUserRegistration returns correct action', () => {
-  const expected = {type: 'REQUEST_USER_REGISTRATION'}
+  const expected = {type: REQUEST_USER_REGISTRATION}
 
   const actual = requestUserRegistration()
 
@@ -22,7 +26,7 @@ test('requestUserRegistration returns correct action', () => {
 })
 
 test('receiveUserRegestration returns correct action type', () => {
-  const expected = 'RECEIVE_USER_REGISTRATION'
+  const expected = RECEIVE_USER_REGISTRATION
 
   const actual = receiveUserRegestration()
 
@@ -30,7 +34,7 @@ test('receiveUserRegestration returns correct action type', () => {
 })
 
 test('receiveUserRegestration returns correct action', () => {
-  const expected = {type: 'RECEIVE_USER_REGISTRATION'}
+  const expected = {type: RECEIVE_USER_REGISTRATION}
 
   const actual = receiveUserRegestration()
 
@@ -40,7 +44,7 @@ test('receiveUserRegestration returns correct action', () => {
 test('receiveUserRegestration returns type details', () => {
   const token = 'token'
   const expected = {
-    type: 'RECEIVE_USER_REGISTRATION',
+    type: RECEIVE_USER_REGISTRATION,
     token: 'token'
   }
 
@@ -50,7 +54,7 @@ test('receiveUserRegestration returns type details', () => {
 })
 
 test('requestUserDetails returns correct action type', () => {
-  const expected = 'REQUEST_USER_DETAILS'
+  const expected = REQUEST_USER_DETAILS
 
   const actual = requestUserDetails()
 
@@ -58,7 +62,7 @@ test('requestUserDetails returns correct action type', () => {
 })
 
 test('requestUserDetails returns correct action', () => {
-  const expected = {type: 'REQUEST_USER_DETAILS'}
+  const expected = {type: REQUEST_USER_DETAILS}
 
   const actual = requestUserDetails()
 
@@ -66,7 +70,7 @@ test('requestUserDetails returns correct action', () => {
 })
 
 test('receiveUserDetails returns correct action type', () => {
-  const expected = 'RECEIVE_USER_DETAILS'
+  const expected = RECEIVE_USER_DETAILS
 
   const actual = receiveUserDetails()
 
@@ -74,7 +78,7 @@ test('receiveUserDetails returns correct action type', () => {
 })
 
 test('receiveUserDetails returns correct action', () => {
-  const expected = {type: 'RECEIVE_USER_DETAILS'}
+  const expected = {type: RECEIVE_USER_DETAILS}
 
   const actual = receiveUserDetails()
 
@@ -84,7 +88,7 @@ test('receiveUserDetails returns correct action', () => {
 test('receiveUserDetails returns type details', () => {
   const user = 'user'
   const expected = {
-    type: 'RECEIVE_USER_DETAILS',
+    type: RECEIVE_USER_DETAILS,
     user: 'user'
   }
 
