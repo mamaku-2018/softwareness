@@ -126,6 +126,7 @@ function getRoles (list, category) {
 function camelToRail (obj) {
   const keyArr = Object.keys(obj)
   let i = 0
+  /* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
   String.prototype.toUnderscore = function () {
     return this.replace(/([A-Z])/g, function ($1) { return '_' + $1.toLowerCase() })
   }
