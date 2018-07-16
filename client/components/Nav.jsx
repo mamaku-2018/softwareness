@@ -12,6 +12,8 @@ const Nav = () => {
       <div className='navbar-menu'>
         {/* To be replaced by an Auth */}
         <Link to='/login' className='button'>login</Link>
+        {/* LogOut needs an onclick function added */}
+        <Link to='/logOut' className='button'>logOut</Link>
         <Link to='/register' className='button'>register</Link>
       </div>
     </nav>

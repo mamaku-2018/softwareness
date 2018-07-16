@@ -27,7 +27,8 @@ class Login extends React.Component {
       email: this.state.email,
       password: this.state.password
     }
-    login(user)
+    const goHome = () => this.props.history.push('/')
+    login(user, goHome)
     e.preventDefault()
   }
 
@@ -54,9 +55,9 @@ class Login extends React.Component {
 
 function mapDispatchToProps (dispatch) {
   return {
-    register: (user) => {
+    register: (user, goHome) => {
       dispatch(clearError())
-      return dispatch(login(user))
+      return dispatch(login(user, goHome))
     }
   }
 }

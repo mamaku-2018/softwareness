@@ -1,5 +1,5 @@
-import request from '../lib/apiClient'
-import {saveAuthToken, logOff} from '../lib/auth'
+import request from '../../lib/apiClient'
+import {saveAuthToken, logOff} from '../../lib/auth'
 import {showError, clearError, showSuccess} from '../'
 
 export const REQUEST_LOGIN = 'REQUEST_LOGIN'
