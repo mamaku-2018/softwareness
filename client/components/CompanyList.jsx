@@ -11,7 +11,8 @@ class CompanyList extends React.Component {
   render () {
     return (
       <div className='companyList'>
-        <h1>reviewed companies</h1>
+        <h1>Reviewed Companies</h1>
+        <p>Softwareness is working with forward-thinking companies to improve self-awareness in the software industry.</p>
         <ul>
           {this.props.companyList.map(company => {
             return (

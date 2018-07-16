@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0.5px solid transparent; 
+  border: 0.5px solid transparent;
 }
 
 html, body {
@@ -195,4 +195,32 @@ input {
   font-size: 15px;
   color: #E8E8E8;
   font-weight: 500;
+}
+
+/* Companies List  */
+.companyList h1 {
+  font-size: 40px; 
+  text-align: center; 
+}
+
+.companyList p {
+  font-size: 20px; 
+  text-align: center;
+  border-bottom: 2px solid #7AB0AD;
+  padding: 1rem; 
+}
+
+.companyList li {
+  text-align: left; 
+  margin: 1rem;
+  text-transform: capitalize;
+  font-size: 20px; 
+}
+
+.companyList a{
+  color: #E8E8E8;
+}
+
+.companyList a:hover{
+  color: #7AB0AD ;
 }
