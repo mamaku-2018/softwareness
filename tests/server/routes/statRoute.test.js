@@ -38,15 +38,3 @@ test('GET /api/v1/stats', () => {
       expect(res.body).toHaveProperty('local')
     })
 })
-
-//Test Route
-
-// test('GET /api/v1/companies/:id', () => {
-//   return request(server)
-//     .get('/api/v1/companies/:id')
-//     .expect('Content-Type', /json/)
-//     .expect(200)
-//     .then(res => {
-//       expect(res.body).toHaveProperty('company')
-//     })
-// })
