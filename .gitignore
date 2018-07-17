@@ -4,3 +4,4 @@ bundle*
 .DS_Store
 *.sqlite*
 server/db/dev.sqlite3
+.env
