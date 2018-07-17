@@ -4,8 +4,10 @@ import CategoryMaleFemale from './CategoryMaleFemale'
 
 export const Stats = () => (
   <div className='stats'>
-    <h2>Statistics</h2>
+    <h3>Statistics</h3>
+    <br />
     <CategoryForeignLocal />
+    <br />
     <CategoryMaleFemale />
   </div>
 )
