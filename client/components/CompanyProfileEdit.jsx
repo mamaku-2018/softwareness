@@ -7,7 +7,39 @@ class CompanyProfileEdit extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      name: '',
+      count: 0,
+      avgYearExp: 0,
+      femaleCount: 0,
+      maleCount: 0,
+      openReqs: 0,
+      percentLocal: 0
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleChange (e) {
+    const {name, value} = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit (e) {
+    const {login} = this.props
+    const user = {
+      name: this.state.name,
+      count: this.state.count,
+      avgYearExp: this.state.avgYearExp,
+      femaleCount: this.state.femaleCount,
+      maleCount: this.state.maleCount,
+      openReqs: this.state.openReqs,
+      percentLocal: this.state.percentLocal
+    }
+    // const goHome = () => this.props.history.push('/')
+    login(user, goHome)
+    e.preventDefault()
   }
 
   componentDidMount () {
@@ -19,6 +51,8 @@ class CompanyProfileEdit extends React.Component {
     const categories = this.props.companyProfile.categories || []
     return (
       <div>
+        <form>
+        <fieldset>
         {categories.map(category => {
           return( 
           <div key ={category.name}>
@@ -38,13 +72,13 @@ class CompanyProfileEdit extends React.Component {
               return(
               <div key ={role.name}>
                 <tr>
-                  <td>{role.name}</td>
-                  <td><input onchange={this.handleChange} placeholder={role.count}/></td>
-                  <td><input onchange={this.handleChange} placeholder={role.avgYearExp}/></td>
-                  <td><input onchange={this.handleChange} placeholder={role.femaleCount}/></td>
-                  <td><input onchange={this.handleChange} placeholder={role.maleCount}/></td>
-                  <td><input onchange={this.handleChange} placeholder={role.openReqs}/></td>
-                  <td><input onchange={this.handleChange} placeholder={role.percentLocal}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="name" value="name" placeholder={role.name}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="count" value="count" placeholder={role.count}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="avgYearExp" value="avgYearExp" placeholder={role.avgYearExp}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="femaleCount" value="femaleCount" placeholder={role.femaleCount}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="maleCount" value="maleCount" placeholder={role.maleCount}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="openReqs" value="openReqs" placeholder={role.openReqs}/></td>
+                  <td><input type="text" onchange={this.handleChange} name="percentLocal" value="percentLocal" placeholder={role.percentLocal}/></td>
                 </tr>
               </div>
               )
@@ -54,6 +88,10 @@ class CompanyProfileEdit extends React.Component {
           </div>
           )
         })}
+         <button type="button" className="button" onClick={this.handleSubmit}>Edit</button>
+        </fieldset>
+        </form>
+        
       </div>
     )
   }
