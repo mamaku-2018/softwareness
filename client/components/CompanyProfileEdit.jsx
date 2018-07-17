@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getCompanyProfile} from '../actions/companies'
-// edit component that switches out with info component.
 
 class CompanyProfileEdit extends React.Component {
   constructor (props) {
@@ -37,8 +36,7 @@ class CompanyProfileEdit extends React.Component {
       openReqs: this.state.openReqs,
       percentLocal: this.state.percentLocal
     }
-    // const goHome = () => this.props.history.push('/')
-    login(user, goHome)
+    //Function to put into database goes here
     e.preventDefault()
   }
 
