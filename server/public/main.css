@@ -234,6 +234,16 @@ label {
   margin-left: 0;
 }
 
+/* STATS */
+
+.bar, .pie {
+  margin-top: 2rem;
+}
+
+.bar.recharts-wrapper, .bar.recharts-surface {
+  height: 400px;
+}   
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 440px) {
