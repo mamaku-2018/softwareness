@@ -10,7 +10,6 @@ import CompanyProfile from './CompanyProfile'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Register from './auth/Register'
-import CompanyForeignLocalStats from './CompanyForeignLocalStats'
 import CategoryCompanyGender from './CategoryCompanyGender'
 import Login from './auth/Login'
 
@@ -18,7 +17,6 @@ const App = () => {
   return (
     <Router>
       <div className='container'>
-        <CompanyForeignLocalStats />
         <Nav />
         <ErrorMessage />
         <WaitIndicator />
