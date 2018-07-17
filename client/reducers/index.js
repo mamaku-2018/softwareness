@@ -7,6 +7,7 @@ import companyInfo from './companyInfo'
 import companyList from './companyList'
 import companyProfile from './companyProfile'
 import errorMessage from './errorMessage'
+import categoryCompanyGender from './stats/categoryCompanyGender'
 import userDetails from './auth/userDetails'
 import login from './auth/login'
 import register from './auth/register'
@@ -19,6 +20,7 @@ export default combineReducers({
   companyInfo,
   companyProfile,
   companyList,
+  categoryCompanyGender,
   userDetails,
   login,
   register
