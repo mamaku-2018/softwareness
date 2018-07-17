@@ -40,16 +40,16 @@ export class CompanyName extends React.Component {
       )
     } else {
       return (
-        <div>
-          <h2 className='AddCompTitle'>Add Company</h2>
+        <div className='companyAdd'>
+          <h3>Add Company</h3>
           <div className='CompanyAddForm'>
-            <h3>Name:</h3>
+            <label>Name:</label>
             <input onChange={this.changeHandler} name='name'/>
-            <h3>Site URL:</h3>
+            <label>Website URL:</label>
             <input onChange={this.changeHandler} name='siteUrl'/>
-            <h3>Company #:</h3>
+            <label>NZ Companies Number:</label>
             <input onChange={this.changeHandler} name='countryId'/>
-            <button className='addButt' onClick={this.submitHandler}>ADD</button>
+            <button className='button' onClick={this.submitHandler}>ADD</button>
           </div>
         </div>
       )
