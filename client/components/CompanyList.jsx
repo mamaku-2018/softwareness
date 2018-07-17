@@ -42,7 +42,7 @@ class CompanyList extends React.Component {
   render () {
     return (
       <div className='companyList'>
-        <h1>Reviewed Companies</h1>
+        <h3>Reviewed Companies</h3>
         <p>Softwareness is working with forward-thinking companies to improve self-awareness in the software industry.</p>
         <div className="field has-addons">
           <div className="control">

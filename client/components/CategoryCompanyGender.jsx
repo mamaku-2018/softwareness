@@ -13,7 +13,7 @@ export class CategoryCompanyGender extends React.Component {
   render () {
     return (
       <div>
-        <h2>Gender Split for Each Company</h2>
+        <h4>Gender Split for Each Company</h4>
 
         <PieChart with={860} height={300}>
           <Pie

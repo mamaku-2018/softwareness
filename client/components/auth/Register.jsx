@@ -55,7 +55,7 @@ class Register extends React.Component {
         <div className="register">
           <form>
             <fieldset>
-              <legend>Register</legend>
+              <h3>Register</h3>
               <label htmlFor="firstName">First name: </label>
               <input type="text" name="firstName" id="firstName" placeholder="First name" onChange={this.handleChange} value={this.state.firstName}/>
               <br />

@@ -231,45 +231,52 @@ label {
   margin-bottom: 1.5rem;
 }
 
-/* Companies List  */
-.companyList h1 {
-  font-size: 40px; 
-  text-align: center; 
+/* COMPANY LIST */
+
+.companyList {
+  text-align: center;
 }
 
 .companyList p {
   font-size: 20px; 
-  text-align: center;
   padding: 1rem; 
 }
 
+.companyList ul {
+  margin-top: 2rem;
+}
+
 .companyList li {
-  text-align: left; 
+  text-align: center; 
   margin: 1rem;
   text-transform: capitalize;
   font-size: 20px; 
 }
 
-.companyList a{
+.companyList a {
   color: #E8E8E8;
 }
 
-.companyList a:hover{
+.companyList a:hover {
   color: #7AB0AD ;
+}
+
+.field {
+  width: 80%;
+  margin: auto;
 }
 
 .button.is-info {
   margin: 0;
-  height: 2.25em; 
-  width: 5rem; 
+  width: 6rem; 
   background-color: #C0462E; 
-  border: none; 
 }
 
 input.search {
-  height: 2.7em; 
-  border: none; 
+  height: 3rem; 
+  margin: 0;
 }
+
 .login .button, .register .button, .companyAdd .button {
   margin-left: 0;
 }
@@ -308,6 +315,15 @@ input.search {
     height: 3rem;
     font-size: 1rem;
   }
+
+  .companyList {
+    text-align: left;
+  }
+
+  .companyList li {
+    text-align: center; 
+  }
+
   .footer {
     width: 100%;
     position: relative;
