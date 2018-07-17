@@ -1,21 +1,21 @@
 import request from 'superagent'
 import {showError} from '../index'
 
-export const GET_COMPANY_GENDER = 'GET_COMPANY_GENDER'
+export const RECEIVE_COMPANY_GENDER_STATS = ' RECEIVE_COMPANY_GENDER_STATS'
 
-const getCompanyGender = (stats) => {
+const receiveCompanyGenderStats = (stats) => {
   return {
-    type: GET_COMPANY_GENDER,
+    type: RECEIVE_COMPANY_GENDER_STATS,
     stats
   }
 }
 
-export function getCompanyGenderStats (id) {
+export function requestCompanyGenderStats (id) {
   return (dispatch) => {
     return request
       .get(`/api/v1/stats/companies/${id}`)
       .then(stats => {
-        dispatch(getCompanyGender(stats.body))
+        dispatch(receiveCompanyGenderStats(stats.body))
       })
       .catch(err => {
         dispatch(showError(err.message))

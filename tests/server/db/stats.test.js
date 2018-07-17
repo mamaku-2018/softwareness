@@ -28,8 +28,9 @@ test('catetoryLocalForeignCount', () => {
 })
 
 test('categoryCompanyGenderCount', () => {
-  return db.categoryCompanyGenderCount(testDb)
+  const id = 4
+  return db.categoryCompanyGenderCount(id, testDb)
     .then(counts => {
-      expect(counts.length).toBe(4)
+      expect(counts[0].CompanyId).toBe(4)
     })
 })
