@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0.5px solid red; 
+  border: 0.5px solid transparent; 
 }
 
 html, body {
@@ -67,8 +67,10 @@ input {
 }
 
 .error {
+  margin-top: 2.5rem;
   color: red;
   font-weight: bold;
+  font-size: 0.8rem;
 }
 
 #app, .container {
@@ -78,6 +80,12 @@ input {
 
 .container {
   position: relative;
+}
+
+label {
+  font-size: 1rem;
+  color: #7AB0AD;
+  margin-bottom: 0rem;
 }
 
 /* NAV  */
@@ -97,9 +105,9 @@ input {
 
 .navbar-brand img {
   position: absolute;
-  top: 40%;
+  top: 30%;
+  left: 2%;
   width: 30%; 
-  margin-left: 0.5rem;
 }
 
 .navbarmenu {
@@ -118,14 +126,14 @@ input {
 /* HOME */
 
 .container-main {
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 /* HOMEGRAPH  */
 
 .homegraph {
   height: 100%; 
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0;
   position: relative;
 }
@@ -156,6 +164,10 @@ input {
   color:  #7AB0AD;
 }
 
+.homebuttons {
+  display: inline;
+}
+
 /* FOOTER */
 
 .footer {
@@ -178,32 +190,28 @@ input {
   background-color: #7AB0AD;
 }
 
-/* Add Company Title */
-
-.AddCompTitle {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: left;
-  font-weight: 500;
-  margin: 5% 5% 2% 10%;
-  font-size: 30px;
-  font-weight: 400;
-}
-
 /* ADD COMPANY */
+
+.companyAdd h3 {
+  text-align: left;
+}
 
 .CompanyAddForm {
   background-color: #1F3D45;
+  width: 100%;
+  margin: auto;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   color: #E8E8E8;
   font-size: 20px;
-  padding: 2% 5% 2% 5%;
-  margin: 0% 12% 10% 10%;
+  padding: 0 2rem 0 2rem;
 }
 
-.CompanyAddForm h3 {
+.companyAdd h3 {
   width: 100%;
   text-align: left;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .name {
@@ -211,25 +219,19 @@ input {
   font-size: 4em;
 }
 
-/* Add Button */
+/* LOGIN, REGISTER */
 
-.addButt {
-  width: 150px;
-  padding: 10px;
-  margin: 0% 20% 0% 35%;
-  background-color: #C0462E;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #E8E8E8;
-  font-weight: 500;
+.login, .register {
+  text-align: left;
+  padding: 0 2rem 0 2rem;
 }
 
+.login h3, .register h3 {
+  margin-bottom: 1.5rem;
+}
 
-/* REGISTER */
-
-.register {
-  text-align: left;
-  padding: 0 1rem 0 1rem;
+.login .button, .register .button, .companyAdd .button {
+  margin-left: 0;
 }
 
 /* MEDIA QUERIES */
