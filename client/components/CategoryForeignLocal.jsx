@@ -12,7 +12,7 @@ export class CategoryForeignLocal extends React.Component {
   render () {
     return (
       <div className='pie'>
-
+        <h4>Split of Local and Foreign Employees</h4>
         <PieChart width={540} height={400}>
           <Pie
             data={this.props.local}
