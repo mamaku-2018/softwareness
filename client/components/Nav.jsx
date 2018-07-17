@@ -9,12 +9,11 @@ const Nav = (props) => {
     <nav className='navbar'>
       <div className='navbar-brand'>
         <a className='logo' href='/'>
-          <h2>SW</h2>
+          <Link to='/'><img src='images/logo.png' alt='softwareness logo' /></Link>
         </a>
       </div>
       <div className='navbarmenu'>
         {!props.loggedIn && <Link to='/login' className='button'>login</Link>}
-        {/* {props.loggedIn && <Link to='/' className='button' onClick={logout}>logOut</Link>} */}
         {props.loggedIn && <button className='button' onClick={logout}>logOut </button>}
         {!props.loggedIn && <Link to='/register' className='button'>register</Link>}
       </div>
