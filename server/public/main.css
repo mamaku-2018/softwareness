@@ -143,6 +143,8 @@ label {
   font-size: 1rem; 
   font-weight: 900; 
   margin: 1rem; 
+  margin-right: 3rem;
+  margin-left: 3rem;
   color: #7AB0AD;
 }
 
@@ -155,7 +157,7 @@ label {
 
 .about {
   position: relative; 
-  padding-top: 5%; 
+  padding-top: 4%; 
 }
 
 .about p {
@@ -178,7 +180,7 @@ label {
   background-color: #1F3D45;
   border-top: 2px solid #7AB0AD;
   margin-top: 5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: #E8E8E8;
 }
 
@@ -244,10 +246,10 @@ label {
 
 .companyList ul {
   margin-top: 2rem;
+  text-align: center;
 }
 
 .companyList li {
-  text-align: center; 
   margin: 1rem;
   text-transform: capitalize;
   font-size: 20px; 
@@ -261,9 +263,10 @@ label {
   color: #7AB0AD ;
 }
 
-.field {
+.field.has-addons {
   width: 80%;
   margin: auto;
+  margin-top: 2rem;
 }
 
 .button.is-info {
@@ -293,16 +296,24 @@ input.search {
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width: 440px) {
+@media only screen and (min-width: 400px) {
   .navbar-brand img {
     width: 22%; 
   }
+
+  .field.has-addons {
+    width: 60%;
+  }  
 }  
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 640px) {
   .navbar-brand img {
     width: 18%; 
   }
+
+  .field.has-addons {
+    width: 40%;
+  }  
 }
 
 @media only screen and (min-width: 800px) {
@@ -320,8 +331,19 @@ input.search {
     text-align: left;
   }
 
-  .companyList li {
-    text-align: center; 
+  .companyList ul {
+    text-align: left; 
+  }
+
+  .companyList h3 {
+    margin-left: 1rem;
+  }
+
+  .field.has-addons {
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-left: 1rem;
   }
 
   .footer {
@@ -329,6 +351,7 @@ input.search {
     position: relative;
     bottom: 0;
     text-align: left;
+    margin-bottom: 2rem;
   }
 
   .about p {
