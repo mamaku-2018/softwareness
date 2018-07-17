@@ -11,6 +11,7 @@ import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Register from './auth/Register'
 import CompanyList from './CompanyList'
+import Login from './auth/Login'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/stats' component={Stats} />
           <Route path='/register' component={Register} />
           <Route path='/companies' component={CompanyList} />
+          <Route path='/login' component={Login} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
             <Route path='/companies/:id' component={CompanyInfo} />
