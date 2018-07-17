@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className='navbar'>
       <div className='navbar-brand'>
@@ -10,11 +11,18 @@ const Nav = () => {
         </a>
       </div>
       <div className='navbarmenu'>
-        {/* To be replaced by an Auth */}
-        <Link to='/login' className='login button'>login</Link>
+        {!props.loggedIn && <Link to='/login' className='button'>login</Link>}
+        {props.loggedIn && <Link to='/' className='button'>logOut</Link>}
+        {!props.loggedIn && <Link to='/register' className='button'>register</Link>}
       </div>
     </nav>
   )
 }
 
-export default Nav
+function mapStateToProps(state){
+  return {
+    loggedIn: state.login
+  }
+}
+
+export default connect(mapStateToProps, null)(Nav)
