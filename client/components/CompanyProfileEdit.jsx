@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {getCompanyProfile} from '../actions/companies'
 // edit component that switches out with info component.
 
-export class CompanyProfileEdit extends React.Component {
+class CompanyProfileEdit extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
