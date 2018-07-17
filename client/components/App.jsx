@@ -6,7 +6,6 @@ import Home from './Home'
 import Stats from './Stats'
 import Footer from './Footer'
 import CompanyAdd from './CompanyAdd'
-import CompanyInfo from './CompanyInfo'
 import CompanyProfile from './CompanyProfile'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
@@ -29,7 +28,6 @@ const App = () => {
           <Route path='/login' component={Login} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
-            <Route path='/companies/:id' component={CompanyInfo} />
             <Route path='/companies/:id' component={CategoryCompanyGender} />
             <Route path='/companies/:id' component={CompanyProfile} />
             <Route path='/companies' component={CompanyList} />
