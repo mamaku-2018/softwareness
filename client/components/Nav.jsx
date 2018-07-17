@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {clearError} from '../actions/index'
+import {logUserOff} from '../actions/auth/login'
 
 const Nav = (props) => {
   return (
@@ -12,17 +14,32 @@ const Nav = (props) => {
       </div>
       <div className='navbarmenu'>
         {!props.loggedIn && <Link to='/login' className='button'>login</Link>}
-        {props.loggedIn && <Link to='/' className='button'>logOut</Link>}
+        {/* {props.loggedIn && <Link to='/' className='button' onClick={logout}>logOut</Link>} */}
+        {props.loggedIn && <button className='button' onClick={logout}>logOut </button>}
         {!props.loggedIn && <Link to='/register' className='button'>register</Link>}
       </div>
     </nav>
   )
+
+  function logout () {
+    const {logUserOff} = props
+    logUserOff()
+  }
 }
 
-function mapStateToProps(state){
+function mapStateToProps (state) {
   return {
     loggedIn: state.login
   }
 }
 
-export default connect(mapStateToProps, null)(Nav)
+function mapDispatchToProps (dispatch) {
+  return {
+    logUserOff: () => {
+      dispatch(clearError())
+      return dispatch(logUserOff())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
