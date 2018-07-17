@@ -36,7 +36,7 @@ class CompanyProfileEdit extends React.Component {
       openReqs: this.state.openReqs,
       percentLocal: this.state.percentLocal
     }
-    //Function to put into database goes here
+    //Function pass to the API
     e.preventDefault()
   }
 

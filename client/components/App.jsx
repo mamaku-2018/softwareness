@@ -28,7 +28,6 @@ const App = () => {
           <Route path='/login' component={Login} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
-            <Route path='/companies/profile/:id' component={CompanyInfo} />
             <Route path='/companies/:id' component={CategoryCompanyGender} />
             <Route path='/companies/:id' component={CompanyProfile} />
             <Route path='/companies' component={CompanyList} />
