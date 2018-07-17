@@ -10,7 +10,6 @@ import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Register from './auth/Register'
-import CompanyProfileEdit from './CompanyProfileEdit'
 import Login from './auth/Login'
 
 const App = () => {
@@ -28,7 +27,6 @@ const App = () => {
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
             <Route path='/companies/profile/:id' component={CompanyInfo} />
-            <Route path='/companies/profile/:id/edit' component={CompanyProfileEdit} />
           </Switch>
         </div>
         <Footer />
