@@ -12,11 +12,12 @@ class CompanyProfile extends React.Component {
   }
 
   render () {
+    const {id} = this.props.match.params
     return (
       <div>
         <h2>{this.props.companyInfo.name}</h2>
-        <CompanyInfo />
-        <EmployeeStats />
+        <CompanyInfo id={id} />
+        <EmployeeStats id={id} />
       </div>
     )
   }
