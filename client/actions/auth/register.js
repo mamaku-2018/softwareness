@@ -41,7 +41,6 @@ export function register (user) {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveUserRegestration(res.body))
         dispatch(getUserDetails(token.id))
-        history.push('/login')
         dispatch(showSuccess('Registration successful'))
       })
       .catch(err => {
@@ -57,7 +56,7 @@ export function register (user) {
 export function getUserDetails (id) {
   return (dispatch) => {
     dispatch(requestUserDetails())
-    request('get', `/users/${id}`)
+    request('get', `/auth/${id}`)
       .then(res => {
         dispatch(receiveUserDetails(res.body))
         dispatch(clearError())
