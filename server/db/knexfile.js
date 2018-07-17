@@ -56,7 +56,7 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      postinstall: 'knex migrate:latest'
+      postinstall: 'webpack && knex migrate:latest'
     }
   }
 
