@@ -10,7 +10,6 @@ class CompanyList extends React.Component {
       search: '',
       companyNames: []
     }
-    this.updateSearch = this.updateSearch.bind(this)
     this.searchBar = this.searchBar.bind(this)
   }
   componentDidMount () {
@@ -25,9 +24,7 @@ class CompanyList extends React.Component {
   searchBar (e) {
     if (e.target.value === '') {
       this.setState({
-        companyNames: this.props.companyList.map(company => company.name)
-      })
-      this.setState({
+        companyNames: this.props.companyList.map(company => company.name),
         search: e.target.value
       })
     } else {
@@ -36,18 +33,10 @@ class CompanyList extends React.Component {
         return res.toLowerCase().search(e.target.value.toLowerCase()) !== -1
       })
       this.setState({
-        search: e.target.value
-      })
-      this.setState({
+        search: e.target.value,
         companyNames: searchList
       })
     }
-  }
-
-  updateSearch (e) {
-    this.setState({
-      search: e.target.value
-    })
   }
 
   render () {

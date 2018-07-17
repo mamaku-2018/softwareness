@@ -24,11 +24,11 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route path='/stats' component={Stats} />
           <Route path='/register' component={Register} />
-          <Route path='/companies' component={CompanyList} />
           <Route path='/login' component={Login} />
           <Switch>
             <Route path='/companies/add' component={CompanyAdd} />
             <Route path='/companies/:id' component={CompanyInfo} />
+            <Route path='/companies' component={CompanyList} />
           </Switch>
         </div>
         <Footer />
