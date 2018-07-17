@@ -42,8 +42,8 @@ export class CategoryCompanyGender extends React.Component {
 
 function mapStateToProps (state, ownProps) {
   return {
-    categoryCompanyGender: state.categoryCompanyGender
-    // ...ownProps ?
+    categoryCompanyGender: state.categoryCompanyGender,
+    match: ownProps.match
   }
 }
 
