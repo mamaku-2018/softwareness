@@ -50,8 +50,7 @@ export function login (user, confirmSuccess) {
         dispatch(showSuccess('You are now logged in.'))
       })
       .catch(err => {
-        const res = err
-        if (res && res.errorType === 'INVALID_CREDENTIALS') {
+        if (err && err.errorType === 'INVALID_CREDENTIALS') {
           return dispatch(showError('Username and password do not match an existing user'))
         }
       })
