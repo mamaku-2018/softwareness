@@ -9,7 +9,7 @@
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "test": "jest --watchAll",
     "start": "node server",
-    "postinstall": "webpack && knex migrate:latest"
+    "postinstall": "yarn build && knex migrate:latest"
   },
   "author": "EDA",
   "license": "ISC",
