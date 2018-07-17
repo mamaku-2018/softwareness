@@ -7,7 +7,7 @@ const colors = ['#c0462e', '#7AB0AD']
 
 class CompanyForLocalStats extends React.Component {
   componentDidMount () {
-    this.props.dispatch(GetCompanyForLocStats(3))
+    this.props.dispatch(GetCompanyForLocStats(2))
     // this.match.params.id
   }
   render () {
