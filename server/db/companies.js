@@ -11,6 +11,7 @@ module.exports = {
 function getAllCompanies (db = knex) {
   return db('companies')
     .select('id', 'name', 'website_url as websiteUrl', 'country_id as countryId')
+    .orderBy('name', 'asc')
 }
 
 function getCompany (id, db = knex) {
