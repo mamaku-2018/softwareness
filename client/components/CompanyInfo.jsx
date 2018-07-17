@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getCompanyInfo} from '../actions/companies'
-import {CompanyProfileEdit} from './CompanyProfileEdit'
+import CompanyProfileEdit from './CompanyProfileEdit'
 import {Route} from 'react-router'
 const companiesRoot = 'https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/'
 
