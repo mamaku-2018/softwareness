@@ -20,7 +20,6 @@ function getEmpLocal (companyId, db = knex) {
     .select('percent_local as pl')
     .then(localResult => {
       const local = localResult
-      console.log(local)
       const foreign = 100 - local[0].pl
       return ([
         {'name': 'Local', 'value': local[0].pl},
