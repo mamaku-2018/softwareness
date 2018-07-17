@@ -9,14 +9,14 @@ const router = express.Router()
 router.post('/register', register, token.issue)
 
 function register (req, res, next) {
-  const {firstName, surName, email, password} = req.body
+  const {firstName, surname, email, password} = req.body
 
   db.userExists(req.body.email)
     .then(exists => {
       if (exists) {
         return res.status(400).send({message: 'User exists'})
       }
-      db.createUser(firstName, surName, password, email)
+      db.createUser(firstName, surname, password, email)
         .then(() => next())
     })
     .catch(err => {
@@ -49,5 +49,18 @@ function invalidCredentials (res) {
     errorType: 'INVALID_CREDENTIALS'
   })
 }
+
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.getUser(id)
+    .then(user => {
+      res.json(user)
+    })
+    .catch(err => {
+      // eslint-disable-next-line
+      console.log(err)
+      res.status(500).send('Unable to find user')
+    })
+})
 
 module.exports = router

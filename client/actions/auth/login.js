@@ -2,8 +2,7 @@ import request from '../../lib/apiClient'
 import {saveAuthToken, logOff} from '../../lib/auth'
 import {showError, clearError, showSuccess} from '../'
 import {requestUserDetails,
-  receiveUserDetails,
-  getUserDetails} from './register'
+  receiveUserDetails} from './register'
 
 export const REQUEST_LOGIN = 'REQUEST_LOGIN'
 export const RECEIVE_LOGIN = 'RECEIVE_LOGIN'
@@ -31,10 +30,17 @@ export const logOut = () => {
   }
 }
 
+export function logUserOff () {
+  return (dispatch) => {
+    dispatch(requestLogin())
+    logOut()
+  }
+}
+
 export function login (user, confirmSuccess) {
   return (dispatch) => {
     dispatch(requestLogin())
-    request('post', '/login', user)
+    request('post', '/auth/login', user)
       .then(res => {
         const token = saveAuthToken(res.body.token)
         dispatch(receiveLogin(res.body))
@@ -44,8 +50,7 @@ export function login (user, confirmSuccess) {
         dispatch(showSuccess('You are now logged in.'))
       })
       .catch(err => {
-        const res = err.response.body
-        if (res && res.errorType === 'INVALID_CREDENTIALS') {
+        if (err && err.errorType === 'INVALID_CREDENTIALS') {
           return dispatch(showError('Username and password do not match an existing user'))
         }
       })
@@ -55,7 +60,7 @@ export function login (user, confirmSuccess) {
 export function getUserData (id) {
   return (dispatch) => {
     dispatch(requestUserDetails())
-    request('get', `/users/${id}`)
+    request('get', `/auth/${id}`)
       .then(res => {
         dispatch(receiveUserDetails(res.body))
         dispatch(clearError())

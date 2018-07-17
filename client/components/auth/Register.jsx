@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {register} from '../../actions/auth/register'
 import {clearError} from '../../actions'
+import {Redirect} from 'react-router-dom'
 
 class Register extends React.Component {
   constructor (props) {
@@ -13,7 +14,8 @@ class Register extends React.Component {
       password: '',
       confirm: '',
       match: false,
-      message: 'Passwords do not match'
+      message: 'Passwords do not match',
+      redirect: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -39,37 +41,44 @@ class Register extends React.Component {
       password: this.state.password
     }
     register(user)
+    this.setState({redirect: true})
     e.preventDefault()
   }
 
   render () {
-    return (
-      <div className="register">
-        <h3>Register</h3>
-        <form>
-          <fieldset>
-            <label htmlFor="firstName">First name: </label>
-            <input type="text" name="firstName" id="firstName" placeholder="First name" onChange={this.handleChange} value={this.state.firstName}/>
-            <br />
-            <label htmlFor="name">Last name: </label>
-            <input type="text" name="surname" id="surname" placeholder="Surname" onChange={this.handleChange} value={this.state.surname}/>
-            <br />
-            <label htmlFor="email">Email: </label>
-            <input type="text" name="email" id="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
-            <br />
-            <label htmlFor="password">Password: </label>
-            <input type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
-            <br />
-            <label htmlFor="confirm">Confirm password: </label>
-            <input type="password" name="confirm" id="confirm" placeholder="Confirm password" onChange={this.handleChange} value={this.state.confirm}/>
-            {!this.state.match && <span>{this.state.message}</span>}
-            <br />
+    if (this.state.redirect) {
+      return (
+        <Redirect to='/' />
+      )
+    } else {
+      return (
+        <div className="register">
+          <form>
+            <fieldset>
+              <legend>Register</legend>
+              <label htmlFor="firstName">First name: </label>
+              <input type="text" name="firstName" id="firstName" placeholder="First name" onChange={this.handleChange} value={this.state.firstName}/>
+              <br />
+              <label htmlFor="name">Last name: </label>
+              <input type="text" name="surname" id="surname" placeholder="Surname" onChange={this.handleChange} value={this.state.surname}/>
+              <br />
+              <label htmlFor="email">Email: </label>
+              <input type="text" name="email" id="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
+              <br />
+              <label htmlFor="password">Password: </label>
+              <input type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
+              <br />
+              <label htmlFor="confirm">Confirm password: </label>
+              <input type="password" name="confirm" id="confirm" placeholder="Confirm password" onChange={this.handleChange} value={this.state.confirm}/>
+              {!this.state.match && <span>{this.state.message}</span>}
+              <br />
 
-            <button type="button" disabled={!this.state.match} className="button" onClick={this.handleSubmit}>Register</button>
-          </fieldset>
-        </form>
-      </div>
-    )
+              <button type="button" disabled={!this.state.match} className="button" onClick={this.handleSubmit}>Register</button>
+            </fieldset>
+          </form>
+        </div>
+      )
+    }
   }
 }
 
