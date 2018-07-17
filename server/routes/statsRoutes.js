@@ -20,4 +20,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/companies/:id', (req, res) => {
+  const id = req.params.id
+  db.categoryCompanyGenderCount(id)
+    .then(company => {
+      res.json(company)
+    })
+})
+
 module.exports = router
