@@ -6,7 +6,9 @@ import localForeign from './localForeign'
 import companyInfo from './companyInfo'
 import companyProfile from './companyProfile'
 import errorMessage from './errorMessage'
-import categoryCompanyGender from './stats/categoryCompanyGender'
+import userDetails from './auth/userDetails'
+import login from './auth/login'
+import register from './auth/register'
 
 export default combineReducers({
   errorMessage,
@@ -15,5 +17,7 @@ export default combineReducers({
   categoryMaleFemale,
   companyInfo,
   companyProfile,
-  categoryCompanyGender
+  userDetails,
+  login,
+  register
 })
