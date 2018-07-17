@@ -10,11 +10,12 @@ import CompanyInfo from './CompanyInfo'
 import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import Register from './auth/Register'
-
+import CompanyForeignLocalStats from './CompanyForeignLocalStats'
 const App = () => {
   return (
     <Router>
       <div className='container'>
+        <CompanyForeignLocalStats />
         <Nav />
         <ErrorMessage />
         <WaitIndicator />

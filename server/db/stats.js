@@ -21,6 +21,9 @@ function catetoryLocalForeignCount (db = knex) {
     .then(localResult => {
       const local = Math.floor(localResult[0].local)
       const foreign = 100 - local
-      return ([{'name': 'Local', 'value': local}, {'name': 'Foreign', 'value': foreign}])
+      return ([
+        {'name': 'Local', 'value': local},
+        {'name': 'Foreign', 'value': foreign}
+      ])
     })
 }

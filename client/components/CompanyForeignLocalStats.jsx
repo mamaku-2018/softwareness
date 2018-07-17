@@ -1,13 +1,14 @@
 import React from 'react'
 import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
 import {connect} from 'react-redux'
-import {getCompanyForLocalStats} from '../actions/getCompanyForLocalStats'
+import {GetCompanyForLocStats} from '../actions/getCompanyForLocalStats'
 
 const colors = ['#c0462e', '#7AB0AD']
 
 class CompanyForLocalStats extends React.Component {
   componentDidMount () {
-    this.props.dispatch(getCompanyForLocalStats(id))
+    this.props.dispatch(GetCompanyForLocStats(4))
+    // this.match.params.id
   }
   render () {
     return (
@@ -15,7 +16,7 @@ class CompanyForLocalStats extends React.Component {
 
         <PieChart width={540} height={400}>
           <Pie
-            data={this.props.local}
+            data={this.props.companyForLoc}
             dataKey="value"
             nameKey="name"
             cx="50%"
@@ -26,7 +27,7 @@ class CompanyForLocalStats extends React.Component {
           >
             <Label position="center" />
             {
-              this.props.local.map((entry, index) => (
+              this.props.companyForLoc.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={colors[index]}/>
               ))
             }
@@ -41,7 +42,7 @@ class CompanyForLocalStats extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    local: state.CompanyForLocalStats
+    companyForLoc: state.companyForLoc
   }
 }
 
