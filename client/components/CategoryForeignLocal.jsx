@@ -5,14 +5,14 @@ import {getLocalForeign} from '../actions/stats/getCategoryForLocation'
 
 const colors = ['#c0462e', '#7AB0AD']
 
-class CategoryForeignLocal extends React.Component {
+export class CategoryForeignLocal extends React.Component {
   componentDidMount () {
     this.props.dispatch(getLocalForeign())
   }
   render () {
     return (
       <div className='pie'>
-
+        <h4>Split of Local and Foreign Employees</h4>
         <PieChart width={540} height={400}>
           <Pie
             data={this.props.local}
