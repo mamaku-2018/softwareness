@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0.5px solid transparent; 
+  border: 0.5px solid red; 
 }
 
 html, body {
@@ -171,11 +171,11 @@ label {
 /* FOOTER */
 
 .footer {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   height: 5%;
   background-color: #1F3D45;
-  text-align: center;
-  border-top: 2px solid  #7AB0AD;
+  border-top: 2px solid #7AB0AD;
   margin-top: 5rem;
   margin-bottom: 1rem;
   color: #E8E8E8;
@@ -259,6 +259,7 @@ label {
     font-size: 1rem;
   }
   .footer {
+    width: 100%;
     position: relative;
     bottom: 0;
     text-align: left;
