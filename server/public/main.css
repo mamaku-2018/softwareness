@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0.5px solid transparent; 
+  border: 0.5px solid transparent;
 }
 
 html, body {
@@ -231,6 +231,45 @@ label {
   margin-bottom: 1.5rem;
 }
 
+/* Companies List  */
+.companyList h1 {
+  font-size: 40px; 
+  text-align: center; 
+}
+
+.companyList p {
+  font-size: 20px; 
+  text-align: center;
+  padding: 1rem; 
+}
+
+.companyList li {
+  text-align: left; 
+  margin: 1rem;
+  text-transform: capitalize;
+  font-size: 20px; 
+}
+
+.companyList a{
+  color: #E8E8E8;
+}
+
+.companyList a:hover{
+  color: #7AB0AD ;
+}
+
+.button.is-info {
+  margin: 0;
+  height: 2.25em; 
+  width: 5rem; 
+  background-color: #C0462E; 
+  border: none; 
+}
+
+input.search {
+  height: 2.7em; 
+  border: none; 
+}
 .login .button, .register .button, .companyAdd .button {
   margin-left: 0;
 }
