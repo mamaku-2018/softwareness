@@ -34,10 +34,10 @@ class Login extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="login">
+        <h3>Login</h3>
         <form>
           <fieldset>
-            <legend>Login</legend>
             <label htmlFor="email">Email: </label>
             <input type="text" name="email" id="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
             <br />

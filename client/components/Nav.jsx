@@ -7,7 +7,7 @@ const Nav = (props) => {
     <nav className='navbar'>
       <div className='navbar-brand'>
         <a className='logo' href='/'>
-          <h2>SW</h2>
+          <Link to='/'><img src='images/logo.png' alt='softwareness logo' /></Link>
         </a>
       </div>
       <div className='navbarmenu'>
@@ -19,7 +19,7 @@ const Nav = (props) => {
   )
 }
 
-function mapStateToProps(state){
+function mapStateToProps (state) {
   return {
     loggedIn: state.login
   }
