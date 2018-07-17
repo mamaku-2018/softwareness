@@ -6,12 +6,12 @@ import {
 const login = (state = false, action) => {
   switch (action.type) {
     case REQUEST_LOGIN:
-      return true
-
-    case RECEIVE_LOGIN:
       return false
 
-      default:
+    case RECEIVE_LOGIN:
+      return true
+
+    default:
       return state
   }
 }
