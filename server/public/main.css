@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0.5px solid transparent; 
+  border: 0.5px solid transparent;
 }
 
 html, body {
@@ -8,8 +8,8 @@ html, body {
   font-family: Arial, Helvetica, sans-serif; 
   color:  #7AB0AD;
   text-align: center;
-  margin: 0px; 
-  padding: 0px; 
+  margin: 0; 
+  padding: 0; 
   background-color:#1F3D45;
 }
 
@@ -19,6 +19,21 @@ body {
 
 h1 {
   font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5 {
   font-weight: 900;
   color: #E8E8E8;
 }
@@ -39,6 +54,10 @@ h1 {
   color:  #E8E8E8;
 }
 
+.button:hover {
+  color:  #7AB0AD;
+}
+
 input {
   width: 100%;
   padding: 10px;
@@ -48,8 +67,10 @@ input {
 }
 
 .error {
+  margin-top: 2.5rem;
   color: red;
   font-weight: bold;
+  font-size: 0.8rem;
 }
 
 #app, .container {
@@ -61,54 +82,58 @@ input {
   position: relative;
 }
 
+label {
+  font-size: 1rem;
+  color: #7AB0AD;
+  margin-bottom: 0rem;
+}
+
 /* NAV  */
 
 .navbar {
   position: relative;
+  display: flex;
   height: 10%;
   width: 100%; 
   background-color: #1F3D45;
   margin: 0;
 }
 
-.navbar-brand h2 {
-  position: absolute;
-  top: 40%;
-  left: 1rem;
-  color: #E8E8E8;
-  font-size: 3rem; 
-  text-align: left; 
-  width: 10%; 
-  margin-left: 0;
+.navbar-brand {
+  width: 50%;
 }
 
-.login {
-  position: absolute;  
-  top: 25%; 
-  right: 0;
+.navbar-brand img {
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  width: 30%; 
+}
+
+.navbarmenu {
+  position: absolute;
+  right: 0.7rem;
+  padding: 1rem;
+}
+
+.navbarmenu .button {
   width: 5rem;
-  height: 3rem;
-  font-size: 1rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #E8E8E8;
-  border: 2px solid  #7AB0AD;
-  background-color: transparent;
-  border-radius: 5px;
+  height: 2rem;
+  margin: 1rem 0 0 1rem;
+  font-size: 0.8rem;
 }
 
 /* HOME */
 
 .container-main {
-  height: 50%; 
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 /* HOMEGRAPH  */
 
 .homegraph {
   height: 100%; 
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0;
   position: relative;
 }
@@ -139,23 +164,23 @@ input {
   color:  #7AB0AD;
 }
 
+.homebuttons {
+  display: inline;
+}
+
 /* FOOTER */
 
 .footer {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   height: 5%;
   background-color: #1F3D45;
-  text-align: left;
-  border-top: 2px solid  #7AB0AD;
+  border-top: 2px solid #7AB0AD;
   margin-top: 5rem;
   margin-bottom: 1rem;
   color: #E8E8E8;
 }
 
-.footer h4 {
-  font-size: 1.2rem;
-  font-weight: 900;
-}
 .footer a {
   color: #E8E8E8;
   border: .3px solid transparent;
@@ -165,27 +190,28 @@ input {
   background-color: #7AB0AD;
 }
 
-/* Add Company Title */
+/* ADD COMPANY */
 
-.AddCompTitle {
-  font-family: Arial, Helvetica, sans-serif;
+.companyAdd h3 {
   text-align: left;
-  font-weight: 500;
-  margin: 5% 5% 2% 10%;
-  font-size: 30px;
-  font-weight: 400;
 }
-
-/* Form */
 
 .CompanyAddForm {
   background-color: #1F3D45;
+  width: 100%;
+  margin: auto;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   color: #E8E8E8;
   font-size: 20px;
-  padding: 2% 5% 2% 5%;
-  margin: 0% 12% 10% 10%;
+  padding: 0 2rem 0 2rem;
+}
+
+.companyAdd h3 {
+  width: 100%;
+  text-align: left;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .name {
@@ -193,32 +219,108 @@ input {
   font-size: 4em;
 }
 
-/* Add Button */
+/* LOGIN, REGISTER */
 
-.addButt {
-  width: 150px;
-  padding: 10px;
-  margin: 0% 20% 0% 35%;
-  background-color: #C0462E;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #E8E8E8;
-  font-weight: 500;
+.login, .register {
+  text-align: left;
+  padding: 0 2rem 0 2rem;
 }
 
+.login h3, .register h3 {
+  margin-bottom: 1.5rem;
+}
+
+/* Companies List  */
+.companyList h1 {
+  font-size: 40px; 
+  text-align: center; 
+}
+
+.companyList p {
+  font-size: 20px; 
+  text-align: center;
+  padding: 1rem; 
+}
+
+.companyList li {
+  text-align: left; 
+  margin: 1rem;
+  text-transform: capitalize;
+  font-size: 20px; 
+}
+
+.companyList a{
+  color: #E8E8E8;
+}
+
+.companyList a:hover{
+  color: #7AB0AD ;
+}
+
+.button.is-info {
+  margin: 0;
+  height: 2.25em; 
+  width: 5rem; 
+  background-color: #C0462E; 
+  border: none; 
+}
+
+input.search {
+  height: 2.7em; 
+  border: none; 
+}
+.login .button, .register .button, .companyAdd .button {
+  margin-left: 0;
+}
+
+/* STATS */
+
+.bar, .pie {
+  margin-top: 2rem;
+}
+
+.bar.recharts-wrapper, .bar.recharts-surface {
+  height: 400px;
+}   
+
 /* MEDIA QUERIES */
+
+@media only screen and (min-width: 440px) {
+  .navbar-brand img {
+    width: 22%; 
+  }
+}  
+
+@media only screen and (min-width: 650px) {
+  .navbar-brand img {
+    width: 18%; 
+  }
+}
 
 @media only screen and (min-width: 800px) {
   .container {
     height: 100vh;
   }
 
+  .navbarmenu .button {
+    width: 6rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
   .footer {
-    position: absolute;
+    width: 100%;
+    position: relative;
     bottom: 0;
+    text-align: left;
   }
 
   .about p {
     font-size: 1.6rem;
   }  
+}
+
+@media only screen and (min-width: 900px) {
+  .navbar-brand img {
+    width: 15%; 
+  }
 }

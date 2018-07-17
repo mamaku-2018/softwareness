@@ -7,16 +7,17 @@ const companiesRoot = 'https://app.companiesoffice.govt.nz/companies/app/ui/page
 
 class CompanyInfo extends React.Component {
   componentDidMount () {
-    const id = this.props.match.params.id
-    this.props.dispatch(getCompanyInfo(id))
+    const {id, dispatch} = this.props
+    dispatch(getCompanyInfo(id))
   }
 
   render () {
+    const {websiteUrl, countryId} = this.props.companyInfo
     return (
       <div>
         <h2>{this.props.companyInfo.name}</h2>
-        <a href={`${this.props.companyInfo.websiteUrl}`}>Website</a>
-        <a href={`${companiesRoot}${this.props.companyInfo.countryId}`}>
+        <a href={`${websiteUrl}`}>Website</a>
+        <a href={`${companiesRoot}${countryId}`}>
           NZ Companies Office listing
         </a>
         <Route path='/companies/profile/:id/edit' component={CompanyProfileEdit} />
@@ -25,8 +26,9 @@ class CompanyInfo extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    id: ownProps.id,
     companyInfo: state.companyInfo
   }
 }
