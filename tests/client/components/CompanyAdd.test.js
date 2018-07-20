@@ -1,13 +1,13 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import {CompanyName} from '../../../client/components/CompanyAdd'
+import {CompanyAdd} from '../../../client/components/CompanyAdd'
 
-test('<CompanyName />', () => {
+test('<CompanyAdd />', () => {
   const expected = 'Add Company'
 
-  const wrapper = shallow(<CompanyName />)
-  const actual = wrapper.find('h2').text()
+  const wrapper = shallow(<CompanyAdd />)
+  const actual = wrapper.find('h3').text()
 
   expect(actual).toEqual(expected)
 })

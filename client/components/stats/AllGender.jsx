@@ -1,9 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {BarChart, Bar, CartesianGrid, YAxis, XAxis, Tooltip, Legend} from 'recharts'
-import {getGenderStats} from '../actions/stats/getCategoryMaleFemale'
 
-export class CategoryMaleFemale extends React.Component {
+import {requestAllGenderStats} from '../../actions/stats/allGender'
+
+export class AllGender extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -12,14 +13,14 @@ export class CategoryMaleFemale extends React.Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(getGenderStats())
+    this.props.dispatch(requestAllGenderStats())
   }
 
   render () {
     return (
       <div className="bar">
         <h4>Gender Split per Category</h4>
-        <BarChart width={730} height={500} data={this.props.gender} barGap={5} margin={{top: 0, right: 30, left: 20, bottom: 5}} >
+        <BarChart width={730} height={500} data={this.props.allGenderStats} barGap={5} margin={{top: 0, right: 30, left: 20, bottom: 5}} >
           <CartesianGrid strokeDasharray = "4 4" />
           <XAxis dataKey="Category" label={{value: 'Category', fill: '#e8e8e8', offset: -10, position: 'insideBottom'}}/>
           <YAxis label={{value: 'Number Of Employees', angle: -90, position: 'center', padding: 10, fill: '#e8e8e8'}}/>
@@ -35,8 +36,8 @@ export class CategoryMaleFemale extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    gender: state.categoryMaleFemale
+    allGenderStats: state.allGenderStats
   }
 }
 
-export default connect(mapStateToProps)(CategoryMaleFemale)
+export default connect(mapStateToProps)(AllGender)

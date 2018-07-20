@@ -1,7 +1,4 @@
-import {
-  REQUEST_LOGIN,
-  RECEIVE_LOGIN
-} from '../../actions/auth/login'
+import {REQUEST_LOGIN, RECEIVE_LOGIN} from '../../actions/auth/login'
 
 const login = (state = false, action) => {
   switch (action.type) {

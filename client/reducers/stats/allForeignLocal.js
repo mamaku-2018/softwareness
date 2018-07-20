@@ -1,8 +1,8 @@
-import {GET_LOCALDATA} from '../actions/stats/getCategoryForLocation'
+import {RECEIVE_ALL_FOREIGN_LOCAL_STATS} from '../../actions/stats/allForeignLocal'
 
 const localforeign = (state = [], action) => {
   switch (action.type) {
-    case GET_LOCALDATA:
+    case RECEIVE_ALL_FOREIGN_LOCAL_STATS:
       state = action.stats
       return state
 

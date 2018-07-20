@@ -13,6 +13,14 @@ jest.mock('../../../server/db/stats', () => ({
     local: [
       {name: 'Local', value: 69}, {name: 'Foreign', value: 31}
     ]
+  }),
+  categoryCompanyGenderCount: () => Promise.resolve({
+    company: [
+      {Male: 3, Female: 10, CompanyId: 4},
+      {Male: 10, Female: 9, CompanyId: 2},
+      {Male: 2, Female: 6, CompanyId: 5},
+      {Male: 7, Female: 11, CompanyId: 3}
+    ]
   })
 }))
 

@@ -4,7 +4,7 @@ import {showError} from '../actions'
 import {addCompany} from '../actions/companies'
 import {Redirect} from 'react-router-dom'
 
-export class CompanyName extends React.Component {
+export class CompanyAdd extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -36,7 +36,7 @@ export class CompanyName extends React.Component {
   render () {
     if (this.state.redirect) {
       return (
-        <Redirect to='/Companies' />
+        <Redirect to='/companies' />
       )
     } else {
       return (
@@ -44,11 +44,11 @@ export class CompanyName extends React.Component {
           <h3>Add Company</h3>
           <div className='CompanyAddForm'>
             <label>Name:</label>
-            <input onChange={this.changeHandler} name='name'/>
+            <input onChange={this.changeHandler} name='name' placeholder='Name'/>
             <label>Website URL:</label>
-            <input onChange={this.changeHandler} name='siteUrl'/>
+            <input onChange={this.changeHandler} name='siteUrl' placeholder='Website URL'/>
             <label>NZ Companies Number:</label>
-            <input onChange={this.changeHandler} name='countryId'/>
+            <input onChange={this.changeHandler} name='countryId' placeholder='NZ Companies Number'/>
             <button className='button' onClick={this.submitHandler}>ADD</button>
           </div>
         </div>
@@ -56,4 +56,5 @@ export class CompanyName extends React.Component {
     }
   }
 }
-export default connect()(CompanyName)
+
+export default connect()(CompanyAdd)

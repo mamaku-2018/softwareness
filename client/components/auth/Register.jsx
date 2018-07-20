@@ -55,25 +55,56 @@ class Register extends React.Component {
         <div className="register">
           <form>
             <fieldset>
-              <legend>Register</legend>
+              <h3>Register</h3>
               <label htmlFor="firstName">First name: </label>
-              <input type="text" name="firstName" id="firstName" placeholder="First name" onChange={this.handleChange} value={this.state.firstName}/>
+              <input
+                name="firstName"
+                id="firstName"
+                placeholder="First name"
+                onChange={this.handleChange}
+                value={this.state.firstName}/>
               <br />
               <label htmlFor="name">Last name: </label>
-              <input type="text" name="surname" id="surname" placeholder="Surname" onChange={this.handleChange} value={this.state.surname}/>
+              <input
+                name="surname"
+                id="surname"
+                placeholder="Surname"
+                onChange={this.handleChange}
+                value={this.state.surname}/>
               <br />
               <label htmlFor="email">Email: </label>
-              <input type="text" name="email" id="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
+              <input
+                name="email"
+                id="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+                value={this.state.email}/>
               <br />
               <label htmlFor="password">Password: </label>
-              <input type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+                value={this.state.password}/>
               <br />
               <label htmlFor="confirm">Confirm password: </label>
-              <input type="password" name="confirm" id="confirm" placeholder="Confirm password" onChange={this.handleChange} value={this.state.confirm}/>
+              <input
+                type="password"
+                name="confirm"
+                id="confirm"
+                placeholder="Confirm password"
+                onChange={this.handleChange}
+                value={this.state.confirm}/>
               {!this.state.match && <span>{this.state.message}</span>}
               <br />
 
-              <button type="button" disabled={!this.state.match} className="button" onClick={this.handleSubmit}>Register</button>
+              <button
+                type="button"
+                disabled={!this.state.match}
+                className="button"
+                onClick={this.handleSubmit}>Register</button>
             </fieldset>
           </form>
         </div>

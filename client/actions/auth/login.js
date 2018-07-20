@@ -1,8 +1,10 @@
 import request from '../../lib/apiClient'
 import {saveAuthToken, logOff} from '../../lib/auth'
 import {showError, clearError, showSuccess} from '../'
-import {requestUserDetails,
-  receiveUserDetails} from './register'
+import {
+  requestUserDetails,
+  receiveUserDetails
+} from './register'
 
 export const REQUEST_LOGIN = 'REQUEST_LOGIN'
 export const RECEIVE_LOGIN = 'RECEIVE_LOGIN'

@@ -1,21 +1,24 @@
 import React from 'react'
-import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
 import {connect} from 'react-redux'
-import {getLocalForeign} from '../actions/stats/getCategoryForLocation'
+import {PieChart, Pie, Tooltip, Cell, Legend, Label} from 'recharts'
+
+import {requestCompanyForeignLocalStats} from '../../actions/stats/companyForeignLocal'
 
 const colors = ['#c0462e', '#7AB0AD']
 
-export class CategoryForeignLocal extends React.Component {
+class CompanyForeignLocal extends React.Component {
   componentDidMount () {
-    this.props.dispatch(getLocalForeign())
+    const {id, dispatch} = this.props
+    dispatch(requestCompanyForeignLocalStats(id))
   }
+
   render () {
     return (
       <div className='pie'>
-        <h4>Split of Local and Foreign Employees</h4>
+
         <PieChart width={540} height={400}>
           <Pie
-            data={this.props.local}
+            data={this.props.companyForLoc}
             dataKey="value"
             nameKey="name"
             cx="50%"
@@ -26,7 +29,7 @@ export class CategoryForeignLocal extends React.Component {
           >
             <Label position="center" />
             {
-              this.props.local.map((entry, index) => (
+              this.props.companyForeignLocal.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={colors[index]}/>
               ))
             }
@@ -39,10 +42,11 @@ export class CategoryForeignLocal extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps (state, ownProps) {
   return {
-    local: state.localForeign
+    id: ownProps.id,
+    companyForeignLocal: state.companyForeignLocalStats
   }
 }
 
-export default connect(mapStateToProps)(CategoryForeignLocal)
+export default connect(mapStateToProps)(CompanyForeignLocal)

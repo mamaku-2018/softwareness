@@ -2,15 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {login} from '../../actions/auth/login'
 import {clearError} from '../../actions'
-import {Redirect} from 'react-router-dom'
 
 class Login extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       email: '',
-      password: '',
-      redirect: false
+      password: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,43 +27,37 @@ class Login extends React.Component {
       email: this.state.email,
       password: this.state.password
     }
-    login(user)
-    this.setState({redirect: true})
+    const goHome = () => this.props.history.push('/')
+    login(user, goHome)
     e.preventDefault()
   }
 
   render () {
-    if (this.state.redirect) {
-      return (
-        <Redirect to='/' />
-      )
-    } else {
-      return (
-        <div>
-          <form>
-            <fieldset>
-              <legend>Login</legend>
-              <label htmlFor="email">Email: </label>
-              <input type="text" name="email" id="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
-              <br />
-              <label htmlFor="password">Password: </label>
-              <input type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
-              <br />
+    return (
+      <div className="login">
+        <h3>Login</h3>
+        <form>
+          <fieldset>
+            <label htmlFor="email">Email: </label>
+            <input type="text" name="email" id="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
+            <br />
+            <label htmlFor="password">Password: </label>
+            <input type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
+            <br />
 
-              <button type="button" className="button" onClick={this.handleSubmit}>Login</button>
-            </fieldset>
-          </form>
-        </div>
-      )
-    }
+            <button type="button" className="button" onClick={this.handleSubmit}>Login</button>
+          </fieldset>
+        </form>
+      </div>
+    )
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    login: (user) => {
+    register: (user, goHome) => {
       dispatch(clearError())
-      return dispatch(login(user))
+      return dispatch(login(user, goHome))
     }
   }
 }

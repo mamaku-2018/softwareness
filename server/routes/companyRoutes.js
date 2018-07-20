@@ -64,6 +64,19 @@ router.get('/profile/:id', (req, res) => {
     })
 })
 
+router.get('/profile/:companyId/stats', (req, res) => {
+  const companyId = req.params.companyId
+  dbProfile.getEmpLocal(companyId)
+    .then(local => {
+      res.json({local})
+    })
+    .catch(err => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      res.status(500).send('Unable to read from database')
+    })
+})
+
 function getCategories (list) {
   const result = []
   const set = new Set()
