@@ -1,6 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Route} from 'react-router'
+
 import {getCompanyInfo} from '../actions/companies'
+import CompanyProfileEdit from './CompanyProfileEdit'
 
 const companiesRoot = 'https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/'
 
@@ -19,6 +22,7 @@ class CompanyInfo extends React.Component {
         <a href={`${companiesRoot}${countryId}`}>
           NZ Companies Office listing
         </a>
+        <Route path='/companies/profile/:id/edit' component={CompanyProfileEdit} />
       </div>
     )
   }

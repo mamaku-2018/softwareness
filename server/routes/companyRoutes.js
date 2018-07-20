@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('../db/companies')
 const dbProfile = require('../db/employeeProfile')
+
 const router = express.Router()
 
 router.post('/add', (req, res) => {
@@ -46,10 +47,10 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.get('/profile/:companyId', (req, res) => {
-  const companyId = req.params.companyId
+router.get('/profile/:id', (req, res) => {
+  const id = req.params.id
 
-  dbProfile.getEmpProfiles(companyId)
+  dbProfile.getEmpProfiles(id)
     .then(list => {
       const result = {
         categories: getCategories(list)
@@ -106,4 +107,5 @@ function getRoles (list, category) {
   }
   return result
 }
+
 module.exports = router

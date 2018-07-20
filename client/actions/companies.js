@@ -90,7 +90,7 @@ export const receiveCompanyProfile = (companyProfile) => {
 
 export function getCompanyProfile (id) {
   return (dispatch) => {
-    dispatch(requestCompanyInfo())
+    dispatch(requestCompanyProfile())
     return request
       .get(`/api/v1/companies/profile/${id}`)
       .then(res => {
