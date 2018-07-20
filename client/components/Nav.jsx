@@ -8,9 +8,7 @@ const Nav = (props) => {
   return (
     <nav className='navbar'>
       <div className='navbar-brand'>
-        <a className='logo' href='/'>
-          <Link to='/'><img src='images/logo.png' alt='softwareness logo' /></Link>
-        </a>
+        <Link to='/'><img src='images/logo.png' alt='softwareness logo' /></Link>
       </div>
       <div className='navbarmenu'>
         {!props.loggedIn && <Link to='/login' className='button'>login</Link>}

@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {getCompanies} from '../actions/companies'
 
@@ -8,35 +9,32 @@ class CompanyList extends React.Component {
     super(props)
     this.state = {
       search: '',
-      companyNames: []
+      companies: []
     }
     this.searchBar = this.searchBar.bind(this)
   }
+
   componentDidMount () {
     this.props.dispatch(getCompanies())
       .then(() => {
         this.setState({
-          companyNames: this.props.companyList.map(company => company.name)
+          companies: this.props.companyList
         })
       })
   }
 
   searchBar (e) {
-    if (e.target.value === '') {
-      this.setState({
-        companyNames: this.props.companyList.map(company => company.name),
-        search: e.target.value
-      })
-    } else {
-      let searchList = this.props.companyList.map(company => company.name)
-      searchList = searchList.filter(res => {
-        return res.toLowerCase().search(e.target.value.toLowerCase()) !== -1
-      })
-      this.setState({
-        search: e.target.value,
-        companyNames: searchList
-      })
-    }
+    const search = e.target.value
+    const companies = search === ''
+      ? this.props.companyList
+      : this.props.companyList.filter(company => (
+        company.name.toLowerCase().search(search.toLowerCase()) !== -1
+      ))
+
+    this.setState({
+      search,
+      companies
+    })
   }
 
   render () {
@@ -53,16 +51,15 @@ class CompanyList extends React.Component {
           </div>
         </div>
         <ul>
-          {this.state.companyNames.map(company => {
+          {this.state.companies.map(company => {
             return (
-              <li key={company}>
-                <a className='companyName' href={company.websiteUrl}>{company}</a>
+              <li key={company.id}>
+                <Link to={`/companies/${company.id}`} className='companyName'>{company.name}</Link>
               </li>
             )
           })}
         </ul>
       </div>
-
     )
   }
 }
