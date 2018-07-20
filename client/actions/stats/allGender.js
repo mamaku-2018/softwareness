@@ -1,21 +1,21 @@
 import request from 'superagent'
 import {showError} from '../index'
 
-export const GET_CATEGORY_MALEFEMALE = 'GET_CATEGORY_MALEFEMALE'
+export const RECEIVE_ALL_GENDER_STATS = 'RECEIVE_ALL_GENDER_STATS'
 
-const getCategoryMaleFemale = (stats) => {
+const receiveAllGenderStats = (stats) => {
   return {
-    type: GET_CATEGORY_MALEFEMALE,
+    type: RECEIVE_ALL_GENDER_STATS,
     stats
   }
 }
 
-export function getGenderStats () {
+export function requestAllGenderStats () {
   return (dispatch) => {
     return request
       .get('/api/v1/stats')
       .then(stats => {
-        dispatch(getCategoryMaleFemale(stats.body.gender))
+        dispatch(receiveAllGenderStats(stats.body.gender))
       })
       .catch(err => {
         dispatch(showError(err.message))
