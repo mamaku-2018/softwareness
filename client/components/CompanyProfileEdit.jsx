@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+
 import {getCompanyProfile} from '../actions/companies'
 
 class CompanyProfileEdit extends React.Component {
@@ -36,7 +37,6 @@ class CompanyProfileEdit extends React.Component {
       openReqs: this.state.openReqs,
       percentLocal: this.state.percentLocal
     }
-    //Function pass to the API
     e.preventDefault()
   }
 
@@ -50,46 +50,45 @@ class CompanyProfileEdit extends React.Component {
     return (
       <div>
         <form>
-        <fieldset>
-        {categories.map(category => {
-          return( 
-          <div key ={category.name}>
-          <h3>{category.name}</h3>
-          <table>
-            <tbody>
-            <tr>
-              <th>Name</th>
-              <th>Employees</th>
-              <th>Average Year Experience</th>
-              <th>Females</th>
-              <th>Males</th>
-              <th>Open Requirements</th>
-              <th>Percent Local</th>
-            </tr>
-            {category.roles.map(role => {
-              return(
-              <div key ={role.name}>
-                <tr>
-                  <td><input type="text" onchange={this.handleChange} name="name" value="name" placeholder={role.name}/></td>
-                  <td><input type="text" onchange={this.handleChange} name="count" value="count" placeholder={role.count}/></td>
-                  <td><input type="text" onchange={this.handleChange} name="avgYearExp" value="avgYearExp" placeholder={role.avgYearExp}/></td>
-                  <td><input type="text" onchange={this.handleChange} name="femaleCount" value="femaleCount" placeholder={role.femaleCount}/></td>
-                  <td><input type="text" onchange={this.handleChange} name="maleCount" value="maleCount" placeholder={role.maleCount}/></td>
-                  <td><input type="text" onchange={this.handleChange} name="openReqs" value="openReqs" placeholder={role.openReqs}/></td>
-                  <td><input type="text" onchange={this.handleChange} name="percentLocal" value="percentLocal" placeholder={role.percentLocal}/></td>
-                </tr>
-              </div>
+          <fieldset>
+            {categories.map(category => {
+              return (
+                <div key={category.name}>
+                  <h3>{category.name}</h3>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <th>Employees</th>
+                        <th>Average Year Experience</th>
+                        <th>Females</th>
+                        <th>Males</th>
+                        <th>Open Requirements</th>
+                        <th>Percent Local</th>
+                      </tr>
+                      {category.roles.map(role => {
+                        return (
+                          <div key={role.name}>
+                            <tr>
+                              <td><input onChange={this.handleChange} name="name" value="name" placeholder={role.name}/></td>
+                              <td><input onChange={this.handleChange} name="count" value="count" placeholder={role.count}/></td>
+                              <td><input onChange={this.handleChange} name="avgYearExp" value="avgYearExp" placeholder={role.avgYearExp}/></td>
+                              <td><input onChange={this.handleChange} name="femaleCount" value="femaleCount" placeholder={role.femaleCount}/></td>
+                              <td><input onChange={this.handleChange} name="maleCount" value="maleCount" placeholder={role.maleCount}/></td>
+                              <td><input onChange={this.handleChange} name="openReqs" value="openReqs" placeholder={role.openReqs}/></td>
+                              <td><input onChange={this.handleChange} name="percentLocal" value="percentLocal" placeholder={role.percentLocal}/></td>
+                            </tr>
+                          </div>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
               )
             })}
-            </tbody>
-          </table>
-          </div>
-          )
-        })}
-         <button type="button" className="button" onClick={this.handleSubmit}>Edit</button>
-        </fieldset>
+            <button type="button" className="button" onClick={this.handleSubmit}>Edit</button>
+          </fieldset>
         </form>
-        
       </div>
     )
   }

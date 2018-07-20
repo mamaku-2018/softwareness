@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('../db/companies')
 const dbProfile = require('../db/employeeProfile')
+
 const router = express.Router()
 
 router.post('/add', (req, res) => {
@@ -94,3 +95,4 @@ function getRoles (list, category) {
   return result
 }
 
+module.exports = router

@@ -13,7 +13,7 @@ jest.mock('../../../server/db/companies', () => ({
     {id: 3, name: 'onemore', websiteUrl: 'www.test1.com', countryId: 222},
     {id: 1, name: 'andanother', websiteUrl: 'www.test1.com', countryId: 432}
   ]),
-  addCompany: () => Promise.resolve(),
+  addCompany: () => Promise.resolve()
 }))
 
 test('good to go', () => {
