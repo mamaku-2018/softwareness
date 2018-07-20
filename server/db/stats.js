@@ -1,4 +1,5 @@
-const config = require('./knexfile').development
+var environment = process.env.NODE_ENV || 'development'
+const config = require('./knexfile')[environment]
 const knex = require('knex')(config)
 
 module.exports = {
@@ -22,7 +23,10 @@ function catetoryLocalForeignCount (db = knex) {
     .then(localResult => {
       const local = Math.floor(localResult[0].local)
       const foreign = 100 - local
-      return ([{'name': 'Local', 'value': local}, {'name': 'Foreign', 'value': foreign}])
+      return ([
+        {'name': 'Local', 'value': local},
+        {'name': 'Foreign', 'value': foreign}
+      ])
     })
 }
 

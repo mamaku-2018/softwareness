@@ -1,4 +1,5 @@
-const config = require('./knexfile').development
+var environment = process.env.NODE_ENV || 'development'
+const config = require('./knexfile')[environment]
 const knex = require('knex')(config)
 
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
 function getAllCompanies (db = knex) {
   return db('companies')
     .select('id', 'name', 'website_url as websiteUrl', 'country_id as countryId')
+    .orderBy('name', 'asc')
 }
 
 function getCompany (id, db = knex) {
