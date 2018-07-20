@@ -40,11 +40,19 @@ class CompanyList extends React.Component {
   render () {
     return (
       <div className='companyList'>
-        <h1>Reviewed Companies</h1>
-        <p>Softwareness is working with forward-thinking companies to improve self-awareness in the software industry.</p>
+        <h3>Reviewed Companies</h3>
+        <p>
+          Softwareness is working with forward-thinking companies
+          to improve self-awareness in the software industry.
+        </p>
         <div className="field has-addons">
           <div className="control">
-            <input className="search" type="text" placeholder="Find a company" onChange={this.searchBar} value={this.state.search} />
+            <input
+              className="search"
+              type="text"
+              placeholder="Find a company"
+              onChange={this.searchBar}
+              value={this.state.search} />
           </div>
           <div className="control">
             <a className="button is-info">Search</a>
@@ -54,7 +62,9 @@ class CompanyList extends React.Component {
           {this.state.companies.map(company => {
             return (
               <li key={company.id}>
-                <Link to={`/companies/${company.id}`} className='companyName'>{company.name}</Link>
+                <Link to={`/companies/${company.id}`} className='companyName'>
+                  {company.name}
+                </Link>
               </li>
             )
           })}

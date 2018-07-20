@@ -48,10 +48,7 @@ h1, h2, h3, h4, h5 {
   height: 3rem;
   color: #E8E8E8;
   border-radius: 5px;
-}
-
-.button a {
-  color:  #E8E8E8;
+  outline: none;
 }
 
 .button:hover {
@@ -63,7 +60,8 @@ input {
   padding: 10px;
   font-size: 15px;
   margin: 2% 0% 2% 0%;
-  color: #E8E8E8;
+  color: black;
+  border-radius: 3px;
 }
 
 .error {
@@ -133,15 +131,20 @@ label {
 
 .homegraph {
   height: 100%; 
-  margin-top: 2rem;
+  margin-top: 0;
   padding: 0;
   position: relative;
 }
 
+.homegraph h4 {
+  visibility: hidden;
+}
 .homegraph p {
   font-size: 1rem; 
   font-weight: 900; 
   margin: 1rem; 
+  margin-right: 3rem;
+  margin-left: 3rem;
   color: #7AB0AD;
 }
 
@@ -154,7 +157,7 @@ label {
 
 .about {
   position: relative; 
-  padding-top: 5%; 
+  padding-top: 4%; 
 }
 
 .about p {
@@ -177,7 +180,7 @@ label {
   background-color: #1F3D45;
   border-top: 2px solid #7AB0AD;
   margin-top: 5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: #E8E8E8;
 }
 
@@ -230,45 +233,53 @@ label {
   margin-bottom: 1.5rem;
 }
 
-/* Companies List  */
-.companyList h1 {
-  font-size: 40px; 
-  text-align: center; 
+/* COMPANY LIST */
+
+.companyList {
+  text-align: center;
 }
 
 .companyList p {
   font-size: 20px; 
-  text-align: center;
   padding: 1rem; 
 }
 
+.companyList ul {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .companyList li {
-  text-align: left; 
   margin: 1rem;
   text-transform: capitalize;
   font-size: 20px; 
 }
 
-.companyList a{
+.companyList a {
   color: #E8E8E8;
 }
 
-.companyList a:hover{
+.companyList a:hover {
   color: #7AB0AD ;
+}
+
+.field.has-addons {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
 }
 
 .button.is-info {
   margin: 0;
-  height: 2.25em; 
-  width: 5rem; 
+  width: 6rem; 
   background-color: #C0462E; 
-  border: none; 
 }
 
 input.search {
-  height: 2.7em; 
-  border: none; 
+  height: 3rem; 
+  margin: 0;
 }
+
 .login .button, .register .button, .companyAdd .button {
   margin-left: 0;
 }
@@ -285,16 +296,24 @@ input.search {
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width: 440px) {
+@media only screen and (min-width: 400px) {
   .navbar-brand img {
     width: 22%; 
   }
+
+  .field.has-addons {
+    width: 60%;
+  }  
 }  
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 640px) {
   .navbar-brand img {
     width: 18%; 
   }
+
+  .field.has-addons {
+    width: 40%;
+  }  
 }
 
 @media only screen and (min-width: 800px) {
@@ -307,11 +326,32 @@ input.search {
     height: 3rem;
     font-size: 1rem;
   }
+
+  .companyList {
+    text-align: left;
+  }
+
+  .companyList ul {
+    text-align: left; 
+  }
+
+  .companyList h3 {
+    margin-left: 1rem;
+  }
+
+  .field.has-addons {
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+
   .footer {
     width: 100%;
     position: relative;
     bottom: 0;
     text-align: left;
+    margin-bottom: 2rem;
   }
 
   .about p {

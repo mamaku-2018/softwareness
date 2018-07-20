@@ -44,11 +44,11 @@ export class CompanyName extends React.Component {
           <h3>Add Company</h3>
           <div className='CompanyAddForm'>
             <label>Name:</label>
-            <input onChange={this.changeHandler} name='name'/>
+            <input onChange={this.changeHandler} name='name' placeholder='Name'/>
             <label>Website URL:</label>
-            <input onChange={this.changeHandler} name='siteUrl'/>
+            <input onChange={this.changeHandler} name='siteUrl' placeholder='Website URL'/>
             <label>NZ Companies Number:</label>
-            <input onChange={this.changeHandler} name='countryId'/>
+            <input onChange={this.changeHandler} name='countryId' placeholder='NZ Companies Number'/>
             <button className='button' onClick={this.submitHandler}>ADD</button>
           </div>
         </div>

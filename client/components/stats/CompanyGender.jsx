@@ -15,7 +15,7 @@ export class CompanyGender extends React.Component {
   render () {
     return (
       <div>
-        <h2>Gender Split</h2>
+        <h4>Gender Split</h4>
 
         <PieChart width={540} height={400}>
           <Pie
