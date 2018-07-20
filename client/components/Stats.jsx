@@ -1,14 +1,14 @@
 import React from 'react'
-import CategoryForeignLocal from './CategoryForeignLocal'
-import CategoryMaleFemale from './CategoryMaleFemale'
+import AllForeignLocalStats from './stats/AllForeignLocal'
+import AllGenderStats from './stats/AllGender'
 
 export const Stats = () => (
   <div className='stats'>
     <h3>Statistics</h3>
     <br />
-    <CategoryForeignLocal />
+    <AllForeignLocalStats />
     <br />
-    <CategoryMaleFemale />
+    <AllGenderStats />
   </div>
 )
 
