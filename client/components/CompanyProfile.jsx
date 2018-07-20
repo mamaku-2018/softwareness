@@ -1,10 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Route} from 'react-router-dom'
 
 import CompanyInfo from './CompanyInfo'
 import EmployeeStats from './EmployeeStats'
+import CompanyProfileEdit from './CompanyProfileEdit'
 import CompanyGenderStats from './stats/CompanyGender'
-// import CompanyForeignLocalStats from './stats/CompanyForeignLocal'
+import CompanyForeignLocalStats from './stats/CompanyForeignLocal'
 import {getCompanyInfo, getCompanyProfile} from '../actions/companies'
 
 class CompanyProfile extends React.Component {
@@ -22,7 +24,8 @@ class CompanyProfile extends React.Component {
         <CompanyInfo id={id} />
         <EmployeeStats id={id} />
         <CompanyGenderStats id={id} />
-        {/* <CompanyForeignLocalStats id={id} /> */}
+        <CompanyForeignLocalStats id={id} />
+        <Route path='/companies/:id/edit' component={CompanyProfileEdit} />
       </div>
     )
   }
