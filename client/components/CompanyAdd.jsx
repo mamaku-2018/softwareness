@@ -4,7 +4,7 @@ import {showError} from '../actions'
 import {addCompany} from '../actions/companies'
 import {Redirect} from 'react-router-dom'
 
-export class CompanyName extends React.Component {
+export class CompanyAdd extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -36,7 +36,7 @@ export class CompanyName extends React.Component {
   render () {
     if (this.state.redirect) {
       return (
-        <Redirect to='/Companies' />
+        <Redirect to='/companies' />
       )
     } else {
       return (
@@ -56,4 +56,5 @@ export class CompanyName extends React.Component {
     }
   }
 }
-export default connect()(CompanyName)
+
+export default connect()(CompanyAdd)
